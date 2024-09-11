@@ -10,8 +10,18 @@ import ProfilePic from '../assets/profile.png'; // 프로필 사진 추가
 function About() {
   return (
     <AboutSection id="about">
+      <AboutContent>
         {/* 프로필 이미지 */}
-        <ProfileImage src={ProfilePic} alt="Profile" />
+        <ProfileImage src={ProfilePic} alt="Profile" /> 
+        
+        {/* 텍스트 컨텐츠 */}
+        <TextContent>
+          {/* <h2>About Me</h2> */}
+          <p>
+            #Hiring
+          </p>
+        </TextContent>
+      </AboutContent>
     </AboutSection>
   );
 }

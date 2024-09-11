@@ -6,6 +6,7 @@ import {
   TechCard,
   TechIcon,
   TechName,
+  TextContent
 } from './TechStackStyles';
 import { FaJava } from 'react-icons/fa';
 import { SiSpring, SiMysql, SiRedis, SiMongodb, SiApachehadoop, SiApachespark } from 'react-icons/si';
@@ -24,6 +25,9 @@ function TechStack() {
   return (
     <TechStackSection id="tech-stack">
       <SectionTitle>Tech Stack</SectionTitle>
+        <TextContent>
+            더 적합한 기술이 있다면 적극적으로 도입합니다.
+        </TextContent>
       <TechList>
         {techs.map((tech, index) => (
           <TechCard key={index}>

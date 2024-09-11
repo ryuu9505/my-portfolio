@@ -16,6 +16,15 @@ export const SectionTitle = styled.h2`
   margin-bottom: 40px;
 `;
 
+// 텍스트 컨텐츠 스타일
+export const TextContent = styled.div`
+    margin-top: 40px;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: ${({ theme }) => theme.colors.primary};
+    margin-bottom: 40px;
+`;
+
 // 프로젝트 리스트 스타일
 export const ProjectList = styled.div`
   display: flex;

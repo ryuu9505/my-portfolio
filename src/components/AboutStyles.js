@@ -15,7 +15,7 @@ export const AboutSection = styled.section`
 // 섹션 내용 컨테이너
 export const AboutContent = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   max-width: 1200px;
   width: 100%;
@@ -32,7 +32,7 @@ const pulse = keyframes`
     transform: scale(1);
   }
   50% {
-    transform: scale(1.15);
+    transform: scale(1.05);
   }
   100% {
     transform: scale(1);
@@ -59,9 +59,9 @@ export const TextContent = styled.div`
   }
 
   p {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    margin-top: 40px;
+    font-size: 1.6rem;
+    line-height: 1.2;
     color: ${({ theme }) => theme.colors.text};
   }
 `;

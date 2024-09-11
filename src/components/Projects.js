@@ -3,6 +3,7 @@ import React from 'react';
 import {
   ProjectsSection,
   SectionTitle,
+  TextContent,
   ProjectList,
   ProjectCard,
   ProjectImageContainer,
@@ -42,6 +43,9 @@ function Projects() {
     return (
       <ProjectsSection id="projects">
         <SectionTitle>Projects</SectionTitle>
+        <TextContent>
+            다양한 문제를 경험하기 위해 계속해서 도전합니다.
+        </TextContent>
         <ProjectList>
           {projects.map((project, index) => (
             <ProjectCard key={index}>
