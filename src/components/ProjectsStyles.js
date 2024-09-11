@@ -3,7 +3,9 @@ import styled from 'styled-components';
 // 섹션 전체 컨테이너 스타일
 export const ProjectsSection = styled.section`
   width: 100%;
-  padding: 300px 20px;
+  padding: 0px 20px;
+  padding-top: 120px;
+  padding-bottom: 360px;
   background-color: ${({ theme }) => theme.colors.background}; // 화이트 배경
   text-align: center;
   color: ${({ theme }) => theme.colors.textLight}; // 진한 그레이 텍스트 색상
@@ -21,7 +23,7 @@ export const TextContent = styled.div`
     margin-top: 40px;
     font-size: 1.6rem;
     line-height: 1.2;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.pr};
     margin-bottom: 40px;
 `;
 

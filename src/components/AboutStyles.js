@@ -7,7 +7,7 @@ export const AboutSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;  // 중앙 정렬
-  padding: 50px 20px;
+  padding: 100px 20px;
   background-color: ${({ theme }) => theme.colors.backgroundDark}; // 검정 배경
   color: ${({ theme }) => theme.colors.textDark}; // 밝은 텍스트 색상
 `;
