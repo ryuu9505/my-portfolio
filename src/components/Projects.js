@@ -29,7 +29,7 @@ const projects = [
   },
   {
     title: 'kkoma',
-    description: '당신을 위한 육아용품 중고거래 플랫폼',
+    description: '쉽고 안전한 육아용품 중고거래 플랫폼',
     imageUrl: 'https://file.notion.so/f/f/77f2e150-05f9-42c4-8a23-b656b39df0bf/2c6d10b2-fc5d-4538-a1e6-4848e4a2e66e/kkoma-logo-1x3-letter-2.png?table=block&id=e90084b7-22a7-4426-b152-7c9e85a322b3&spaceId=77f2e150-05f9-42c4-8a23-b656b39df0bf&expirationTimestamp=1726149600000&signature=mSPgj-z1RlLA1JYXna2HS_iBDMYWOBSp0RlbH569We4&downloadName=kkoma-logo-1x3-letter-2.png',
     githubUrl: 'https://github.com/kkomas/kkoma',
     notionUrl: 'https://www.notion.so/xiyoon/e90084b722a74426b1527c9e85a322b3?pvs=4', // Notion URL 추가
@@ -50,7 +50,7 @@ function Projects() {
               <ProjectImage src={project.imageUrl} alt={project.title} />
             </ProjectImageContainer>
               <ProjectContent>
-                <ProjectTitle>{project.title}</ProjectTitle>
+                {/* <ProjectTitle>{project.title}</ProjectTitle> */}
                 <ProjectDescription>{project.description}</ProjectDescription>
                 
                 {/* 도메인 주소 표시 */}
