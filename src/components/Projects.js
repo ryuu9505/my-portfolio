@@ -47,7 +47,9 @@ function Projects() {
             <ProjectCard key={index}>
                           {/* 이미지 컨테이너로 감싸서 비율 유지 */}
             <ProjectImageContainer>
-              <ProjectImage src={project.imageUrl} alt={project.title} />
+                <a href={project.domainUrl} target="_blank" rel="noopener noreferrer">
+                    <ProjectImage src={project.imageUrl} alt={project.title} />
+                </a>
             </ProjectImageContainer>
               <ProjectContent>
                 {/* <ProjectTitle>{project.title}</ProjectTitle> */}
