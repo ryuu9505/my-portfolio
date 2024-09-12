@@ -31,8 +31,8 @@ const pulse = keyframes`
   0% {
     transform: scale(1);
   }
-  50% {
-    transform: scale(1.05);
+  30% {
+    transform: scale(1.16);
   }
   100% {
     transform: scale(1);
@@ -46,7 +46,7 @@ export const ProfileImage = styled.img`
   border-radius: 50%;  // 원형 이미지
   object-fit: cover;
   margin: 0;  // 가운데 정렬을 위해 여백 제거
-  animation: ${pulse} 3s infinite; /* 애니메이션 적용 */
+  animation: ${pulse} 2s infinite; /* 애니메이션 적용 */
 `;
 
 // 텍스트 컨텐츠 스타일
