@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const TechStackSection = styled.section`
   width: 100%;
   padding: 0px 40px;
-  padding-top: 200px;
+  padding-top: 160px;
   padding-bottom: 280px;
   background-image: url('/star-textures/Atmo_Gstar.png'); // 배경 이미지 경로 설정
   background-size: cover; // 배경 이미지가 섹션을 덮도록 설정
