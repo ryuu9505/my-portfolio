@@ -18,7 +18,7 @@ function About() {
         <TextContent>
           {/* <h2>About Me</h2> */}
           <p>
-            #구직중 #OPENTOWORK #求職中
+            #Web #BigData #AI #Cloud 
           </p>
         </TextContent>
       </AboutContent>

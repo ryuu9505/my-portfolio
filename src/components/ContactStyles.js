@@ -16,7 +16,7 @@ export const ContactSection = styled.section`
 // 섹션 제목 스타일
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.textDark};
   margin-bottom: 40px;
 `;
 
@@ -72,7 +72,7 @@ export const SocialLinks = styled.div`
 
 // 소셜 아이콘 스타일
 export const SocialIcon = styled.a`
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.iconLight};
   font-size: 2rem;
   transition: color 0.3s ease;
 

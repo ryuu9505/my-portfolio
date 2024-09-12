@@ -17,7 +17,7 @@ export const TechStackSection = styled.section`
 // 제목 스타일
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.textLight};
   margin-bottom: 40px;
 `;
 
@@ -27,7 +27,7 @@ export const TextContent = styled.div`
     margin-top: 40px;
     font-size: 1.6rem;
     line-height: 1.2;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.textLight};
     margin-bottom: 40px;
 `;
 
@@ -57,7 +57,7 @@ export const TechCard = styled.div`
 // 기술 아이콘 스타일
 export const TechIcon = styled.div`
   font-size: 3rem;
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.textLight};
   margin-bottom: 10px;
 `;
 

@@ -55,13 +55,13 @@ export const TextContent = styled.div`
 
   h2 {
     font-size: 2.5rem;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.textDark};
   }
 
   p {
     margin-top: 40px;
     font-size: 1.6rem;
     line-height: 1.2;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.textDark};
   }
 `;

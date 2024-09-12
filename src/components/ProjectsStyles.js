@@ -88,12 +88,6 @@ export const ProjectDescription = styled.p`
   margin-bottom: 4px;
 `;
 
-// 도메인 및 아이콘을 감싸는 컨테이너 스타일
-export const ProjectLinksContainer = styled.div`
-//   align-items: center;  // 수직 정렬
-//   margin: 8px 0;  // 위아래 여백 설정
-`;
-
 // 도메인 스타일
 export const ProjectDomain = styled.a`
   display: inline;
@@ -107,15 +101,62 @@ export const ProjectDomain = styled.a`
   }
 `;
 
+// 도메인 및 아이콘을 감싸는 컨테이너 스타일
+export const ProjectLinksContainer = styled.div`
+//   align-items: center;  // 수직 정렬
+//   margin: 8px 0;  // 위아래 여백 설정
+`;
+
 // 프로젝트 링크 스타일
 export const ProjectLink = styled.a`
   display: inline-block;
   font-size: 1rem;
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
   margin-right: 4px;
-  margin-top: 8px;
+  margin-top: 4px;
+  
   &:hover {
-    // text-decoration: underline;
+    // background: linear-gradient(145deg, #0064d9, #6fb3ff); /* 호버 시 그라데이션 방향 변경 */
+    // box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.6); /* 호버 시 그림자 강도 증가 */
+    transform: translateY(-2px); /* 호버 시 살짝 떠오르는 효과 */
+  }
+
+  &:active {
+    // box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5); /* 클릭 시 움푹 들어간 효과 */
+    transform: translateY(0px); /* 클릭 시 원래 위치로 복귀 */
+  }
+
+`;
+
+// 프로젝트 태그를 감싸는 컨테이너 스타일
+export const ProjectTagsContainer = styled.div`
+  margin-top: 10px;  /* 위쪽 여백 */
+  margin-bottom: 10px;  /* 아래쪽 여백 */
+  display: flex;  /* 플렉스박스 사용 */
+  flex-wrap: wrap;  /* 여러 줄로 감싸기 */
+  gap: 5px;  /* 태그 사이의 간격 */
+`;
+
+// 프로젝트 태그 스타일
+export const ProjectTag = styled.a`
+  background: ${({ theme }) => theme.colors.primary};
+  color: white;  /* 흰색 텍스트 */
+  padding: 3px 8px;  /* 내부 여백 */
+  border-radius: 4px;  /* 테두리 둥글게 */
+  font-size: 0.8rem;  /* 글씨 크기 */
+  cursor: default;  /* 마우스 커서 설정 */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.5); /* 입체감을 위한 그림자 */
+  transition: all 0.3s ease;  /* 전환 효과 */
+
+  &:hover {
+    // background: linear-gradient(145deg, #0064d9, #6fb3ff); /* 호버 시 그라데이션 방향 변경 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), -2px -2px 5px rgba(255, 255, 255, 0.6); /* 호버 시 그림자 강도 증가 */
+    transform: translateY(-2px); /* 호버 시 살짝 떠오르는 효과 */
+  }
+
+  &:active {
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2), inset -2px -2px 5px rgba(255, 255, 255, 0.5); /* 클릭 시 움푹 들어간 효과 */
+    transform: translateY(0px); /* 클릭 시 원래 위치로 복귀 */
   }
 `;

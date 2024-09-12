@@ -14,6 +14,8 @@ import {
   ProjectDomain,
   ProjectLink,
   ProjectLinksContainer,
+  ProjectTag,
+  ProjectTagsContainer,
 } from './ProjectsStyles';
 import { FaGithub } from 'react-icons/fa'; // GitHub 아이콘 추가
 import { SiNotion } from 'react-icons/si'; // Notion 아이콘 추가
@@ -27,6 +29,11 @@ const projects = [
     githubUrl: 'https://github.com/SteamedPapaya/neon',
     notionUrl: 'https://www.notion.so/xiyoon/f8777a529adc4ae9997a1ae26fca172c?pvs=4', // Notion URL 추가
     domainUrl: 'https://neon7.site/',
+    tags: [
+      { name: '채팅', url: 'https://www.notion.so/xiyoon/Trust-8fe4874d011a4710b5359d46471226de?pvs=4' },
+      { name: '무중단 배포', url: 'https://www.notion.so/xiyoon/Trust-8fe4874d011a4710b5359d46471226de?pvs=4' },
+      { name: 'MSA', url: 'https://www.notion.so/xiyoon/STOC-497555a8dba041b8bf3f79da98a2c15e?pvs=4' }
+    ],
   },
   {
     title: 'kkoma',
@@ -35,6 +42,10 @@ const projects = [
     githubUrl: 'https://github.com/kkomas/kkoma',
     notionUrl: 'https://www.notion.so/xiyoon/e90084b722a74426b1527c9e85a322b3?pvs=4', // Notion URL 추가
     domainUrl: 'https://kkoma.shop/',
+    tags: [
+      { name: '빅데이터', url: 'https://www.notion.so/xiyoon/Layette-ee0734edc21643ec9ea1a85da78c768f?pvs=4' },
+      { name: '추천', url: 'https://www.notion.so/xiyoon/Layette-ee0734edc21643ec9ea1a85da78c768f?pvs=4' },
+    ],
   },
   // 추가 프로젝트 데이터...
 ];
@@ -42,14 +53,14 @@ const projects = [
 function Projects() {
     return (
       <ProjectsSection id="projects">
-        <SectionTitle>Projects</SectionTitle>
+        <SectionTitle>Products</SectionTitle>
         <TextContent>
-            다양한 문제를 경험하기 위해 계속해서 도전합니다.
+            다양한 제품을 만들면서 새로운 문제를 해결합니다.
         </TextContent>
         <ProjectList>
           {projects.map((project, index) => (
             <ProjectCard key={index}>
-                          {/* 이미지 컨테이너로 감싸서 비율 유지 */}
+            {/* 이미지 컨테이너로 감싸서 비율 유지 */}
             <ProjectImageContainer>
                 <a href={project.domainUrl} target="_blank" rel="noopener noreferrer">
                     <ProjectImage src={project.imageUrl} alt={project.title} />
@@ -59,10 +70,19 @@ function Projects() {
                 {/* <ProjectTitle>{project.title}</ProjectTitle> */}
                 <ProjectDescription>{project.description}</ProjectDescription>
                 
+                {/* 태그 추가 */}
+                <ProjectTagsContainer>
+                  {project.tags.map((tag, i) => (
+                    <ProjectTag key={i} href={tag.url} target="_blank" rel="noopener noreferrer">
+                      {tag.name}
+                    </ProjectTag>
+                  ))}
+                </ProjectTagsContainer>
+
                 {/* 도메인 주소 표시 */}
-                <ProjectDomain href={project.domainUrl} target="_blank" rel="noopener noreferrer">
-                {new URL(project.domainUrl).hostname} {/* 도메인 주소만 추출하여 표시 */}
-                </ProjectDomain>
+                {/* <ProjectDomain href={project.domainUrl} target="_blank" rel="noopener noreferrer">
+                {new URL(project.domainUrl).hostname}
+                </ProjectDomain> */}
                 
                 <ProjectLinksContainer>
                     {/* GitHub 및 Notion 아이콘 링크 설정 */}
