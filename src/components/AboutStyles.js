@@ -32,7 +32,7 @@ const pulse = keyframes`
     transform: scale(1);
   }
   20% {
-    transform: scale(1.16);
+    transform: scale(1.10);
   }
   100% {
     transform: scale(1);
