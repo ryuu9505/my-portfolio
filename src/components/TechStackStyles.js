@@ -3,9 +3,9 @@ import styled from 'styled-components';
 // 섹션 전체 컨테이너
 export const TechStackSection = styled.section`
   width: 100%;
-  padding: 0px 20px;
-  padding-top: 120px;
-  padding-bottom: 360px;
+  padding: 0px 40px;
+  padding-top: 200px;
+  padding-bottom: 280px;
   background-image: url('/star-textures/Atmo_Gstar.png'); // 배경 이미지 경로 설정
   background-size: cover; // 배경 이미지가 섹션을 덮도록 설정
   background-position: center; // 배경 이미지 위치 조정

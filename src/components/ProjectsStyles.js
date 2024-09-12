@@ -5,7 +5,7 @@ export const ProjectsSection = styled.section`
   width: 100%;
   padding: 0px 20px;
   padding-top: 120px;
-  padding-bottom: 360px;
+  padding-bottom: 200px;
   background-color: ${({ theme }) => theme.colors.background}; // 화이트 배경
   text-align: center;
   color: ${({ theme }) => theme.colors.textLight}; // 진한 그레이 텍스트 색상

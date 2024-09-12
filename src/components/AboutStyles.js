@@ -64,4 +64,11 @@ export const TextContent = styled.div`
     line-height: 1.2;
     color: ${({ theme }) => theme.colors.textDark};
   }
+    
+  small {
+    margin-top: 40px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: ${({ theme }) => theme.colors.secondary};
+  }
 `;

@@ -18,8 +18,11 @@ function About() {
         <TextContent>
           {/* <h2>About Me</h2> */}
           <p>
-            #Web #BigData #AI #Cloud 
+            Backend Engineer
           </p>
+        </TextContent><br/>
+        <TextContent>
+          <small>#Web #BigData #MachineLearning #CloudComputing #MSA</small>
         </TextContent>
       </AboutContent>
     </AboutSection>
