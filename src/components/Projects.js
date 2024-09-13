@@ -26,7 +26,7 @@ import kkomaLogo from '../assets/kkoma-logo.png';
 const projects = [
   {
     title: 'NEON',
-    description: '누군가를 본뜬 AI와 채팅해보세요.',
+    description: '쉽고 빠르게 이벤트를 주최해보세요.',
     imageUrl: neonLogo,
     githubUrl: 'https://github.com/SteamedPapaya/neon',
     notionUrl: 'https://www.notion.so/xiyoon/f8777a529adc4ae9997a1ae26fca172c?pvs=4', // Notion URL 추가
@@ -39,7 +39,7 @@ const projects = [
   },
   {
     title: 'kkoma',
-    description: '쉽고 안전한 육아용품 중고거래 플랫폼',
+    description: '부모를 위한 육아용품 중고거래 플랫폼',
     imageUrl: kkomaLogo,
     githubUrl: 'https://github.com/kkomas/kkoma',
     notionUrl: 'https://www.notion.so/xiyoon/e90084b722a74426b1527c9e85a322b3?pvs=4', // Notion URL 추가
