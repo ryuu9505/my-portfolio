@@ -39,7 +39,7 @@ const projects = [
   },
   {
     title: 'kkoma',
-    description: '부모를 위한 육아용품 중고거래 플랫폼',
+    description: '맞춤형 육아용품 중고거래 플랫폼',
     imageUrl: kkomaLogo,
     githubUrl: 'https://github.com/kkomas/kkoma',
     notionUrl: 'https://www.notion.so/xiyoon/e90084b722a74426b1527c9e85a322b3?pvs=4', // Notion URL 추가
