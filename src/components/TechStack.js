@@ -14,17 +14,17 @@ import { SiSpring, SiMysql, SiRedis, SiMongodb, SiApachehadoop, SiApachespark, S
 
 function TechStack() {
   const techs = [
-    { name: 'Java', icon: <FaJava />, url: 'https://www.notion.so/xiyoon/Java-51bd9080920a4cb2a7f4165a9c419567?pvs=4' },
-    { name: 'Hibernate', icon: <SiHibernate />, url: 'https://www.notion.so/xiyoon/Hibernate-db378f588acd4812a4708881b8fa04e7?pvs=4' },
-    { name: 'Spring', icon: <SiSpring />, url: 'https://www.notion.so/xiyoon/Spring-Framework-c1a94d43afeb49a39a9c045f8e92d430?pvs=4' },
-    { name: 'MySQL', icon: <SiMysql />, url: 'https://www.notion.so/xiyoon/MySQL-7ea9601908d443be87833f95302ebf83?pvs=4' },
-    { name: 'Redis', icon: <SiRedis />, url: 'https://www.notion.so/xiyoon/Redis-807da33715a64f249e922990850afa58?pvs=4' },
-    { name: 'MongoDB', icon: <SiMongodb />, url: 'https://www.notion.so/xiyoon/MongoDB-de6fbe14e01b498eae0d29dcbbd83528?pvs=4' },
-    { name: 'Kafka', icon: <SiApachekafka />, url: 'https://www.notion.so/xiyoon/Kafka-5e08bab26db445128e92b24e8eedfa07?pvs=4' },
-    { name: 'Hadoop', icon: <SiApachehadoop />, url: 'https://www.notion.so/xiyoon/Hadoop-4b5a67ffa18f493eb31c197e82c5a766?pvs=4' },
-    { name: 'Spark', icon: <SiApachespark />, url: 'https://www.notion.so/xiyoon/Spark-6a28a6726a91493eb03305d9e48bccd5?pvs=4' },
-    { name: 'Docker', icon: <SiDocker />, url: 'https://www.notion.so/xiyoon/Docker-9564fe714d1b465fb139dc1ddf668a93?pvs=4' },
-    { name: 'AWS', icon: <SiAmazonwebservices />, url: 'https://www.notion.so/xiyoon/AWS-8da062489d9d42d187f4277da7d84379?pvs=4' },
+    { name: 'Java', icon: <FaJava />, url: 'https://www.notion.so/hyeongjun-dev/Java-1a09683271d080f58e5cd8abcf99d216?pvs=4' },
+    { name: 'Hibernate', icon: <SiHibernate />, url: 'https://www.notion.so/hyeongjun-dev/Hibernate-1a39683271d081c3892fff41a01ca115?pvs=4' },
+    { name: 'Spring', icon: <SiSpring />, url: 'https://www.notion.so/hyeongjun-dev/Spring-Framework-1a29683271d08195b194d2f0e0e2480e?pvs=4' },
+    { name: 'MySQL', icon: <SiMysql />, url: 'https://www.notion.so/hyeongjun-dev/MySQL-1a29683271d08196862ac54643a547b2?pvs=4' },
+    { name: 'Redis', icon: <SiRedis />, url: 'https://www.notion.so/hyeongjun-dev/Redis-1a29683271d08107a142f1241521aae6?pvs=4' },
+    { name: 'MongoDB', icon: <SiMongodb />, url: 'https://www.notion.so/hyeongjun-dev/MongoDB-1a29683271d08141a44ae86ad5106d7f?pvs=4' },
+    { name: 'Kafka', icon: <SiApachekafka />, url: 'https://www.notion.so/hyeongjun-dev/Kafka-1a29683271d081b2811dcbb3fb0a4278?pvs=4' },
+    { name: 'Hadoop', icon: <SiApachehadoop />, url: 'https://www.notion.so/hyeongjun-dev/Hadoop-1a39683271d0812ca104c72dcd502734?pvs=4' },
+    { name: 'Spark', icon: <SiApachespark />, url: 'https://www.notion.so/hyeongjun-dev/Spark-1a39683271d081febe69c27936df777e?pvs=4' },
+    { name: 'Docker', icon: <SiDocker />, url: 'https://www.notion.so/hyeongjun-dev/Docker-1a29683271d0810ba14bde0a9c3e04e5?pvs=4' },
+    { name: 'AWS', icon: <SiAmazonwebservices />, url: 'https://www.notion.so/hyeongjun-dev/AWS-1a39683271d081d48736d004732c9c3e?pvs=4' },
   ];
 
   return (

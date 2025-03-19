@@ -18,36 +18,35 @@ import {
   ProjectTag,
   ProjectTagsContainer,
 } from './ProjectsStyles';
-import { FaGithub } from 'react-icons/fa'; // GitHub 아이콘 추가
-import { SiNotion } from 'react-icons/si'; // Notion 아이콘 추가
+import { FaGithub } from 'react-icons/fa';
+import { SiNotion } from 'react-icons/si';
 import neonLogo from '../assets/neon-logo.png';
 import kkomaLogo from '../assets/kkoma-logo.png';
 
 // 프로젝트 데이터
 const projects = [
   {
-    title: 'NEON',
-    description: '쉽고 빠르게 이벤트를 주최해보세요.',
+    title: '네온',
+    description: '온라인 이벤트 플랫폼',
     imageUrl: neonLogo,
-    githubUrl: 'https://github.com/SteamedPapaya/neon',
-    notionUrl: 'https://www.notion.so/xiyoon/f8777a529adc4ae9997a1ae26fca172c?pvs=4', // Notion URL 추가
+    githubUrl: 'https://github.com/buffthis',
+    notionUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
     domainUrl: 'https://neon7.site/',
     tags: [
-      { name: '채팅', url: 'https://www.notion.so/xiyoon/Trust-8fe4874d011a4710b5359d46471226de?pvs=4' },
-      { name: '무중단 배포', url: 'https://www.notion.so/xiyoon/Trust-8fe4874d011a4710b5359d46471226de?pvs=4' },
-      { name: 'MSA', url: 'https://www.notion.so/xiyoon/STOC-497555a8dba041b8bf3f79da98a2c15e?pvs=4' }
+      { name: '채팅', url: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4' },
+      { name: '예매', url: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4' },
     ],
   },
   {
-    title: 'kkoma',
+    title: '꼬마',
     description: '맞춤형 육아용품 중고거래 플랫폼',
     imageUrl: kkomaLogo,
-    githubUrl: 'https://github.com/kkomas/kkoma',
-    notionUrl: 'https://www.notion.so/xiyoon/e90084b722a74426b1527c9e85a322b3?pvs=4', // Notion URL 추가
+    githubUrl: 'https://github.com/samsungacademy/kkoma',
+    notionUrl: 'https://www.notion.so/hyeongjun-dev/1ab9683271d08060b163c4916d696f17?pvs=4',
     domainUrl: 'https://kkoma.shop/',
     tags: [
-      { name: '빅데이터', url: 'https://www.notion.so/xiyoon/Layette-ee0734edc21643ec9ea1a85da78c768f?pvs=4' },
-      { name: '추천', url: 'https://www.notion.so/xiyoon/Layette-ee0734edc21643ec9ea1a85da78c768f?pvs=4' },
+      { name: '빅데이터', url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080b38097d28e6bd9863d?pvs=4' },
+      { name: '추천', url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080959b45f2023f1dbf31?pvs=4' },
     ],
   },
   // 추가 프로젝트 데이터...
@@ -61,7 +60,7 @@ function Projects() {
       </ScrollAnimation>
       <ScrollAnimation delay={0.2}>
         <TextContent>
-          다양한 제품을 만들면서 새로운 문제를 해결합니다.
+          다양한 제품을 만들면서 새로운 문제에 도전합니다.
         </TextContent>
       </ScrollAnimation>
       <ProjectList>
