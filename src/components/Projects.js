@@ -1,5 +1,6 @@
 // src/components/Projects.js
 import React from 'react';
+import ScrollAnimation from './common/ScrollAnimation';
 import {
   ProjectsSection,
   SectionTitle,
@@ -53,21 +54,26 @@ const projects = [
 ];
 
 function Projects() {
-    return (
-      <ProjectsSection id="projects">
+  return (
+    <ProjectsSection id="projects">
+      <ScrollAnimation>
         <SectionTitle>Products</SectionTitle>
+      </ScrollAnimation>
+      <ScrollAnimation delay={0.2}>
         <TextContent>
-            다양한 제품을 만들면서 새로운 문제를 해결합니다.
+          다양한 제품을 만들면서 새로운 문제를 해결합니다.
         </TextContent>
-        <ProjectList>
-          {projects.map((project, index) => (
-            <ProjectCard key={index}>
-            {/* 이미지 컨테이너로 감싸서 비율 유지 */}
-            <ProjectImageContainer>
+      </ScrollAnimation>
+      <ProjectList>
+        {projects.map((project, index) => (
+          <ScrollAnimation key={index} delay={0.2 + index * 0.1}>
+            <ProjectCard>
+              {/* 이미지 컨테이너로 감싸서 비율 유지 */}
+              <ProjectImageContainer>
                 <a href={project.domainUrl} target="_blank" rel="noopener noreferrer">
-                    <ProjectImage src={project.imageUrl} alt={project.title} />
+                  <ProjectImage src={project.imageUrl} alt={project.title} />
                 </a>
-            </ProjectImageContainer>
+              </ProjectImageContainer>
               <ProjectContent>
                 {/* <ProjectTitle>{project.title}</ProjectTitle> */}
                 <ProjectDescription>{project.description}</ProjectDescription>
@@ -97,10 +103,11 @@ function Projects() {
                 </ProjectLinksContainer>
               </ProjectContent>
             </ProjectCard>
-          ))}
-        </ProjectList>
-      </ProjectsSection>
-    );
-  }
+          </ScrollAnimation>
+        ))}
+      </ProjectList>
+    </ProjectsSection>
+  );
+}
 
 export default Projects;

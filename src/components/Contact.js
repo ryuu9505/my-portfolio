@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ScrollAnimation from './common/ScrollAnimation';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { SiTistory } from 'react-icons/si';
 import {
@@ -32,7 +33,9 @@ function Contact() {
 
   return (
     <ContactSection id="contact">
-      <SectionTitle>Contact</SectionTitle>
+      <ScrollAnimation>
+        <SectionTitle>Contact</SectionTitle>
+      </ScrollAnimation>
       {/* <ContactForm onSubmit={handleSubmit}>
         <InputField
           type="text"
@@ -61,20 +64,30 @@ function Contact() {
       </ContactForm> */}
 
       {/* 소셜 링크 */}
-      <SocialLinks>
-        <SocialIcon href="https://github.com/ryuu9505" target="_blank" rel="noopener noreferrer">
-          <FaGithub />
-        </SocialIcon>
-        <SocialIcon href="https://linkedin.com/in/xiyoon" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin />
-        </SocialIcon>
-        <SocialIcon href="https://instagram.com/xiyoonl" target="_blank" rel="noopener noreferrer">
-          <FaInstagram />
-        </SocialIcon>
-        <SocialIcon href="https://shady-dev.tistory.com/" target="_blank" rel="noopener noreferrer">
-          <SiTistory />
-        </SocialIcon>
-      </SocialLinks>
+      <ScrollAnimation delay={0.2}>
+        <SocialLinks>
+          <ScrollAnimation delay={0.3}>
+            <SocialIcon href="https://github.com/ryuu9505" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </SocialIcon>
+          </ScrollAnimation>
+          <ScrollAnimation delay={0.4}>
+            <SocialIcon href="https://linkedin.com/in/xiyoon" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </SocialIcon>
+          </ScrollAnimation>
+          <ScrollAnimation delay={0.5}>
+            <SocialIcon href="https://instagram.com/xiyoonl" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </SocialIcon>
+          </ScrollAnimation>
+          <ScrollAnimation delay={0.6}>
+            <SocialIcon href="https://shady-dev.tistory.com/" target="_blank" rel="noopener noreferrer">
+              <SiTistory />
+            </SocialIcon>
+          </ScrollAnimation>
+        </SocialLinks>
+      </ScrollAnimation>
     </ContactSection>
   );
 }

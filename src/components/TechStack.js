@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollAnimation from './common/ScrollAnimation';
 import {
   TechStackSection,
   SectionTitle,
@@ -28,20 +29,32 @@ function TechStack() {
 
   return (
     <TechStackSection id="tech-stack">
-      <SectionTitle>Tech Stack</SectionTitle>
+      <ScrollAnimation>
+        <SectionTitle>Tech Stack</SectionTitle>
+      </ScrollAnimation>
+      <ScrollAnimation delay={0.1}>
         <TextContent>
-            더 적합한 기술을 찾고 적극적으로 도입합니다.
+          더 적합한 기술을 찾고 적극적으로 도입합니다.
         </TextContent>
-      <TechList>
-        {techs.map((tech, index) => (
-          <a href={tech.url} target="_blank" rel="noopener noreferrer">
-            <TechCard key={index}>
-              <TechIcon>{tech.icon}</TechIcon>
-              <TechName>{tech.name}</TechName>
-            </TechCard>
-          </a>
-        ))}
-      </TechList>
+      </ScrollAnimation>
+      <ScrollAnimation delay={0.2}>
+        <TechList>
+          {techs.map((tech, index) => (
+            <ScrollAnimation 
+              key={index} 
+              delay={0.1 + index * 0.05}
+              margin="0px"
+            >
+              <a href={tech.url} target="_blank" rel="noopener noreferrer">
+                <TechCard>
+                  <TechIcon>{tech.icon}</TechIcon>
+                  <TechName>{tech.name}</TechName>
+                </TechCard>
+              </a>
+            </ScrollAnimation>
+          ))}
+        </TechList>
+      </ScrollAnimation>
     </TechStackSection>
   );
 }
