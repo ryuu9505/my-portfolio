@@ -39,17 +39,15 @@ export const ProjectList = styled.div`
 
 // 프로젝트 카드 스타일
 export const ProjectCard = styled.div`
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.background};
   border-radius: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform; // 성능 최적화
-  backface-visibility: hidden; // 3D 렌더링 최적화
+  transition: transform 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
 
   &:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -80,31 +78,33 @@ export const ProjectImage = styled.img`
 
 // 프로젝트 내용 스타일
 export const ProjectContent = styled.div`
-  padding: 20px;
+  padding: 0px;
   text-align: left;
 `;
 
 // 프로젝트 제목 스타일
 export const ProjectTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
   color: ${({ theme }) => theme.colors.primary};
-  margin-bottom: 0px;
+  margin: 0;
 `;
 
 // 프로젝트 설명 스타일
 export const ProjectDescription = styled.p`
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 4px;
+  margin: 0;
 `;
 
 // 도메인 스타일
 export const ProjectDomain = styled.a`
-  display: inline;
-  font-size: 0.9rem; // 도메인 주소의 글씨 크기 설정
+  display: block;
+  font-size: 0.9rem;
   color: #646464;
-  margin-bottom: 10px;
+  margin: 0;
   text-decoration: underline;
+  text-align: left;
 
   &:hover {
     color: #000000
@@ -115,7 +115,8 @@ export const ProjectDomain = styled.a`
 export const ProjectLinksContainer = styled.div`
   display: flex;
   gap: 10px;
-  margin-top: 15px;
+  margin: 0;
+  justify-content: flex-start;
 `;
 
 // 프로젝트 링크 스타일
@@ -138,11 +139,10 @@ export const ProjectLink = styled.a`
 
 // 프로젝트 태그를 감싸는 컨테이너 스타일
 export const ProjectTagsContainer = styled.div`
-  margin-top: 10px;  /* 위쪽 여백 */
-  margin-bottom: 10px;  /* 아래쪽 여백 */
-  display: flex;  /* 플렉스박스 사용 */
-  flex-wrap: wrap;  /* 여러 줄로 감싸기 */
-  gap: 5px;  /* 태그 사이의 간격 */
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 `;
 
 // 프로젝트 태그 스타일

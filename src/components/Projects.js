@@ -15,6 +15,7 @@ import {
   ProjectLinksContainer,
   ProjectTag,
   ProjectTagsContainer,
+  ProjectTitle,
 } from './ProjectsStyles';
 import { FaGithub } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
@@ -29,7 +30,7 @@ const projects = [
     imageUrl: neonLogo,
     githubUrl: 'https://github.com/buffthis',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
-    domainUrl: 'https://neon7.site/',
+    domainUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
     tags: [
       { name: '채팅', url: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4' },
       { name: '예매', url: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4' },
@@ -41,7 +42,7 @@ const projects = [
     imageUrl: kkomaLogo,
     githubUrl: 'https://github.com/samsungacademy/kkoma',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/1ab9683271d08060b163c4916d696f17?pvs=4',
-    domainUrl: 'https://kkoma.shop/',
+    domainUrl: 'https://www.notion.so/hyeongjun-dev/1ab9683271d08060b163c4916d696f17?pvs=4',
     tags: [
       { name: '빅데이터', url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080b38097d28e6bd9863d?pvs=4' },
       { name: '추천', url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080959b45f2023f1dbf31?pvs=4' },
@@ -71,6 +72,7 @@ function Projects() {
                 </a>
               </ProjectImageContainer>
               <ProjectContent>
+                <ProjectTitle>{project.title}</ProjectTitle>
                 <ProjectDescription>{project.description}</ProjectDescription>
                 
                 <ProjectTagsContainer>
