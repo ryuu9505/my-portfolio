@@ -18,17 +18,18 @@ export const TechStackSection = styled.section`
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
   color: ${({ theme }) => theme.colors.textLight};
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 `;
 
 
 // 텍스트 컨텐츠 스타일
 export const TextContent = styled.div`
-    margin-top: 40px;
+    margin-top: 0px;
     font-size: 1.6rem;
     line-height: 1.2;
-    color: ${({ theme }) => theme.colors.textLight};
-    margin-bottom: 40px;
+    font-weight: 200;
+    color: ${({ theme }) => theme.colors.secondary};
+    margin-bottom: 0px;
 `;
 
 // 기술 스택 리스트 스타일
@@ -37,6 +38,7 @@ export const TechList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  margin-top: 50px;
 `;
 
 // 기술 카드 스타일
@@ -64,5 +66,6 @@ export const TechIcon = styled.div`
 // 기술 이름 스타일
 export const TechName = styled.h3`
   font-size: 1.2rem;
+  font-weight: 400;
   color: ${({ theme }) => theme.colors.text};
 `;

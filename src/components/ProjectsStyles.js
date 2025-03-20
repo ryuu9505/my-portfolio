@@ -16,20 +16,22 @@ export const ProjectsSection = styled.section`
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
   color: ${({ theme }) => theme.colors.textLight};
-  margin-bottom: 40px;
+  margin-bottom: 00px;
 `;
 
 // 텍스트 컨텐츠 스타일
 export const TextContent = styled.div`
-    margin-top: 40px;
+    margin-top: 0px;
     font-size: 1.6rem;
     line-height: 1.2;
-    color: ${({ theme }) => theme.colors.pr};
-    margin-bottom: 40px;
+    font-weight: 200;
+    color: ${({ theme }) => theme.colors.secondary};
+    margin-bottom: 0px;
 `;
 
 // 프로젝트 리스트 스타일
 export const ProjectList = styled.div`
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -83,8 +85,8 @@ export const ProjectTitle = styled.h3`
 // 프로젝트 설명 스타일
 export const ProjectDescription = styled.p`
   font-size: 1.4rem;
-  font-weight: 400;
-  color: gray;
+  font-weight: 200;
+  color: ${({ theme }) => theme.colors.secondary};
   margin: 0;
 `;
 

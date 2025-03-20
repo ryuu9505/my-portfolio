@@ -20,7 +20,7 @@ import neubieorderThumbnail from '../assets/neubieorder-thumbnail.png';
 // 프로젝트 데이터
 const projects = [
   {
-    title: '네온',
+    title: 'NEON',
     description: '온라인 이벤트 플랫폼',
     imageUrl: neonThumbnail,
     githubUrl: 'https://github.com/buffthis',
@@ -32,7 +32,7 @@ const projects = [
     ],
   },
   {
-    title: '꼬마',
+    title: 'KKOMA',
     description: '육아용품 중고거래 플랫폼',
     imageUrl: kkomaThumbnail,
     githubUrl: 'https://github.com/samsungacademy/kkoma',
@@ -44,7 +44,7 @@ const projects = [
     ],
   },
   {
-    title: '뉴비고',
+    title: 'NEUBIE-GO',
     description: '자율주행 로봇 운용 플랫폼',
     imageUrl: neubiegoThumbnail,
     githubUrl: 'https://github.com/',
@@ -55,7 +55,7 @@ const projects = [
     ],
   },
   {
-    title: '뉴비오더',
+    title: 'NEUBIE-ORDER',
     description: '자율주행 로봇 배달 플랫폼',
     imageUrl: neubieorderThumbnail,
     githubUrl: 'https://github.com/',
@@ -75,7 +75,7 @@ function Projects() {
       </ScrollAnimation>
       <ScrollAnimation delay={0.2}>
         <TextContent>
-          다양한 제품을 만들면서 새로운 문제에 도전합니다.
+          Taking on new challenges.
         </TextContent>
       </ScrollAnimation>
       <ProjectList>
