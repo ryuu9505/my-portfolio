@@ -40,7 +40,7 @@ export const ProjectList = styled.div`
 // 프로젝트 카드 스타일
 export const ProjectCard = styled.div`
   background-color: white;
-  border-radius: 8px;
+  border-radius: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -55,22 +55,22 @@ export const ProjectCard = styled.div`
 
 // 이미지 컨테이너 추가
 export const ProjectImageContainer = styled.div`
-  width: 100%;  // 부모 요소의 너비를 100%로 설정
-  aspect-ratio: 3 / 1;  // 컨테이너의 비율을 3:1로 설정
-  overflow: hidden;  // 이미지가 넘치지 않도록 숨김
-  position: relative;  // 포지션을 상대적으로 설정하여 자식 요소 위치 조정
-  border-radius: 8px 8px 0 0;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0;
 `;
 
 // 프로젝트 이미지 스타일 업데이트
 export const ProjectImage = styled.img`
-  width: 100%;  // 이미지의 너비를 컨테이너에 맞춤
-  height: 100%;  // 이미지 높이를 컨테이너에 맞춤
-  object-fit: cover;  // 이미지가 비율에 맞게 잘리도록 설정
-  position: absolute;  // 이미지 위치를 절대값으로 설정하여 컨테이너에 맞춤
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
   top: 0;
   left: 0;
-  border-radius: 8px 8px 0 0;
+  border-radius: 0;
   transition: transform 0.3s ease;
 
   &:hover {

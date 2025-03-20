@@ -42,7 +42,7 @@ export const TechList = styled.div`
 // 기술 카드 스타일
 export const TechCard = styled.div`
   background-color: white;
-  border-radius: 8px;
+  border-radius: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 150px;
