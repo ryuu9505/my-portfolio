@@ -74,23 +74,6 @@ function Projects() {
               <ProjectContent>
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <ProjectDescription>{project.description}</ProjectDescription>
-                
-                <ProjectTagsContainer>
-                  {project.tags.map((tag, i) => (
-                    <ProjectTag key={i} href={tag.url} target="_blank" rel="noopener noreferrer">
-                      {tag.name}
-                    </ProjectTag>
-                  ))}
-                </ProjectTagsContainer>
-                
-                <ProjectLinksContainer>
-                    <ProjectLink href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <FaGithub size={24} />
-                    </ProjectLink>
-                    <ProjectLink href={project.notionUrl} target="_blank" rel="noopener noreferrer">
-                    <SiNotion size={24} />
-                    </ProjectLink>
-                </ProjectLinksContainer>
               </ProjectContent>
             </ProjectCard>
           </ScrollAnimation>

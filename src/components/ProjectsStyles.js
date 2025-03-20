@@ -33,7 +33,7 @@ export const ProjectList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
   perspective: 1000px; // 3D 효과를 위한 원근감 설정
 `;
 
@@ -41,20 +41,15 @@ export const ProjectList = styled.div`
 export const ProjectCard = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 0;
-  width: 300px;
-  transition: transform 0.3s ease;
+  width: 350px;
   will-change: transform;
   backface-visibility: hidden;
-
-  &:hover {
-    transform: translateY(-10px) scale(1.02);
-  }
 `;
 
 // 이미지 컨테이너 추가
 export const ProjectImageContainer = styled.div`
   width: 100%;
-  aspect-ratio: 3 / 1;
+  aspect-ratio: 10 / 7;
   overflow: hidden;
   position: relative;
   border-radius: 0;
@@ -69,11 +64,6 @@ export const ProjectImage = styled.img`
   top: 0;
   left: 0;
   border-radius: 0;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 `;
 
 // 프로젝트 내용 스타일
@@ -84,16 +74,17 @@ export const ProjectContent = styled.div`
 
 // 프로젝트 제목 스타일
 export const ProjectTitle = styled.h3`
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.primary};
-  margin: 0;
+  margin-top: 10px;
 `;
 
 // 프로젝트 설명 스타일
 export const ProjectDescription = styled.p`
-  font-size: 1.1rem;
-  color: ${({ theme }) => theme.colors.text};
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: gray;
   margin: 0;
 `;
 
