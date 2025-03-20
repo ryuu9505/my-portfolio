@@ -10,9 +10,7 @@ import {
   ProjectImageContainer,
   ProjectImage,
   ProjectContent,
-  ProjectTitle,
   ProjectDescription,
-  ProjectDomain,
   ProjectLink,
   ProjectLinksContainer,
   ProjectTag,
@@ -67,17 +65,14 @@ function Projects() {
         {projects.map((project, index) => (
           <ScrollAnimation key={index} delay={0.2 + index * 0.1}>
             <ProjectCard>
-              {/* 이미지 컨테이너로 감싸서 비율 유지 */}
               <ProjectImageContainer>
                 <a href={project.domainUrl} target="_blank" rel="noopener noreferrer">
                   <ProjectImage src={project.imageUrl} alt={project.title} />
                 </a>
               </ProjectImageContainer>
               <ProjectContent>
-                {/* <ProjectTitle>{project.title}</ProjectTitle> */}
                 <ProjectDescription>{project.description}</ProjectDescription>
                 
-                {/* 태그 추가 */}
                 <ProjectTagsContainer>
                   {project.tags.map((tag, i) => (
                     <ProjectTag key={i} href={tag.url} target="_blank" rel="noopener noreferrer">
@@ -85,19 +80,13 @@ function Projects() {
                     </ProjectTag>
                   ))}
                 </ProjectTagsContainer>
-
-                {/* 도메인 주소 표시 */}
-                {/* <ProjectDomain href={project.domainUrl} target="_blank" rel="noopener noreferrer">
-                {new URL(project.domainUrl).hostname}
-                </ProjectDomain> */}
                 
                 <ProjectLinksContainer>
-                    {/* GitHub 및 Notion 아이콘 링크 설정 */}
                     <ProjectLink href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <FaGithub size={24} /> {/* GitHub 아이콘 */}
+                    <FaGithub size={24} />
                     </ProjectLink>
                     <ProjectLink href={project.notionUrl} target="_blank" rel="noopener noreferrer">
-                    <SiNotion size={24} /> {/* Notion 아이콘 */}
+                    <SiNotion size={24} />
                     </ProjectLink>
                 </ProjectLinksContainer>
               </ProjectContent>

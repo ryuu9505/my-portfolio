@@ -1,67 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ScrollAnimation from './common/ScrollAnimation';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { SiTistory } from 'react-icons/si';
 import {
   ContactSection,
   SectionTitle,
-  ContactForm,
-  InputField,
-  TextArea,
-  SubmitButton,
   SocialLinks,
   SocialIcon,
 } from './ContactStyles';
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // 폼 제출 로직 (예: 이메일 전송 또는 API 호출)
-    alert('Message sent!');
-    setFormData({ name: '', email: '', message: '' }); // 폼 초기화
-  };
-
   return (
     <ContactSection id="contact">
       <ScrollAnimation>
         <SectionTitle>Contact</SectionTitle>
       </ScrollAnimation>
-      {/* <ContactForm onSubmit={handleSubmit}>
-        <InputField
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <InputField
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <TextArea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
-        <SubmitButton type="submit">Send Message</SubmitButton>
-      </ContactForm> */}
 
       {/* 소셜 링크 */}
       <ScrollAnimation delay={0.2}>

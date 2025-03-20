@@ -1,6 +1,5 @@
 import React from 'react';
 import { HeaderContainer, NavMenu, NavLink } from './HeaderStyles';
-import { FaApple } from 'react-icons/fa';
 import { Link } from 'react-scroll';  // react-scroll의 Link 컴포넌트 추가
 
 function Header() {
