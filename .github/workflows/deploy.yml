@@ -36,6 +36,10 @@ jobs:
         run: npm run build
         continue-on-error: false
 
+      - name: Debug SSH Key
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}"
+
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
@@ -51,7 +55,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo "🔄 Removing old build files..."
-            sudo -n rm -rf /var/www/react-app/*
+            sudo rm -rf /var/www/react-app/*
             echo "✅ Old files removed."
           
       - name: Upload Build Files to Instance
@@ -61,7 +65,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "build/*"
-          target: "/var/www/react-app"
+          target: "/var/www/react-app/"
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@v1.0.3
@@ -71,5 +75,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo "🔄 Restarting Nginx..."
-            sudo -n systemctl restart nginx
+            sudo systemctl restart nginx
             echo "✅ Deployment complete!"
