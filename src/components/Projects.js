@@ -1,4 +1,3 @@
-// src/components/Projects.js
 import React from 'react';
 import ScrollAnimation from './common/ScrollAnimation';
 import {
@@ -11,14 +10,8 @@ import {
   ProjectImage,
   ProjectContent,
   ProjectDescription,
-  ProjectLink,
-  ProjectLinksContainer,
-  ProjectTag,
-  ProjectTagsContainer,
   ProjectTitle,
 } from './ProjectsStyles';
-import { FaGithub } from 'react-icons/fa';
-import { SiNotion } from 'react-icons/si';
 import neonThumbnail from '../assets/neon-thumbnail.png';
 import kkomaThumbnail from '../assets/kkoma-thumbnail.png';
 import neubiegoThumbnail from '../assets/neubiego-thumbnail.png';
