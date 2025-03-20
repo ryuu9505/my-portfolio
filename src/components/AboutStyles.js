@@ -41,8 +41,8 @@ const pulse = keyframes`
 
 // 프로필 이미지 스타일
 export const ProfileImage = styled.img`
-  width: 300px;  // 이미지 크기 설정
-  height: 300px;
+  width: 200px;  // 이미지 크기 설정
+  height: 200px;
   border-radius: 50%;  // 원형 이미지
   object-fit: cover;
   margin: 0;  // 가운데 정렬을 위해 여백 제거

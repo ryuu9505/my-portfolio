@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollAnimation from './common/ScrollAnimation';
 import {
   AboutSection,
   AboutContent,
@@ -11,19 +12,23 @@ function About() {
   return (
     <AboutSection id="about">
       <AboutContent>
-        {/* 프로필 이미지 */}
-        <ProfileImage src={ProfilePic} alt="Profile" /> 
+        <ScrollAnimation delay={0.2}>
+          <ProfileImage src={ProfilePic} alt="Profile" />
+        </ScrollAnimation>
         
-        {/* 텍스트 컨텐츠 */}
-        <TextContent>
-          {/* <h2>About Me</h2> */}
-          <p>
-            Backend Engineer
-          </p>
-        </TextContent><br/>
-        <TextContent>
-          <small>#Web #BigData #MachineLearning #CloudComputing #MSA</small>
-        </TextContent>
+        <ScrollAnimation delay={0.4}>
+          <TextContent>
+            <p>
+              조형준
+            </p>
+          </TextContent>
+        </ScrollAnimation>
+        
+        <ScrollAnimation delay={0.6}>
+          <TextContent>
+            <small>Backend Engineer</small>
+          </TextContent>
+        </ScrollAnimation>
       </AboutContent>
     </AboutSection>
   );
