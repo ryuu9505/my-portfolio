@@ -46,6 +46,8 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.INSTANCE_IP }} >> ~/.ssh/known_hosts
+          sudo chown -R $USER:$USER /var/www/react-app
+          sudo chmod -R 777 /var/www/react-app
 
       - name: SSH into Instance and Prepare Server
         uses: appleboy/ssh-action@v1.0.3
