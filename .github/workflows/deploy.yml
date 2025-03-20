@@ -8,6 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      INSTANCE_IP: ${{ secrets.INSTANCE_IP }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      USERNAME: ${{ secrets.USERNAME }}
 
     steps:
       - name: Checkout Repository
