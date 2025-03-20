@@ -19,15 +19,16 @@ import {
 } from './ProjectsStyles';
 import { FaGithub } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
-import neonLogo from '../assets/neon-logo.png';
-import kkomaLogo from '../assets/kkoma-logo.png';
+import neonThumbnail from '../assets/neon-thumbnail.png';
+import kkomaThumbnail from '../assets/kkoma-thumbnail.png';
+import neubiegoThumbnail from '../assets/neubiego-thumbnail.png';
 
 // 프로젝트 데이터
 const projects = [
   {
     title: '네온',
     description: '온라인 이벤트 플랫폼',
-    imageUrl: neonLogo,
+    imageUrl: neonThumbnail,
     githubUrl: 'https://github.com/buffthis',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
     domainUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
@@ -38,8 +39,8 @@ const projects = [
   },
   {
     title: '꼬마',
-    description: '맞춤형 육아용품 중고거래 플랫폼',
-    imageUrl: kkomaLogo,
+    description: '육아용품 중고거래 플랫폼',
+    imageUrl: kkomaThumbnail,
     githubUrl: 'https://github.com/samsungacademy/kkoma',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/1ab9683271d08060b163c4916d696f17?pvs=4',
     domainUrl: 'https://www.notion.so/hyeongjun-dev/1ab9683271d08060b163c4916d696f17?pvs=4',
@@ -48,7 +49,17 @@ const projects = [
       { name: '추천', url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080959b45f2023f1dbf31?pvs=4' },
     ],
   },
-  // 추가 프로젝트 데이터...
+  {
+    title: '뉴비고',
+    description: '자율주행 로봇 운용 플랫폼',
+    imageUrl: neubiegoThumbnail,
+    githubUrl: 'https://github.com/',
+    notionUrl: 'https://www.notion.so/hyeongjun-dev/1a39683271d08049b1c8d53f1e0ef7c5?pvs=4',
+    domainUrl: 'https://www.notion.so/hyeongjun-dev/1a39683271d08049b1c8d53f1e0ef7c5?pvs=4',
+    tags: [
+      { name: '기술 전환', url: 'https://www.notion.so/hyeongjun-dev/1b79683271d080e38e8ef91f186574c6?pvs=4' },
+    ],
+  },
 ];
 
 function Projects() {

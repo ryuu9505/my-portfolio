@@ -26,7 +26,7 @@ function About() {
         
         <ScrollAnimation delay={0.6}>
           <TextContent>
-            <small>Backend Engineer</small>
+            <small>Backend Engineer | Data Engineer</small>
           </TextContent>
         </ScrollAnimation>
       </AboutContent>

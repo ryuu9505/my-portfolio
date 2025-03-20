@@ -52,7 +52,8 @@ export const ProfileImage = styled.img`
 // 텍스트 컨텐츠 스타일
 export const TextContent = styled.div`
   max-width: 600px;
-
+  margin-top: 10px;
+  
   h2 {
     font-size: 2.5rem;
     color: ${({ theme }) => theme.colors.textDark};
