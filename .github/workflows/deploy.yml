@@ -8,11 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      INSTANCE_IP: ${{ secrets.INSTANCE_IP }}
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      USERNAME: ${{ secrets.USERNAME }}
-
+    environment: GCP-APPLE
+      
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -42,9 +39,9 @@ jobs:
       - name: SSH into Instance and Prepare Server
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ env.INSTANCE_IP }}
-          username: ${{ env.USERNAME }}
-          key: ${{ env.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.INSTANCE_IP }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo "🔄 Removing old build files..."
             sudo -n rm -rf /var/www/react-app/*
@@ -53,18 +50,18 @@ jobs:
       - name: Upload Build Files to Instance
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ env.INSTANCE_IP }}
-          username: ${{ env.USERNAME }}
-          key: ${{ env.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.INSTANCE_IP }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "build/*"
           target: "/var/www/react-app"
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ env.INSTANCE_IP }}
-          username: ${{ env.USERNAME }}
-          key: ${{ env.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.INSTANCE_IP }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo "🔄 Restarting Nginx..."
             sudo -n systemctl restart nginx
