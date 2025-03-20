@@ -15,6 +15,7 @@ import {
 import neonThumbnail from '../assets/neon-thumbnail.png';
 import kkomaThumbnail from '../assets/kkoma-thumbnail.png';
 import neubiegoThumbnail from '../assets/neubiego-thumbnail.png';
+import neubieorderThumbnail from '../assets/neubieorder-thumbnail.png';
 
 // 프로젝트 데이터
 const projects = [
@@ -51,6 +52,17 @@ const projects = [
     domainUrl: 'https://www.notion.so/hyeongjun-dev/1a39683271d08049b1c8d53f1e0ef7c5?pvs=4',
     tags: [
       { name: '기술 전환', url: 'https://www.notion.so/hyeongjun-dev/1b79683271d080e38e8ef91f186574c6?pvs=4' },
+    ],
+  },
+  {
+    title: '뉴비오더',
+    description: '자율주행 로봇 배달 플랫폼',
+    imageUrl: neubieorderThumbnail,
+    githubUrl: 'https://github.com/',
+    notionUrl: 'https://www.notion.so/hyeongjun-dev/1a39683271d080ceb0fae753db8deccb?pvs=4',
+    domainUrl: 'https://www.notion.so/hyeongjun-dev/1a39683271d080ceb0fae753db8deccb?pvs=4',
+    tags: [
+      { name: '배달', url: 'https://www.notion.so/hyeongjun-dev/1a39683271d080ceb0fae753db8deccb?pvs=4' },
     ],
   },
 ];
