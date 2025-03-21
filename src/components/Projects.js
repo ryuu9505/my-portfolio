@@ -73,14 +73,14 @@ function Projects() {
       <ScrollAnimation>
         <SectionTitle>Products</SectionTitle>
       </ScrollAnimation>
-      <ScrollAnimation delay={0.2}>
+      <ScrollAnimation delay={0.15}>
         <TextContent>
           Taking on new challenges.
         </TextContent>
       </ScrollAnimation>
       <ProjectList>
         {projects.map((project, index) => (
-          <ScrollAnimation key={index} delay={0.2 + index * 0.1}>
+          <ScrollAnimation key={index} delay={0.3}>
             <ProjectCard>
               <ProjectImageContainer>
                 <a href={project.domainUrl} target="_blank" rel="noopener noreferrer">

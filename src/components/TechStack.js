@@ -36,17 +36,17 @@ function TechStack() {
       <ScrollAnimation>
         <SectionTitle>Tech Stack</SectionTitle>
       </ScrollAnimation>
-      <ScrollAnimation delay={0.2}>
+      <ScrollAnimation delay={0.15}>
         <TextContent>
           Powered by the best tools.
         </TextContent>
       </ScrollAnimation>
-      <ScrollAnimation delay={0.2}>
+      <ScrollAnimation>
         <TechList>
           {techs.map((tech, index) => (
             <ScrollAnimation 
-              key={index} 
-              delay={0.1 + index * 0.05}
+              key={index}
+              delay={0.3}
               margin="0px"
             >
               <a href={tech.url} target="_blank" rel="noopener noreferrer">

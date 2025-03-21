@@ -12,6 +12,11 @@ function Header() {
           </Link>
         </NavLink>
         <NavLink>
+          <Link to="history" smooth={true} duration={500}>
+            History
+          </Link>
+        </NavLink>
+        <NavLink>
           <Link to="tech-stack" smooth={true} duration={500}>
             Tech Stack
           </Link>
