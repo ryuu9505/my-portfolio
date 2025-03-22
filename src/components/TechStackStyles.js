@@ -74,7 +74,7 @@ export const TechCard = styled.div`
 export const TechIcon = styled.div`
   font-size: 3rem;
   color: ${({ theme }) => theme.colors.textLight};
-  margin-bottom: 4px;
+  margin-bottom: 0px;
 
   @media (max-width: 480px) {
     font-size: 2rem;
