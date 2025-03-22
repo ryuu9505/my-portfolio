@@ -7,7 +7,7 @@ import ssafyLogo from '../assets/ssafy-logo.png';
 import inhaLogo from '../assets/inha-logo.png';
 
 const HistorySection = styled.section`
-  padding: 120px 0 200px;
+  padding: 80px 0 240px;
   background: ${({ theme }) => theme.colors.background};
 `;
 

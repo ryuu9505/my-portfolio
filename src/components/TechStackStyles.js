@@ -4,8 +4,8 @@ import styled from 'styled-components';
 export const TechStackSection = styled.section`
   width: 100%;
   padding: 0px 40px;
-  padding-top: 160px;
-  padding-bottom: 280px;
+  padding-top: 80px;
+  padding-bottom: 240px;
   background-image: url('/star-textures/Atmo_Gstar.png'); // 배경 이미지 경로 설정
   background-size: cover; // 배경 이미지가 섹션을 덮도록 설정
   background-position: center; // 배경 이미지 위치 조정
@@ -84,9 +84,9 @@ export const TechIcon = styled.div`
 
 // 기술 이름 스타일
 export const TechName = styled.h3`
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: ${({ theme }) => theme.colors.text};
+  font-size: 1.0rem;
+  font-weight: 100;
+  color: ${({ theme }) => theme.colors.textLight};
 
   @media (max-width: 480px) {
     font-size: 0.7rem;
