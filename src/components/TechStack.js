@@ -34,7 +34,7 @@ function TechStack() {
   return (
     <TechStackSection id="tech-stack">
       <ScrollAnimation>
-        <SectionTitle>Tech Stack</SectionTitle>
+        <SectionTitle>Skills</SectionTitle>
       </ScrollAnimation>
       <ScrollAnimation delay={0.15}>
         <TextContent>

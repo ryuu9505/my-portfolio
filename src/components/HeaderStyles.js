@@ -28,7 +28,7 @@ export const Logo = styled.div`
 export const NavMenu = styled.nav`
   display: flex;
   align-items: center;
-  gap: 30px;  // 메뉴 항목 간의 간격 설정
+  gap: 20px;  // 메뉴 항목 간의 간격 설정
 `;
 
 // 네비게이션 링크 스타일

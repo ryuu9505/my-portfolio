@@ -30,6 +30,10 @@ export const TextContent = styled.div`
     font-weight: 200;
     color: ${({ theme }) => theme.colors.secondary};
     margin-bottom: 0px;
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+    }
 `;
 
 // 기술 스택 리스트 스타일
@@ -39,6 +43,11 @@ export const TechList = styled.div`
   justify-content: center;
   gap: 30px;
   margin-top: 50px;
+
+  @media (max-width: 480px) {
+    gap: 12px;
+    margin-top: 30px;
+  }
 `;
 
 // 기술 카드 스타일
@@ -54,13 +63,23 @@ export const TechCard = styled.div`
   &:hover {
     transform: translateY(-10px);
   }
+
+  @media (max-width: 480px) {
+    width: 90px;
+    padding: 12px;
+  }
 `;
 
 // 기술 아이콘 스타일
 export const TechIcon = styled.div`
   font-size: 3rem;
   color: ${({ theme }) => theme.colors.textLight};
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+    margin-bottom: -4px;
+  }
 `;
 
 // 기술 이름 스타일
@@ -68,4 +87,8 @@ export const TechName = styled.h3`
   font-size: 1.2rem;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.text};
+
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+  }
 `;

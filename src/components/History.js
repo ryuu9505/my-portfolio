@@ -12,9 +12,13 @@ const HistorySection = styled.section`
 `;
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0 20px;
+
+  @media (max-width: 480px) {
+    padding: 0 30px;
+  }
 `;
 
 const Title = styled.h2`
@@ -32,6 +36,11 @@ const TextContent = styled.div`
   color: ${({ theme }) => theme.colors.secondary};
   margin-bottom: 50px;
   text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+  }
 `;
 
 const HistoryList = styled.div`
@@ -40,6 +49,10 @@ const HistoryList = styled.div`
   gap: 20px;
   max-width: 700px;
   margin: 0 auto;
+
+  @media (max-width: 480px) {
+    gap: 25px;
+  }
 `;
 
 const TimelineItem = styled(motion.div)`
@@ -53,6 +66,10 @@ const TimelineContent = styled.div`
   background: ${({ theme }) => theme.colors.card};
   border-radius: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 480px) {
+    padding: 20px;
+  }
 `;
 
 const CompanyLogo = styled.img`
@@ -60,10 +77,24 @@ const CompanyLogo = styled.img`
   height: 88px;
   object-fit: contain;
   margin-right: 30px;
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+  }
 `;
 
 const ContentWrapper = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 88px;
+
+  @media (max-width: 480px) {
+    min-height: 50px;
+  }
 `;
 
 const TitleWrapper = styled.div`
@@ -71,6 +102,11 @@ const TitleWrapper = styled.div`
   align-items: baseline;
   gap: 6px;
   margin-bottom: 0px;
+
+  @media (max-width: 480px) {
+    gap: 3px;
+    margin-bottom: 0px;
+  }
 `;
 
 const CompanyName = styled.h3`
@@ -78,6 +114,12 @@ const CompanyName = styled.h3`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.primary};
   margin: 0;
+  line-height: 0.9;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    line-height: 0.9;
+  }
 `;
 
 const Position = styled.h4`
@@ -86,6 +128,10 @@ const Position = styled.h4`
   color: ${({ theme }) => theme.colors.primary};
   margin: 0;
   transform: translateY(-1px);
+
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const Description = styled.p`
@@ -93,15 +139,28 @@ const Description = styled.p`
   font-weight: 200;
   color: ${({ theme }) => theme.colors.secondary};
   line-height: 1.6;
-  margin: 0;
-  margin-bottom: 4px;
+  margin-top: 0px;
+  margin-bottom: 6px;
+
+  @media (max-width: 480px) {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    margin-top: 2px;
+    margin-bottom: 6px;
+  }
 `;
 
 const Period = styled.span`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 200;
   color: ${({ theme }) => theme.colors.secondary}99;
   line-height: 1;
+  display: block;
+
+  @media (max-width: 480px) {
+    font-size: 0.6rem;
+    line-height: 1;
+  }
 `;
 
 const historyData = [

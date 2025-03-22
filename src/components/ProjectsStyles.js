@@ -27,6 +27,10 @@ export const TextContent = styled.div`
     font-weight: 200;
     color: ${({ theme }) => theme.colors.secondary};
     margin-bottom: 0px;
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+    }
 `;
 
 // 프로젝트 리스트 스타일
@@ -36,7 +40,12 @@ export const ProjectList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 50px;
-  perspective: 1000px; // 3D 효과를 위한 원근감 설정
+  perspective: 1000px;
+
+  @media (max-width: 480px) {
+    gap: 30px;
+    margin-top: 30px;
+  }
 `;
 
 // 프로젝트 카드 스타일
@@ -46,6 +55,10 @@ export const ProjectCard = styled.div`
   width: 350px;
   will-change: transform;
   backface-visibility: hidden;
+
+  @media (max-width: 480px) {
+    width: 300px;
+  }
 `;
 
 // 이미지 컨테이너 추가
@@ -72,6 +85,10 @@ export const ProjectImage = styled.img`
 export const ProjectContent = styled.div`
   padding: 0px;
   text-align: left;
+
+  @media (max-width: 480px) {
+    padding: 0px;
+  }
 `;
 
 // 프로젝트 제목 스타일
@@ -80,6 +97,11 @@ export const ProjectTitle = styled.h3`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.primary};
   margin-top: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+    margin-top: 8px;
+  }
 `;
 
 // 프로젝트 설명 스타일
@@ -88,6 +110,11 @@ export const ProjectDescription = styled.p`
   font-weight: 200;
   color: ${({ theme }) => theme.colors.secondary};
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+    margin: 6px 0;
+  }
 `;
 
 // 도메인 스타일
@@ -98,6 +125,10 @@ export const ProjectDomain = styled.a`
   margin: 0;
   text-decoration: underline;
   text-align: left;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 
   &:hover {
     color: #000000
@@ -120,6 +151,10 @@ export const ProjectLink = styled.a`
   text-decoration: none;
   transition: all 0.3s ease;
   
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+
   &:hover {
     transform: translateY(-2px);
     color: ${({ theme }) => theme.colors.accent};
@@ -136,18 +171,27 @@ export const ProjectTagsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+
+  @media (max-width: 480px) {
+    gap: 4px;
+  }
 `;
 
 // 프로젝트 태그 스타일
 export const ProjectTag = styled.a`
   background: ${({ theme }) => theme.colors.primary};
-  color: white;  /* 흰색 텍스트 */
-  padding: 3px 8px;  /* 내부 여백 */
-  border-radius: 4px;  /* 테두리 둥글게 */
-  font-size: 0.8rem;  /* 글씨 크기 */
-  cursor: default;  /* 마우스 커서 설정 */
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: default;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;  /* 전환 효과 */
+  transition: all 0.3s ease;
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+  }
 
   &:hover {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
