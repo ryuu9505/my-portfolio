@@ -65,7 +65,7 @@ export const TechCard = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 90px;
+    width: 80px;
     padding: 12px;
   }
 `;
