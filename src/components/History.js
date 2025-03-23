@@ -46,12 +46,12 @@ const TextContent = styled.div`
 const HistoryList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   max-width: 700px;
   margin: 0 auto;
 
   @media (max-width: 480px) {
-    gap: 25px;
+    gap: 12px;
   }
 `;
 
