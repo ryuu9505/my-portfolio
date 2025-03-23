@@ -6,12 +6,36 @@ export const TechStackSection = styled.section`
   padding: 0px 40px;
   padding-top: 80px;
   padding-bottom: 240px;
-  background-image: url('/star-textures/Atmo_Fstar.png'); // 배경 이미지 경로 설정
-  background-size: cover; // 배경 이미지가 섹션을 덮도록 설정
-  background-position: center; // 배경 이미지 위치 조정
-  background-repeat: no-repeat; // 배경 이미지가 반복되지 않도록 설정
-  background-color: ${({ theme }) => theme.colors.background};
+  position: relative;
   text-align: center;
+  background-color: ${({ theme }) => theme.colors.background};
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-image: url('/star-textures/Atmo_Fstar.png');
+    background-repeat: repeat-x;
+    background-size: auto 143%; // 70%만 보이도록 크기를 약 143%(100/0.7)로 설정
+    background-position: top center; // 위쪽부터 시작
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    transform: scaleY(-1);
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
 `;
 
 // 제목 스타일
