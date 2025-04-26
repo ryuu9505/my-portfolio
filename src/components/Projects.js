@@ -18,6 +18,10 @@ import neubieorderThumbnail from '../assets/neubieorder-thumbnail.png';
 import rateloThumbnail from '../assets/ratelo-thumbnail.png';
 import ticketImage from '../assets/ticket.png';
 import chatImage from '../assets/chat.png';
+import ticketWebImage from '../assets/ticket-web.png';
+import neubieImage from '../assets/neubie.jpg';
+import chatWebImage from '../assets/chat-web.png';
+import kkomaDataImage from '../assets/kkoma-data.png';
 
 // 프로젝트 데이터
 const projects = [
@@ -26,6 +30,7 @@ const projects = [
     description: '개발',
     period: '2024.04 ~ 진행 중',
     imageUrl: rateloThumbnail,
+    hoverImage: rateloThumbnail,
     githubUrl: 'https://github.com/buffthis/payments',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/Ratelo-1e19683271d08052a279e361d3bdbc28?pvs=4',
     domainUrl: 'https://www.notion.so/hyeongjun-dev/Ratelo-1e19683271d08052a279e361d3bdbc28?pvs=4',
@@ -39,6 +44,7 @@ const projects = [
     description: '기능 개발',
     period: '2025.02 ~ 진행 중',
     imageUrl: neubieorderThumbnail,
+    hoverImage: neubieImage,
     githubUrl: 'https://github.com/',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/1a39683271d08049b1c8d53f1e0ef7c5?pvs=4',
     domainUrl: 'https://www.notion.so/hyeongjun-dev/1a39683271d08049b1c8d53f1e0ef7c5?pvs=4',
@@ -64,6 +70,7 @@ const projects = [
     description: '개발 / 성능 개선',
     period: '2024.09 ~ 2024.10',
     imageUrl: ticketImage,
+    hoverImage: ticketWebImage,
     githubUrl: 'https://github.com/buffthis',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
     domainUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
@@ -77,6 +84,7 @@ const projects = [
     description: '개발 / 성능 개선',
     period: '2024.08 ~ 2024.09',
     imageUrl: chatImage,
+    hoverImage: chatWebImage,
     githubUrl: 'https://github.com/buffthis',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
     domainUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
@@ -90,6 +98,7 @@ const projects = [
     description: '개발 / 성능 개선',
     period: '2024.02 ~ 2024.04',
     imageUrl: kkomaThumbnail,
+    hoverImage: kkomaDataImage,
     githubUrl: 'https://github.com/samsungacademy/kkoma',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/1ab9683271d08060b163c4916d696f17?pvs=4',
     domainUrl: 'https://www.notion.so/hyeongjun-dev/1ab9683271d08060b163c4916d696f17?pvs=4',
@@ -101,6 +110,7 @@ const projects = [
 ];
 
 function Projects() {
+  const [hoveredIdx, setHoveredIdx] = React.useState(null);
   return (
     <ProjectsSection id="projects">
       <ScrollAnimation>
@@ -114,12 +124,33 @@ function Projects() {
       <ProjectList>
         {projects.map((project, index) => (
           <ScrollAnimation key={index} delay={0.3}>
+            <ProjectImageContainer
+              onMouseEnter={() => setHoveredIdx(index)}
+              onMouseLeave={() => setHoveredIdx(null)}
+              style={{ position: 'relative' }}
+            >
+              <a href={project.domainUrl} target="_blank" rel="noopener noreferrer">
+                <ProjectImage src={project.imageUrl} alt={project.title} />
+                <img
+                  src={project.hoverImage}
+                  alt="hover"
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    opacity: hoveredIdx === index ? 1 : 0,
+                    transition: 'opacity 0.4s',
+                    pointerEvents: 'none',
+                    zIndex: 2,
+                    borderRadius: 0,
+                  }}
+                />
+              </a>
+            </ProjectImageContainer>
             <ProjectCard>
-              <ProjectImageContainer>
-                <a href={project.domainUrl} target="_blank" rel="noopener noreferrer">
-                  <ProjectImage src={project.imageUrl} alt={project.title} />
-                </a>
-              </ProjectImageContainer>
               <ProjectContent>
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <ProjectDescription>{project.description}</ProjectDescription>

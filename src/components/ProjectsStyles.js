@@ -64,7 +64,7 @@ export const ProjectCard = styled.div`
 // 이미지 컨테이너 추가
 export const ProjectImageContainer = styled.div`
   width: 100%;
-  aspect-ratio: 10 / 7;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   position: relative;
   border-radius: 0;
