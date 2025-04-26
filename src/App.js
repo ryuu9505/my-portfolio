@@ -8,6 +8,13 @@ import History from './components/History';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import styled from 'styled-components';
+import FilmSection from './components/FilmSection';
+
+const WhiteSpace = styled.div`
+  height: 20px;
+  background-color: ${({ theme }) => theme.colors.backgroundLight};
+`;
 
 function App() {
   return (
@@ -15,12 +22,16 @@ function App() {
       <GlobalStyle />
       <Header />
       <About />
+      <WhiteSpace />
       <History />
+      <WhiteSpace />
       <TechStack />
+      <WhiteSpace />
       <Projects />
+      <WhiteSpace />
+      <FilmSection />
+      <WhiteSpace />
       <Contact />
-      <div className="App">
-      </div>
     </ThemeProvider>
   );
 }
