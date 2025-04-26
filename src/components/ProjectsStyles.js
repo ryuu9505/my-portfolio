@@ -113,7 +113,7 @@ export const ProjectDescription = styled.p`
 
   @media (max-width: 480px) {
     font-size: 0.95rem;
-    margin: 6px 0;
+    margin: 2px 0;
   }
 `;
 
@@ -213,6 +213,6 @@ export const Period = styled.span`
 
   @media (max-width: 480px) {
     font-size: 0.6rem;
-    line-height: 1;
+    line-height: 2.4;
   }
 `;
