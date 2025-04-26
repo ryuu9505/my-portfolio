@@ -169,7 +169,7 @@ const historyData = [
     logo: neubilityLogo,
     company: '뉴빌리티',
     position: '백엔드 개발',
-    description: '자율주행 로봇 운용 플랫폼 개발',
+    description: '로봇 운용/관리 플랫폼 개발',
     period: '2025.02 - 재직 중'
   },
   {
@@ -199,7 +199,7 @@ const History = () => {
         </ScrollAnimation>
         <ScrollAnimation delay={0.15}>
           <TextContent>
-            My journey so far.
+            
           </TextContent>
         </ScrollAnimation>
         <HistoryList>

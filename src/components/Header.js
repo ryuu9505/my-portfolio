@@ -23,7 +23,7 @@ function Header() {
         </NavLink>
         <NavLink>
           <Link to="projects" smooth={true} duration={500}>
-            Products
+            Projects
           </Link>
         </NavLink>
         <NavLink>

@@ -203,3 +203,16 @@ export const ProjectTag = styled.a`
     transform: translateY(0px);
   }
 `;
+
+export const Period = styled.span`
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: ${({ theme }) => theme.colors.secondary}99;
+  line-height: 2.4;
+  display: block;
+
+  @media (max-width: 480px) {
+    font-size: 0.6rem;
+    line-height: 1;
+  }
+`;
