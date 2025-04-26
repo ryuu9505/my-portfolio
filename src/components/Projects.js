@@ -22,6 +22,7 @@ import ticketWebImage from '../assets/ticket-web.png';
 import neubieImage from '../assets/neubie.jpg';
 import chatWebImage from '../assets/chat-web.png';
 import kkomaDataImage from '../assets/kkoma-data.png';
+import developingImage from '../assets/developing.png';
 
 // 프로젝트 데이터
 const projects = [
@@ -30,7 +31,7 @@ const projects = [
     description: '개발',
     period: '2024.04 ~ 진행 중',
     imageUrl: rateloThumbnail,
-    hoverImage: rateloThumbnail,
+    hoverImage: developingImage,
     githubUrl: 'https://github.com/buffthis/payments',
     notionUrl: 'https://www.notion.so/hyeongjun-dev/Ratelo-1e19683271d08052a279e361d3bdbc28?pvs=4',
     domainUrl: 'https://www.notion.so/hyeongjun-dev/Ratelo-1e19683271d08052a279e361d3bdbc28?pvs=4',
@@ -72,8 +73,8 @@ const projects = [
     imageUrl: ticketImage,
     hoverImage: ticketWebImage,
     githubUrl: 'https://github.com/buffthis',
-    notionUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
-    domainUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
+    notionUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4',
+    domainUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4',
     tags: [
       { name: '채팅', url: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4' },
       { name: '예매', url: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4' },
@@ -86,8 +87,8 @@ const projects = [
     imageUrl: chatImage,
     hoverImage: chatWebImage,
     githubUrl: 'https://github.com/buffthis',
-    notionUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
-    domainUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d081a2ab96d306ca0af8c9?pvs=4',
+    notionUrl: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4',
+    domainUrl: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4',
     tags: [
       { name: '채팅', url: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4' },
       { name: '예매', url: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4' },
@@ -100,8 +101,8 @@ const projects = [
     imageUrl: kkomaThumbnail,
     hoverImage: kkomaDataImage,
     githubUrl: 'https://github.com/samsungacademy/kkoma',
-    notionUrl: 'https://www.notion.so/hyeongjun-dev/1ab9683271d08060b163c4916d696f17?pvs=4',
-    domainUrl: 'https://www.notion.so/hyeongjun-dev/1ab9683271d08060b163c4916d696f17?pvs=4',
+    notionUrl: 'https://www.notion.so/hyeongjun-dev/1e19683271d080acb379fe9d4fa25177?pvs=4',
+    domainUrl: 'https://www.notion.so/hyeongjun-dev/1e19683271d080acb379fe9d4fa25177?pvs=4',
     tags: [
       { name: '빅데이터', url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080b38097d28e6bd9863d?pvs=4' },
       { name: '추천', url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080959b45f2023f1dbf31?pvs=4' },
