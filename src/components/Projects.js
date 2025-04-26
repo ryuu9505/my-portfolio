@@ -13,9 +13,7 @@ import {
   ProjectTitle,
   Period,
 } from './ProjectsStyles';
-import neonThumbnail from '../assets/neon-thumbnail.png';
 import kkomaThumbnail from '../assets/kkoma-thumbnail.png';
-import neubiegoThumbnail from '../assets/neubiego-thumbnail.png';
 import neubieorderThumbnail from '../assets/neubieorder-thumbnail.png';
 import rateloThumbnail from '../assets/ratelo-thumbnail.png';
 import ticketImage from '../assets/ticket.png';
