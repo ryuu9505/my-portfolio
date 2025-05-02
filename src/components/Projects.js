@@ -1,5 +1,6 @@
 import React from 'react';
 import ScrollAnimation from './common/ScrollAnimation';
+import HoverImage from './common/HoverImage';
 import {
   ProjectsSection,
   SectionTitle,
@@ -7,7 +8,6 @@ import {
   ProjectList,
   ProjectCard,
   ProjectImageContainer,
-  ProjectImage,
   ProjectContent,
   ProjectDescription,
   ProjectTitle,
@@ -111,7 +111,6 @@ const projects = [
 ];
 
 function Projects() {
-  const [hoveredIdx, setHoveredIdx] = React.useState(null);
   return (
     <ProjectsSection id="projects">
       <ScrollAnimation>
@@ -124,41 +123,24 @@ function Projects() {
       </ScrollAnimation>
       <ProjectList>
         {projects.map((project, index) => (
-          <ScrollAnimation key={index} delay={0.3}>
-            <ProjectImageContainer
-              onMouseEnter={() => setHoveredIdx(index)}
-              onMouseLeave={() => setHoveredIdx(null)}
-              style={{ position: 'relative' }}
-            >
-              <a href={project.domainUrl} target="_blank" rel="noopener noreferrer">
-                <ProjectImage src={project.imageUrl} alt={project.title} />
-                <img
-                  src={project.hoverImage}
-                  alt="hover"
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    opacity: hoveredIdx === index ? 1 : 0,
-                    transition: 'opacity 0.4s',
-                    pointerEvents: 'none',
-                    zIndex: 2,
-                    borderRadius: 0,
-                  }}
+          <ProjectCard key={index}>
+            <ScrollAnimation delay={0.3}>
+              <ProjectImageContainer>
+                <HoverImage
+                  baseImage={project.imageUrl}
+                  hoverImage={project.hoverImage}
+                  alt={project.title}
+                  link={project.domainUrl}
+                  showButton={false}
                 />
-              </a>
-            </ProjectImageContainer>
-            <ProjectCard>
+              </ProjectImageContainer>
               <ProjectContent>
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <ProjectDescription>{project.description}</ProjectDescription>
                 <Period>{project.period}</Period>
               </ProjectContent>
-            </ProjectCard>
-          </ScrollAnimation>
+            </ScrollAnimation>
+          </ProjectCard>
         ))}
       </ProjectList>
     </ProjectsSection>

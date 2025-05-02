@@ -61,23 +61,12 @@ export const ProjectCard = styled.div`
   }
 `;
 
-// 이미지 컨테이너 추가
+// 이미지 컨테이너 추가 - HoverImage 컴포넌트와 함께 사용
 export const ProjectImageContainer = styled.div`
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   position: relative;
-  border-radius: 0;
-`;
-
-// 프로젝트 이미지 스타일 업데이트
-export const ProjectImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
   border-radius: 0;
 `;
 
