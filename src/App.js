@@ -2,31 +2,19 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import theme from './theme';
-import Header from './components/Header';
-import About from './components/About'; 
-import History from './components/History';
-import TechStack from './components/TechStack';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import FilmSection from './components/FilmSection';
-import { WhiteSpace } from './components/common/CommonStyles';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import InfoPage from './pages/InfoPage';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header />
-      <About />
-      <WhiteSpace />
-      <History />
-      <WhiteSpace />
-      <TechStack />
-      <WhiteSpace />
-      <Projects />
-      <WhiteSpace />
-      <FilmSection />
-      <WhiteSpace />
-      <Contact />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/info" element={<InfoPage />} />
+          <Route path="/" element={<Navigate to="/info" replace />} />
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
