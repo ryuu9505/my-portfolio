@@ -5,7 +5,7 @@ import {
   AboutContent,
   ProfileImage,
   TextContent,
-} from './AboutStyles';
+} from '../styles/AboutStyles';
 import ProfilePic from '../assets/profile.png'; // 프로필 사진 추가
 
 function About() {

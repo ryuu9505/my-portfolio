@@ -8,7 +8,7 @@ import {
   TechIcon,
   TechName,
   TextContent
-} from './TechStackStyles';
+} from '../styles/TechStackStyles';
 import { FaJava } from 'react-icons/fa';
 import { SiSpring, SiMysql, SiRedis, SiMongodb, SiApachehadoop, SiApachespark, SiApachekafka, SiHibernate, SiDocker, SiAmazonwebservices, SiPython, SiDjango, SiInfluxdb, SiPostgresql } from 'react-icons/si';
 

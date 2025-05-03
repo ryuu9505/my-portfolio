@@ -6,7 +6,7 @@ import TechStack from '../components/TechStack';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import FilmSection from '../components/FilmSection';
-import { WhiteSpace } from '../components/common/CommonStyles';
+import { WhiteSpace } from '../styles/CommonStyles';
 
 export default function InfoPage() {
   return (

@@ -12,7 +12,7 @@ import {
   ProjectDescription,
   ProjectTitle,
   Period,
-} from './ProjectsStyles';
+} from '../styles/ProjectsStyles';
 import kkomaThumbnail from '../assets/kkoma-thumbnail.png';
 import neubieorderThumbnail from '../assets/neubieorder-thumbnail.png';
 import rateloThumbnail from '../assets/ratelo-thumbnail.png';

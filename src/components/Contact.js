@@ -7,7 +7,7 @@ import {
   SectionTitle,
   SocialLinks,
   SocialIcon,
-} from './ContactStyles';
+} from '../styles/ContactStyles';
 
 function Contact() {
   return (
