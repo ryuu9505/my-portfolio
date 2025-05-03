@@ -122,7 +122,7 @@ export const Button = styled.button`
   }
 `;
 
-export default {
+const CommonStyles = {
   Section,
   SectionTitle,
   SectionDescription,
@@ -133,4 +133,6 @@ export default {
   Container,
   ResponsiveImage,
   Button
-}; 
+};
+
+export default CommonStyles; 
