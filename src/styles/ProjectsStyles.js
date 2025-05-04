@@ -6,7 +6,7 @@ export const ProjectsSection = styled.section`
   padding: 0px 20px;
   padding-top: 80px;
   padding-bottom: 240px;
-  background-color: ${({ theme }) => theme.colors.background}; // 화이트 배경
+  background-color: white; // ${({ theme }) => theme.colors.background}; // 화이트 배경
   text-align: center;
   color: ${({ theme }) => theme.colors.textLight}; // 진한 그레이 텍스트 색상
   overflow: hidden; // 애니메이션 중 오버플로우 방지
@@ -36,21 +36,32 @@ export const TextContent = styled.div`
 // 프로젝트 리스트 스타일
 export const ProjectList = styled.div`
   margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 350px));
   gap: 50px;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   perspective: 1000px;
 
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+  }
   @media (max-width: 480px) {
+    grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 30px;
+    max-width: 95vw;
   }
 `;
 
 // 프로젝트 카드 스타일
 export const ProjectCard = styled.div`
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: white; // ${({ theme }) => theme.colors.background};
   border-radius: 0;
   width: 350px;
   will-change: transform;
@@ -67,6 +78,7 @@ export const ProjectImageContainer = styled.div`
   aspect-ratio: 4 / 3;
   overflow: hidden;
   position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 0;
 `;
 
@@ -85,11 +97,11 @@ export const ProjectTitle = styled.h3`
   font-size: 1.6rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.primary};
-  margin-top: 10px;
+  margin-top: 20px;
 
   @media (max-width: 480px) {
     font-size: 1.3rem;
-    margin-top: 8px;
+    margin-top: 15px;
   }
 `;
 

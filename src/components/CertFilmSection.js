@@ -1,23 +1,26 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import HoverImage from './common/HoverImage';
+import githubBadge from '../assets/github-foundations-cert.png';
+import awsBadge from '../assets/aws-educate-introduction-to-cloud-101.png';
+import hsatBadge from '../assets/hsat-cert.png';
+
 
 const images = [
   {
     src: 'https://i.redd.it/k1ac1xpb31wy.png',
-    link: 'https://hyeongjun.me/',
+    link: 'https://www.credly.com/badges/76477d73-efad-4c3e-b7e7-56eb8e688798/public_url',
+    badge: githubBadge,
   },
   {
     src: 'https://i.redd.it/k1ac1xpb31wy.png',
-    link: 'https://hyeongjun.me/',
+    link: 'https://www.credly.com/badges/d857e697-2077-47f5-b021-093c6bb46b07/public_url',
+    badge: awsBadge,
   },
   {
     src: 'https://i.redd.it/k1ac1xpb31wy.png',
-    link: 'https://hyeongjun.me/',
-  },
-  {
-    src: 'https://i.redd.it/k1ac1xpb31wy.png',
-    link: 'https://hyeongjun.me/',
+    link: 'https://softeer.ai/certificate/verify?ui=28015&di=4978&bd=mK4LbR%2FA%2FhuYypLsmW0rEw%3D%3D',
+    badge: hsatBadge,
   },
 ];
 
@@ -44,11 +47,21 @@ const ThumbnailWrapper = styled.div`
   vertical-align: top;
 `;
 
-const FILM_WIDTH = (400 + 20) * images.length; // 한 세트의 전체 너비
-const NORMAL_SPEED = 60; // px per second
-const SLOW_SPEED = 30; // px per second
+const Badge = styled.img`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+`;
 
-const FilmSection = () => {
+const FILM_WIDTH = (400 + 20) * images.length;
+const NORMAL_SPEED = 60;
+const SLOW_SPEED = 30;
+
+const CertFilmSection = () => {
   const [slow, setSlow] = useState(false);
   const [offset, setOffset] = useState(0);
   const reqRef = useRef();
@@ -57,7 +70,7 @@ const FilmSection = () => {
   useEffect(() => {
     const animate = (now) => {
       if (!lastTimeRef.current) lastTimeRef.current = now;
-      const delta = (now - lastTimeRef.current) / 1000; // 초 단위
+      const delta = (now - lastTimeRef.current) / 1000;
       lastTimeRef.current = now;
       const speed = slow ? SLOW_SPEED : NORMAL_SPEED;
       setOffset(prev => {
@@ -86,6 +99,7 @@ const FilmSection = () => {
               link={img.link}
               buttonText="More"
             />
+            <Badge src={img.badge} alt="certi badge" />
           </ThumbnailWrapper>
         ))}
       </FilmTrack>
@@ -93,4 +107,4 @@ const FilmSection = () => {
   );
 };
 
-export default FilmSection; 
+export default CertFilmSection; 

@@ -44,7 +44,7 @@ export const HistoryTitle = styled.h3`
 export const HistoryPeriod = styled.span`
   font-size: 0.8rem;
   font-weight: 200;
-  color: ${({ theme }) => theme.colors.secondary}99;
+  color: ${({ theme }) => theme.colors.secondary};
   line-height: 1.2;
   display: block;
   margin-bottom: 6px;

@@ -7,11 +7,10 @@ import {
   TechCard,
   TechIcon,
   TechName,
-  TextContent
+  TextContent,
 } from '../styles/TechStackStyles';
 import { FaJava } from 'react-icons/fa';
 import { SiSpring, SiMysql, SiRedis, SiMongodb, SiApachehadoop, SiApachespark, SiApachekafka, SiHibernate, SiDocker, SiAmazonwebservices, SiPython, SiDjango, SiInfluxdb, SiPostgresql } from 'react-icons/si';
-
 function TechStack() {
   const techs = [
     { name: 'Java', icon: <FaJava />, color: '#007396', url: 'https://www.notion.so/hyeongjun-dev/Java-1a09683271d080f58e5cd8abcf99d216?pvs=4' },

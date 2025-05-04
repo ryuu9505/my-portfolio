@@ -15,12 +15,10 @@ export default function InfoPage() {
       <About />
       <WhiteSpace />
       <History />
-      <WhiteSpace />
+      <FilmSection />
       <TechStack />
       <WhiteSpace />
       <Projects />
-      <WhiteSpace />
-      <FilmSection />
       <WhiteSpace />
       <Contact />
     </>

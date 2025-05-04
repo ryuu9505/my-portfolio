@@ -8,7 +8,7 @@ import inhaLogo from '../assets/inha-logo.png';
 
 const HistorySection = styled.section`
   padding: 80px 0 240px;
-  background: ${({ theme }) => theme.colors.background};
+  background: white;
 `;
 
 const Container = styled.div`

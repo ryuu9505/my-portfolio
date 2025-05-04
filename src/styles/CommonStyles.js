@@ -4,8 +4,7 @@ import styled from 'styled-components';
 export const Section = styled.section`
   width: 100%;
   padding: 80px 20px;
-  background-color: ${({ theme, dark }) => 
-    dark ? theme.colors.backgroundDark : theme.colors.backgroundLight};
+  background-color: white;
   color: ${({ theme, dark }) => 
     dark ? theme.colors.textDark : theme.colors.textLight};
   overflow: hidden;
@@ -39,8 +38,7 @@ export const SectionDescription = styled.div`
 // 컨텐츠 간격 조절용 공백
 export const WhiteSpace = styled.div`
   height: ${({ size }) => size || '20px'};
-  background-color: ${({ theme, color }) => 
-    color ? theme.colors[color] : theme.colors.backgroundLight};
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 // 플렉스 컨테이너

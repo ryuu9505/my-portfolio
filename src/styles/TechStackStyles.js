@@ -5,7 +5,7 @@ export const TechStackSection = styled.section`
   padding: 0px 20px;
   padding-top: 80px;
   padding-bottom: 240px;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: white;
   text-align: center;
   color: ${({ theme }) => theme.colors.textLight};
   overflow: hidden;
@@ -34,15 +34,21 @@ export const TextContent = styled.div`
 
 // 기술 스택 리스트 스타일
 export const TechList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 150px));
   gap: 30px;
-  margin-top: 50px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  justify-items: center;
 
   @media (max-width: 480px) {
-    gap: 12px;
-    margin-top: 30px;
+    grid-template-columns: repeat(3, minmax(0, 100px));
+    gap: 20px;
+    margin-top: 20px;
   }
 `;
 
@@ -61,8 +67,7 @@ export const TechCard = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 80px;
-    padding: 12px;
+    width: 100px;
   }
 `;
 
@@ -86,5 +91,42 @@ export const TechName = styled.h3`
 
   @media (max-width: 480px) {
     font-size: 0.7rem;
+  }
+`;
+
+// 인증 배지 리스트 스타일
+export const CertList = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  margin-top: 36px;
+  margin-bottom: 0px;
+  flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    gap: 0px;
+    margin-top: 20px;
+  }
+`;
+
+// 인증 배지 이미지 스타일
+export const CertBadge = styled.img`
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  padding: 4px 8px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+
+  @media (max-width: 480px) {
+    height: 100px;
+    padding: 2px 4px;
   }
 `;
