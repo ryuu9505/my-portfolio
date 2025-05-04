@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from './GlobalStyle';
+import GlobalStyle from './styles/GlobalStyle';
 import theme from './theme';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import InfoPage from './pages/InfoPage';

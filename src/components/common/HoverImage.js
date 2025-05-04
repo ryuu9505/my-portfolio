@@ -6,23 +6,16 @@ const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  &:hover img {
+    transform: scale(1.08);
+  }
 `;
 
 const BaseImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.4s;
-`;
-
-const HoverImageStyled = styled(BaseImage)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: ${({ isHovered }) => (isHovered ? 1 : 0)};
-  pointer-events: none;
-  z-index: 2;
-  border-radius: 0;
+  transition: opacity 0.4s, transform 0.4s cubic-bezier(0.4,0,0.2,1);
 `;
 
 const Overlay = styled.div`
@@ -75,7 +68,6 @@ const ActionButton = styled.button`
 
 const HoverImage = ({
   baseImage,
-  hoverImage,
   alt,
   link,
   buttonText = 'More',
@@ -83,8 +75,6 @@ const HoverImage = ({
   showOverlay = false,
   showButton = true,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   const handleButtonClick = (e) => {
     e.preventDefault();
     if (onButtonClick) {
@@ -95,23 +85,13 @@ const HoverImage = ({
   };
 
   return (
-    <ImageContainer
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <ImageContainer>
       <a href={link} target="_blank" rel="noopener noreferrer">
         <BaseImage src={baseImage} alt={alt} />
-        {hoverImage && (
-          <HoverImageStyled 
-            src={hoverImage} 
-            alt={`${alt} hover`} 
-            isHovered={isHovered}
-          />
-        )}
-        {showOverlay && <Overlay isHovered={isHovered} />}
+        {showOverlay && <Overlay isHovered={false} />}
         {showButton && (
           <ActionButton
-            isHovered={isHovered}
+            isHovered={false}
             onClick={handleButtonClick}
             tabIndex={-1}
           >
