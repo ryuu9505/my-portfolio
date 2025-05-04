@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderContainer, NavMenu, NavLink } from '../styles/HeaderStyles';
-import { Link } from 'react-scroll';  // react-scroll의 Link 컴포넌트 추가
+import { Link } from 'react-scroll';
 
 function Header() {
   return (
