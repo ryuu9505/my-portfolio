@@ -1,9 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import HoverImage from './common/HoverImage';
-import githubBadge from '../assets/github-foundations-cert.png';
-import awsBadge from '../assets/aws-educate-introduction-to-cloud-101.png';
-import hsatBadge from '../assets/hsat-cert.png';
+import { githubBadge, awsCloudComputing101Badge, hsatBadge } from "../assets/certs";
 
 
 const images = [
@@ -15,7 +13,7 @@ const images = [
   {
     src: 'https://i.redd.it/k1ac1xpb31wy.png',
     link: 'https://www.credly.com/badges/d857e697-2077-47f5-b021-093c6bb46b07/public_url',
-    badge: awsBadge,
+    badge: awsCloudComputing101Badge,
   },
   {
     src: 'https://i.redd.it/k1ac1xpb31wy.png',

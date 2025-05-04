@@ -37,7 +37,6 @@ function TechStack() {
       </ScrollAnimation>
       <ScrollAnimation delay={0.15}>
         <TextContent>
-          각 상황에 가장 적합한 기술을 찾고 사용합니다.
         </TextContent>
       </ScrollAnimation>
       <ScrollAnimation>

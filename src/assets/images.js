@@ -1,0 +1,7 @@
+export const profilePic = 'https://imgur.com/HOtRUW2.png';
+
+// Thumbnails
+export const prismBabyBottle = 'https://imgur.com/bia0XFS.png';
+export const prismDeliveryRobot = 'https://imgur.com/Uq46C6i.png';
+export const prismTicket = 'https://imgur.com/DFePcN7.png';
+export const prismSpeechBubble = 'https://imgur.com/732z0zE.png';

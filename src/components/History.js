@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import ScrollAnimation from './common/ScrollAnimation';
-import neubilityLogo from '../assets/neubility-logo.png';
-import ssafyLogo from '../assets/ssafy-logo.png';
-import inhaLogo from '../assets/inha-logo.png';
+import { neubilityLogo, ssafyLogo, inhaLogo } from "../assets/logos";
 
 const HistorySection = styled.section`
   padding: 80px 0 240px;

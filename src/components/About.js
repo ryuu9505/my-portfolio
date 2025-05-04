@@ -6,14 +6,14 @@ import {
   ProfileImage,
   TextContent,
 } from '../styles/AboutStyles';
-import ProfilePic from '../assets/profile.png'; // 프로필 사진 추가
+import { profilePic } from '../assets/images'; // 프로필 사진 추가
 
 function About() {
   return (
     <AboutSection id="about">
       <AboutContent>
         <ScrollAnimation delay={0.2}>
-          <ProfileImage src={ProfilePic} alt="Profile" />
+          <ProfileImage src={profilePic} alt="Profile" />
         </ScrollAnimation>
         
         <ScrollAnimation delay={0.4}>
