@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// 섹션 기본 스타일
 export const Section = styled.section`
   width: 100%;
   padding: 80px 20px;
@@ -10,7 +9,6 @@ export const Section = styled.section`
   overflow: hidden;
 `;
 
-// 섹션 제목 스타일
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
   color: ${({ theme, dark }) =>
@@ -19,7 +17,6 @@ export const SectionTitle = styled.h2`
   text-align: center;
 `;
 
-// 섹션 설명 텍스트 스타일
 export const SectionDescription = styled.div`
   margin-top: 0px;
   font-size: 1.6rem;
@@ -35,13 +32,11 @@ export const SectionDescription = styled.div`
   }
 `;
 
-// 컨텐츠 간격 조절용 공백
 export const WhiteSpace = styled.div`
   height: ${({ size }) => size || '20px'};
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-// 플렉스 컨테이너
 export const FlexContainer = styled.div`
   display: flex;
   flex-direction: ${({ direction }) => direction || 'row'};
@@ -52,7 +47,6 @@ export const FlexContainer = styled.div`
   width: 100%;
 `;
 
-// 그리드 컨테이너
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: ${({ columns }) =>
@@ -61,7 +55,6 @@ export const GridContainer = styled.div`
   width: 100%;
 `;
 
-// 카드 기본 스타일
 export const Card = styled.div`
   background-color: ${({ theme, dark }) =>
     dark ? theme.colors.backgroundDark : theme.colors.backgroundLight};
@@ -84,7 +77,6 @@ export const Card = styled.div`
   }
 `;
 
-// 컨테이너 너비 제한
 export const Container = styled.div`
   max-width: ${({ maxWidth }) => maxWidth || '1200px'};
   width: 100%;
@@ -92,7 +84,6 @@ export const Container = styled.div`
   padding: ${({ padding }) => padding || '0 20px'};
 `;
 
-// 반응형 이미지
 export const ResponsiveImage = styled.img`
   width: 100%;
   height: auto;
@@ -100,7 +91,6 @@ export const ResponsiveImage = styled.img`
   aspect-ratio: ${({ ratio }) => ratio || 'auto'};
 `;
 
-// 버튼 스타일
 export const Button = styled.button`
   padding: 8px 20px;
   font-size: 0.9rem;

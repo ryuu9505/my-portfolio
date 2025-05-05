@@ -11,14 +11,12 @@ export const TechStackSection = styled.section`
   overflow: hidden;
 `;
 
-// 제목 스타일
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
   color: ${({ theme }) => theme.colors.textLight};
   margin-bottom: 0px;
 `;
 
-// 텍스트 컨텐츠 스타일
 export const TextContent = styled.div`
   margin-top: 0px;
   font-size: 1.6rem;
@@ -32,7 +30,6 @@ export const TextContent = styled.div`
   }
 `;
 
-// 기술 스택 리스트 스타일
 export const TechList = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 150px));
@@ -52,10 +49,9 @@ export const TechList = styled.div`
   }
 `;
 
-// 기술 카드 스타일
 export const TechCard = styled.div`
   background-color: white;
-  border-radius: 0;
+  border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 150px;
@@ -71,7 +67,6 @@ export const TechCard = styled.div`
   }
 `;
 
-// 기술 아이콘 스타일
 export const TechIcon = styled.div`
   font-size: 3rem;
   color: ${({ theme }) => theme.colors.textLight};
@@ -83,7 +78,6 @@ export const TechIcon = styled.div`
   }
 `;
 
-// 기술 이름 스타일
 export const TechName = styled.h3`
   font-size: 1rem;
   font-weight: 100;
@@ -94,7 +88,6 @@ export const TechName = styled.h3`
   }
 `;
 
-// 인증 배지 리스트 스타일
 export const CertList = styled.div`
   display: flex;
   flex-direction: row;
@@ -111,7 +104,6 @@ export const CertList = styled.div`
   }
 `;
 
-// 인증 배지 이미지 스타일
 export const CertBadge = styled.img`
   height: 150px;
   width: auto;

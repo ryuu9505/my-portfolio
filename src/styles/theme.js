@@ -17,7 +17,7 @@ const theme = {
     headerBackground: 'rgba(0, 0, 0, 0.85)',
   },
   fonts: {
-    primary: 'Roboto, sans-serif',
+    primary: 'sans-serif',
     bmhanna: 'BMHANNA, sans-serif',
   },
   breakpoints: {

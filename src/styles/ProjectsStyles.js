@@ -1,26 +1,20 @@
 import styled from 'styled-components';
 
-// 섹션 전체 컨테이너 스타일
 export const ProjectsSection = styled.section`
   width: 100%;
   padding: 0px 20px;
   padding-top: 80px;
   padding-bottom: 240px;
-  background-color: white; // ${({ theme }) =>
-    theme.colors.background}; // 화이트 배경
   text-align: center;
-  color: ${({ theme }) => theme.colors.textLight}; // 진한 그레이 텍스트 색상
   overflow: hidden; // 애니메이션 중 오버플로우 방지
 `;
 
-// 섹션 제목 스타일
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
   color: ${({ theme }) => theme.colors.textLight};
   margin-bottom: 00px;
 `;
 
-// 텍스트 컨텐츠 스타일
 export const TextContent = styled.div`
   margin-top: 0px;
   font-size: 1.6rem;
@@ -34,7 +28,6 @@ export const TextContent = styled.div`
   }
 `;
 
-// 프로젝트 리스트 스타일
 export const ProjectList = styled.div`
   margin-top: 50px;
   display: grid;
@@ -60,9 +53,8 @@ export const ProjectList = styled.div`
   }
 `;
 
-// 프로젝트 카드 스타일
 export const ProjectCard = styled.div`
-  background-color: white; // ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgroundLight};
   border-radius: 0;
   width: 350px;
   will-change: transform;
@@ -73,17 +65,15 @@ export const ProjectCard = styled.div`
   }
 `;
 
-// 이미지 컨테이너 추가 - HoverImage 컴포넌트와 함께 사용
 export const ProjectImageContainer = styled.div`
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 0;
+  border-radius: 16px;
 `;
 
-// 프로젝트 내용 스타일
 export const ProjectContent = styled.div`
   padding: 0px;
   text-align: left;
@@ -93,7 +83,6 @@ export const ProjectContent = styled.div`
   }
 `;
 
-// 프로젝트 제목 스타일
 export const ProjectTitle = styled.h3`
   font-size: 1.6rem;
   font-weight: 700;
@@ -106,7 +95,6 @@ export const ProjectTitle = styled.h3`
   }
 `;
 
-// 프로젝트 설명 스타일
 export const ProjectDescription = styled.p`
   font-size: 1.4rem;
   font-weight: 200;
@@ -119,7 +107,6 @@ export const ProjectDescription = styled.p`
   }
 `;
 
-// 도메인 스타일
 export const ProjectDomain = styled.a`
   display: block;
   font-size: 0.9rem;
@@ -137,7 +124,6 @@ export const ProjectDomain = styled.a`
   }
 `;
 
-// 도메인 및 아이콘을 감싸는 컨테이너 스타일
 export const ProjectLinksContainer = styled.div`
   display: flex;
   gap: 10px;
@@ -145,7 +131,6 @@ export const ProjectLinksContainer = styled.div`
   justify-content: flex-start;
 `;
 
-// 프로젝트 링크 스타일
 export const ProjectLink = styled.a`
   display: inline-block;
   font-size: 1rem;
@@ -167,7 +152,6 @@ export const ProjectLink = styled.a`
   }
 `;
 
-// 프로젝트 태그를 감싸는 컨테이너 스타일
 export const ProjectTagsContainer = styled.div`
   margin: 0;
   display: flex;
@@ -179,7 +163,6 @@ export const ProjectTagsContainer = styled.div`
   }
 `;
 
-// 프로젝트 태그 스타일
 export const ProjectTag = styled.a`
   background: ${({ theme }) => theme.colors.primary};
   color: white;
