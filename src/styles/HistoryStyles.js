@@ -1,56 +1,15 @@
 import styled from 'styled-components';
 
-export const HistorySection = styled.section`
-  padding: 80px 0 240px;
-  background: white;
-`;
-
-export const Container = styled.div`
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 20px;
-
-  @media (max-width: 480px) {
-    padding: 0 30px;
-  }
-`;
-
-export const Title = styled.h2`
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 0px;
-  color: ${({ theme }) => theme.colors.textLight};
-`;
-
-export const TextContent = styled.div`
-  margin-top: 0px;
-  font-size: 1.6rem;
-  line-height: 1.2;
-  font-weight: 200;
-  color: ${({ theme }) => theme.colors.secondary};
-  margin-bottom: 50px;
-  text-align: center;
-
-  @media (max-width: 480px) {
-    font-size: 1.1rem;
-    margin-bottom: 35px;
-  }
-`;
-
-export const HistoryList = styled.div`
+export const CardList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
 
   @media (max-width: 480px) {
     gap: 12px;
   }
-`;
-
-export const TimelineItem = styled.div`
-  width: 100%;
 `;
 
 export const HistoryCard = styled.div`
@@ -93,6 +52,7 @@ export const ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   min-height: 88px;
+  text-align: left;
 
   @media (max-width: 480px) {
     min-height: 50px;

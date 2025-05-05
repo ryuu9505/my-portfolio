@@ -1,13 +1,16 @@
-import ScrollAnimation from '@components/common/ScrollAnimation';
 import {
+  awsCloudComputing101Badge,
+  awsCloudEssentialsBadge,
+  githubBadge,
+  hsatBadge,
+} from '@assets/certs';
+import {
+  Section,
+  SectionDescription,
   SectionTitle,
-  TechCard,
-  TechIcon,
-  TechList,
-  TechName,
-  TechStackSection,
-  TextContent,
-} from '@styles/TechStackStyles';
+} from '@components/section/Section';
+import { ScrollAnimation } from '@styles/AnimationStyles';
+import { TechList } from '@styles/TechStackStyles';
 import React from 'react';
 import { FaJava } from 'react-icons/fa';
 import {
@@ -27,8 +30,11 @@ import {
   SiSpring,
 } from 'react-icons/si';
 
+import CertBadge from './CertBadge';
+import TechCard from './TechCard';
+
 function TechStack() {
-  const techs = [
+  const javaTechs = [
     {
       name: 'Java',
       icon: <FaJava />,
@@ -47,6 +53,24 @@ function TechStack() {
       color: '#6DB33F',
       url: 'https://www.notion.so/hyeongjun-dev/Spring-Framework-1a29683271d08195b194d2f0e0e2480e?pvs=4',
     },
+  ];
+
+  const pythonTechs = [
+    {
+      name: 'Python',
+      icon: <SiPython />,
+      color: '#3776AB',
+      url: 'https://www.notion.so/hyeongjun-dev/Python-1a09683271d0818b84c3c1e279d6f1cb?pvs=4',
+    },
+    {
+      name: 'Django',
+      icon: <SiDjango />,
+      color: '#092E20',
+      url: 'https://www.notion.so/hyeongjun-dev/Django-1a39683271d081f49c00e66ff9ab724a?pvs=4',
+    },
+  ];
+
+  const dataTechs = [
     {
       name: 'MySQL',
       icon: <SiMysql />,
@@ -72,6 +96,12 @@ function TechStack() {
       url: 'https://www.notion.so/hyeongjun-dev/MongoDB-1a29683271d08141a44ae86ad5106d7f?pvs=4',
     },
     {
+      name: 'InfluxDB',
+      icon: <SiInfluxdb />,
+      color: '#22ADF6',
+      url: '',
+    },
+    {
       name: 'Kafka',
       icon: <SiApachekafka />,
       color: '#231F20',
@@ -89,6 +119,9 @@ function TechStack() {
       color: '#E25A1C',
       url: 'https://www.notion.so/hyeongjun-dev/Spark-1a39683271d081febe69c27936df777e?pvs=4',
     },
+  ];
+
+  const infraTechs = [
     {
       name: 'Docker',
       icon: <SiDocker />,
@@ -101,44 +134,63 @@ function TechStack() {
       color: '#FF9900',
       url: 'https://www.notion.so/hyeongjun-dev/AWS-1a39683271d081d48736d004732c9c3e?pvs=4',
     },
-    {
-      name: 'Python',
-      icon: <SiPython />,
-      color: '#3776AB',
-      url: 'https://www.notion.so/hyeongjun-dev/Python-1a09683271d0818b84c3c1e279d6f1cb?pvs=4',
-    },
-    {
-      name: 'Django',
-      icon: <SiDjango />,
-      color: '#092E20',
-      url: 'https://www.notion.so/hyeongjun-dev/Django-1a39683271d081f49c00e66ff9ab724a?pvs=4',
-    },
-    { name: 'InfluxDB', icon: <SiInfluxdb />, color: '#22ADF6', url: '' },
   ];
 
+  const infraCerts = [awsCloudComputing101Badge, awsCloudEssentialsBadge];
+
+  const certBadges = [githubBadge, hsatBadge];
+
   return (
-    <TechStackSection id="tech-stack">
+    <Section id="tech-stack">
       <ScrollAnimation>
         <SectionTitle>Skills</SectionTitle>
       </ScrollAnimation>
       <ScrollAnimation delay={0.15}>
-        <TextContent></TextContent>
+        <SectionDescription></SectionDescription>
       </ScrollAnimation>
       <ScrollAnimation>
         <TechList>
-          {techs.map((tech, index) => (
+          {javaTechs.map((tech, index) => (
             <ScrollAnimation key={index} delay={0.3} margin="0px">
-              <a href={tech.url} target="_blank" rel="noopener noreferrer">
-                <TechCard>
-                  <TechIcon style={{ color: tech.color }}>{tech.icon}</TechIcon>
-                  <TechName>{tech.name}</TechName>
-                </TechCard>
-              </a>
+              <TechCard icon={tech.icon} name={tech.name} url={tech.url} />
+            </ScrollAnimation>
+          ))}
+        </TechList>
+        <TechList>
+          {pythonTechs.map((tech, index) => (
+            <ScrollAnimation key={index} delay={0.3} margin="0px">
+              <TechCard icon={tech.icon} name={tech.name} url={tech.url} />
+            </ScrollAnimation>
+          ))}
+        </TechList>
+        <TechList>
+          {dataTechs.map((tech, index) => (
+            <ScrollAnimation key={index} delay={0.3} margin="0px">
+              <TechCard icon={tech.icon} name={tech.name} url={tech.url} />
+            </ScrollAnimation>
+          ))}
+        </TechList>
+        <TechList>
+          {infraTechs.map((tech, index) => (
+            <ScrollAnimation key={index} delay={0.3} margin="0px">
+              <TechCard icon={tech.icon} name={tech.name} url={tech.url} />
+            </ScrollAnimation>
+          ))}
+          {infraCerts.map((cert, idx) => (
+            <ScrollAnimation key={`cert-badge-${idx}`} delay={0.3} margin="0px">
+              <CertBadge img={cert.img} url={cert.url} alt="cert badge" />
+            </ScrollAnimation>
+          ))}
+        </TechList>
+        <TechList>
+          {certBadges.map((cert, idx) => (
+            <ScrollAnimation key={`cert-badge-${idx}`} delay={0.3} margin="0px">
+              <CertBadge img={cert.img} url={cert.url} alt="cert badge" />
             </ScrollAnimation>
           ))}
         </TechList>
       </ScrollAnimation>
-    </TechStackSection>
+    </Section>
   );
 }
 

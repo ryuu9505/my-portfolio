@@ -1,35 +1,5 @@
 import styled from 'styled-components';
 
-export const TechStackSection = styled.section`
-  width: 100%;
-  padding: 0px 20px;
-  padding-top: 80px;
-  padding-bottom: 240px;
-  background-color: white;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.textLight};
-  overflow: hidden;
-`;
-
-export const SectionTitle = styled.h2`
-  font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.textLight};
-  margin-bottom: 0px;
-`;
-
-export const TextContent = styled.div`
-  margin-top: 0px;
-  font-size: 1.6rem;
-  line-height: 1.2;
-  font-weight: 200;
-  color: ${({ theme }) => theme.colors.secondary};
-  margin-bottom: 0px;
-
-  @media (max-width: 480px) {
-    font-size: 1.1rem;
-  }
-`;
-
 export const TechList = styled.div`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 150px));
@@ -85,40 +55,5 @@ export const TechName = styled.h3`
 
   @media (max-width: 480px) {
     font-size: 0.7rem;
-  }
-`;
-
-export const CertList = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0px;
-  margin-top: 36px;
-  margin-bottom: 0px;
-  flex-wrap: wrap;
-
-  @media (max-width: 600px) {
-    gap: 0px;
-    margin-top: 20px;
-  }
-`;
-
-export const CertBadge = styled.img`
-  height: 150px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 12px;
-  background: #fff;
-  padding: 4px 8px;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-10px);
-  }
-
-  @media (max-width: 480px) {
-    height: 100px;
-    padding: 2px 4px;
   }
 `;

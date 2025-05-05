@@ -4,8 +4,13 @@ import {
   prismSpeechBubble,
   prismTicket,
 } from '@assets/images';
-import HoverImage from '@components/common/HoverImage';
-import ScrollAnimation from '@components/common/ScrollAnimation';
+import HoverImage from '@components/HoverImage';
+import {
+  Section,
+  SectionDescription,
+  SectionTitle,
+} from '@components/section/Section';
+import { ScrollAnimation } from '@styles/AnimationStyles';
 import {
   Period,
   ProjectCard,
@@ -13,10 +18,7 @@ import {
   ProjectDescription,
   ProjectImageContainer,
   ProjectList,
-  ProjectsSection,
   ProjectTitle,
-  SectionTitle,
-  TextContent,
 } from '@styles/ProjectsStyles';
 import React from 'react';
 
@@ -105,12 +107,12 @@ const projects = [
 
 function Projects() {
   return (
-    <ProjectsSection id="projects">
+    <Section id="projects">
       <ScrollAnimation>
         <SectionTitle>Projects</SectionTitle>
       </ScrollAnimation>
       <ScrollAnimation delay={0.15}>
-        <TextContent></TextContent>
+        <SectionDescription></SectionDescription>
       </ScrollAnimation>
       <ProjectList>
         {projects.map((project, index) => (
@@ -133,7 +135,7 @@ function Projects() {
           </ProjectCard>
         ))}
       </ProjectList>
-    </ProjectsSection>
+    </Section>
   );
 }
 

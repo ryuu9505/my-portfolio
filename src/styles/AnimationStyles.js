@@ -1,5 +1,22 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import styled, { keyframes } from 'styled-components';
+
+const pulse = keyframes`
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.10);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
+
+export const PulseAnimation = styled.div`
+  animation: ${pulse} 2s infinite;
+`;
 
 // 기본 애니메이션 변형
 const defaultVariants = {
@@ -17,8 +34,7 @@ const defaultVariants = {
   },
 };
 
-// 스크롤 애니메이션 컴포넌트
-const ScrollAnimation = ({
+export const ScrollAnimation = ({
   children,
   variants = defaultVariants,
   delay = 0,
@@ -51,5 +67,3 @@ const ScrollAnimation = ({
     </motion.div>
   );
 };
-
-export default ScrollAnimation;

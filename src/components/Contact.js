@@ -1,4 +1,4 @@
-import ScrollAnimation from '@components/common/ScrollAnimation';
+import { ScrollAnimation } from '@styles/AnimationStyles';
 import {
   ContactSection,
   SectionTitle,

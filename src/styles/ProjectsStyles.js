@@ -1,33 +1,5 @@
 import styled from 'styled-components';
 
-export const ProjectsSection = styled.section`
-  width: 100%;
-  padding: 0px 20px;
-  padding-top: 80px;
-  padding-bottom: 240px;
-  text-align: center;
-  overflow: hidden; // 애니메이션 중 오버플로우 방지
-`;
-
-export const SectionTitle = styled.h2`
-  font-size: 2.5rem;
-  color: ${({ theme }) => theme.colors.textLight};
-  margin-bottom: 00px;
-`;
-
-export const TextContent = styled.div`
-  margin-top: 0px;
-  font-size: 1.6rem;
-  line-height: 1.2;
-  font-weight: 200;
-  color: ${({ theme }) => theme.colors.secondary};
-  margin-bottom: 0px;
-
-  @media (max-width: 480px) {
-    font-size: 1.1rem;
-  }
-`;
-
 export const ProjectList = styled.div`
   margin-top: 50px;
   display: grid;

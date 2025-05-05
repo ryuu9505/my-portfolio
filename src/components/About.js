@@ -1,11 +1,7 @@
-import { profilePic } from '@assets/images'; // 프로필 사진 추가
-import ScrollAnimation from '@components/common/ScrollAnimation';
-import {
-  AboutContent,
-  AboutSection,
-  ProfileImage,
-  TextContent,
-} from '@styles/AboutStyles';
+import { profilePic } from '@assets/images';
+import { AboutContent, AboutSection, TextContent } from '@styles/AboutStyles';
+import { PulseAnimation, ScrollAnimation } from '@styles/AnimationStyles';
+import { RoundedImage } from '@styles/ImageStyles';
 import React from 'react';
 
 function About() {
@@ -13,7 +9,9 @@ function About() {
     <AboutSection id="about">
       <AboutContent>
         <ScrollAnimation delay={0.2}>
-          <ProfileImage src={profilePic} alt="Profile" />
+          <PulseAnimation>
+            <RoundedImage src={profilePic} alt="Profile" />
+          </PulseAnimation>
         </ScrollAnimation>
 
         <ScrollAnimation delay={0.4}>

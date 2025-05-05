@@ -1,22 +1,18 @@
 import { inhaLogo, neubilityLogo, ssafyLogo } from '@assets/logos';
-import ScrollAnimation from '@components/common/ScrollAnimation';
+import { Section, SectionTitle } from '@components/section/Section';
+import { ScrollAnimation } from '@styles/AnimationStyles';
 import {
+  CardList,
   CompanyLogo,
-  Container,
   ContentWrapper,
   HistoryCard,
   HistoryDescription,
-  HistoryList,
   HistoryPeriod,
-  HistorySection,
   HistoryTitle,
   Position,
-  TextContent,
-  TimelineItem,
-  Title,
   TitleWrapper,
 } from '@styles/HistoryStyles';
-import { motion } from 'framer-motion';
+import { Container } from '@styles/SectionStyles';
 import React from 'react';
 
 const historyData = [
@@ -48,35 +44,28 @@ const historyData = [
 
 const History = () => {
   return (
-    <HistorySection id="history">
-      <Container>
-        <ScrollAnimation>
-          <Title>History</Title>
-        </ScrollAnimation>
-        <ScrollAnimation delay={0.15}>
-          <TextContent></TextContent>
-        </ScrollAnimation>
-        <HistoryList>
-          {historyData.map((item, index) => (
-            <ScrollAnimation key={item.id} delay={0.3}>
-              <TimelineItem as={motion.div}>
-                <HistoryCard>
-                  <CompanyLogo src={item.logo} alt={item.company} />
-                  <ContentWrapper>
-                    <TitleWrapper>
-                      <HistoryTitle>{item.company}</HistoryTitle>
-                      <Position>{item.position}</Position>
-                    </TitleWrapper>
-                    <HistoryDescription>{item.description}</HistoryDescription>
-                    <HistoryPeriod>{item.period}</HistoryPeriod>
-                  </ContentWrapper>
-                </HistoryCard>
-              </TimelineItem>
-            </ScrollAnimation>
-          ))}
-        </HistoryList>
-      </Container>
-    </HistorySection>
+    <Section id="history">
+      <SectionTitle>
+        <ScrollAnimation>History</ScrollAnimation>
+      </SectionTitle>
+      <CardList>
+        {historyData.map((item, index) => (
+          <ScrollAnimation key={item.id} delay={0.3}>
+            <HistoryCard>
+              <CompanyLogo src={item.logo} alt={item.company} />
+              <ContentWrapper>
+                <TitleWrapper>
+                  <HistoryTitle>{item.company}</HistoryTitle>
+                  <Position>{item.position}</Position>
+                </TitleWrapper>
+                <HistoryDescription>{item.description}</HistoryDescription>
+                <HistoryPeriod>{item.period}</HistoryPeriod>
+              </ContentWrapper>
+            </HistoryCard>
+          </ScrollAnimation>
+        ))}
+      </CardList>
+    </Section>
   );
 };
 

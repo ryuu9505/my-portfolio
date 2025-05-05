@@ -3,7 +3,7 @@ import {
   githubBadge,
   hsatBadge,
 } from '@assets/certs';
-import HoverImage from '@components/common/HoverImage';
+import HoverImage from '@components/HoverImage';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
