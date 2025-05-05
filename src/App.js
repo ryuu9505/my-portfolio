@@ -1,9 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from './styles/GlobalStyle';
-import theme from './styles/theme';
+import GlobalStyle from '@styles/GlobalStyle';
+import theme from '@styles/theme';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import InfoPage from './pages/InfoPage';
+import InfoPage from '@pages/InfoPage';
 
 function App() {
   return (

@@ -1,12 +1,12 @@
 import React from 'react';
-import ScrollAnimation from './common/ScrollAnimation';
+import ScrollAnimation from '@components/common/ScrollAnimation';
 import {
   AboutSection,
   AboutContent,
   ProfileImage,
   TextContent,
-} from '../styles/AboutStyles';
-import { profilePic } from '../assets/images'; // 프로필 사진 추가
+} from '@styles/AboutStyles';
+import { profilePic } from '@assets/images'; // 프로필 사진 추가
 
 function About() {
   return (

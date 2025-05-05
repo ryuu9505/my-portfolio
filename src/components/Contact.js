@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrollAnimation from './common/ScrollAnimation';
+import ScrollAnimation from '@components/common/ScrollAnimation';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { SiTistory } from 'react-icons/si';
 import {
@@ -7,7 +7,7 @@ import {
   SectionTitle,
   SocialLinks,
   SocialIcon,
-} from '../styles/ContactStyles';
+} from '@styles/ContactStyles';
 
 function Contact() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderContainer, NavMenu, NavLink } from '../styles/HeaderStyles';
+import { HeaderContainer, NavMenu, NavLink } from '@styles/HeaderStyles';
 import { Link } from 'react-scroll';
 
 function Header() {
