@@ -1,9 +1,8 @@
+import { inhaLogo, neubilityLogo, ssafyLogo } from '@assets/logos';
+import ScrollAnimation from '@components/common/ScrollAnimation';
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
-
-import { inhaLogo, neubilityLogo, ssafyLogo } from '../assets/logos';
-import ScrollAnimation from './common/ScrollAnimation';
 
 const HistorySection = styled.section`
   padding: 80px 0 240px;

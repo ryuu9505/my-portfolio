@@ -1,3 +1,13 @@
+import ScrollAnimation from '@components/common/ScrollAnimation';
+import {
+  SectionTitle,
+  TechCard,
+  TechIcon,
+  TechList,
+  TechName,
+  TechStackSection,
+  TextContent,
+} from '@styles/TechStackStyles';
 import React from 'react';
 import { FaJava } from 'react-icons/fa';
 import {
@@ -16,17 +26,6 @@ import {
   SiRedis,
   SiSpring,
 } from 'react-icons/si';
-
-import {
-  SectionTitle,
-  TechCard,
-  TechIcon,
-  TechList,
-  TechName,
-  TechStackSection,
-  TextContent,
-} from '../styles/TechStackStyles';
-import ScrollAnimation from './common/ScrollAnimation';
 
 function TechStack() {
   const techs = [

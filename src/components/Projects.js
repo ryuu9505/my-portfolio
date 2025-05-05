@@ -1,11 +1,11 @@
-import React from 'react';
-
 import {
   prismBabyBottle,
   prismDeliveryRobot,
   prismSpeechBubble,
   prismTicket,
-} from '../assets/images';
+} from '@assets/images';
+import HoverImage from '@components/common/HoverImage';
+import ScrollAnimation from '@components/common/ScrollAnimation';
 import {
   Period,
   ProjectCard,
@@ -17,9 +17,8 @@ import {
   ProjectTitle,
   SectionTitle,
   TextContent,
-} from '../styles/ProjectsStyles';
-import HoverImage from './common/HoverImage';
-import ScrollAnimation from './common/ScrollAnimation';
+} from '@styles/ProjectsStyles';
+import React from 'react';
 
 const projects = [
   {

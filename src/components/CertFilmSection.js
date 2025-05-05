@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
-
 import {
   awsCloudComputing101Badge,
   githubBadge,
   hsatBadge,
-} from '../assets/certs';
-import HoverImage from './common/HoverImage';
+} from '@assets/certs';
+import HoverImage from '@components/common/HoverImage';
+import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 
 const images = [
   {

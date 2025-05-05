@@ -1,7 +1,6 @@
+import HoverImage from '@components/common/HoverImage';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-
-import HoverImage from './common/HoverImage';
 
 const images = [
   {
