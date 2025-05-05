@@ -1,10 +1,10 @@
 export const awsCloudComputing101Badge = {
   img: 'https://imgur.com/Q0BHBJf.png',
-  url: 'https://www.credly.com/badges/76477d73-efad-4c3e-b7e7-56eb8e688798/public_url',
+  url: 'https://www.credly.com/badges/d857e697-2077-47f5-b021-093c6bb46b07/public_url',
 };
 export const awsCloudEssentialsBadge = {
   img: 'https://imgur.com/nTwP9VH.png',
-  url: 'https://www.credly.com/badges/d857e697-2077-47f5-b021-093c6bb46b07/public_url',
+  url: 'https://www.credly.com/badges/d8c803f7-011d-4b88-8216-744bbcdb67db/public_url',
 };
 export const githubBadge = {
   img: 'https://imgur.com/OJYd4qa.png',
