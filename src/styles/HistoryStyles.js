@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-export const CardList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  max-width: 600px;
-  margin: 0 auto;
-
-  @media (max-width: 480px) {
-    gap: 12px;
-  }
-`;
-
 export const HistoryCard = styled.div`
   display: flex;
   align-items: center;
@@ -30,19 +18,6 @@ export const HistoryCard = styled.div`
 
   @media (max-width: 480px) {
     padding: 20px;
-  }
-`;
-
-export const CompanyLogo = styled.img`
-  width: 88px;
-  height: 88px;
-  object-fit: contain;
-  margin-right: 30px;
-
-  @media (max-width: 480px) {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
   }
 `;
 

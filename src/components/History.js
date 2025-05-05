@@ -1,9 +1,8 @@
 import { inhaLogo, neubilityLogo, ssafyLogo } from '@assets/logos';
 import { Section, SectionTitle } from '@components/section/Section';
 import { ScrollAnimation } from '@styles/AnimationStyles';
+import { CardList } from '@styles/CommonStyles';
 import {
-  CardList,
-  CompanyLogo,
   ContentWrapper,
   HistoryCard,
   HistoryDescription,
@@ -12,7 +11,7 @@ import {
   Position,
   TitleWrapper,
 } from '@styles/HistoryStyles';
-import { Container } from '@styles/SectionStyles';
+import { SquareImage } from '@styles/ImageStyles';
 import React from 'react';
 
 const historyData = [
@@ -52,7 +51,7 @@ const History = () => {
         {historyData.map((item, index) => (
           <ScrollAnimation key={item.id} delay={0.3}>
             <HistoryCard>
-              <CompanyLogo src={item.logo} alt={item.company} />
+              <SquareImage src={item.logo} alt={item.company} />
               <ContentWrapper>
                 <TitleWrapper>
                   <HistoryTitle>{item.company}</HistoryTitle>

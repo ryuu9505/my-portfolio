@@ -117,6 +117,18 @@ export const Button = styled.button`
   }
 `;
 
+export const CardList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 600px;
+  margin: 0 auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    max-width: ${({ theme }) => theme.breakpoints.mobile} - 20px;
+  }
+`;
+
 const CommonStyles = {
   Section,
   SectionTitle,
@@ -128,6 +140,7 @@ const CommonStyles = {
   Container,
   ResponsiveImage,
   Button,
+  CardList,
 };
 
 export default CommonStyles;
