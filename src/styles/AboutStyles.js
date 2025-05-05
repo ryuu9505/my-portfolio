@@ -6,7 +6,7 @@ export const AboutSection = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;  // 중앙 정렬
+  justify-content: center; // 중앙 정렬
   padding: 120px 20px;
   background-color: ${({ theme }) => theme.colors.backgroundDark}; // 검정 배경
   color: ${({ theme }) => theme.colors.textDark}; // 밝은 텍스트 색상
@@ -41,11 +41,11 @@ const pulse = keyframes`
 
 // 프로필 이미지 스타일
 export const ProfileImage = styled.img`
-  width: 200px;  // 이미지 크기 설정
+  width: 200px; // 이미지 크기 설정
   height: 200px;
-  border-radius: 50%;  // 원형 이미지
+  border-radius: 50%; // 원형 이미지
   object-fit: cover;
-  margin: 0;  // 가운데 정렬을 위해 여백 제거
+  margin: 0; // 가운데 정렬을 위해 여백 제거
   animation: ${pulse} 2s infinite; /* 애니메이션 적용 */
 `;
 
@@ -53,7 +53,7 @@ export const ProfileImage = styled.img`
 export const TextContent = styled.div`
   max-width: 600px;
   margin-top: 10px;
-  
+
   h2 {
     font-size: 2.5rem;
     color: ${({ theme }) => theme.colors.textDark};
@@ -65,7 +65,7 @@ export const TextContent = styled.div`
     line-height: 1.2;
     color: ${({ theme }) => theme.colors.textDark};
   }
-    
+
   small {
     margin-top: 40px;
     font-size: 1.2rem;

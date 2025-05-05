@@ -4,7 +4,8 @@ import styled from 'styled-components';
 const Section = styled.section`
   width: 100%;
   padding: 80px 20px 240px 20px;
-  background: ${({ background, theme }) => background || theme.colors.background};
+  background: ${({ background, theme }) =>
+    background || theme.colors.background};
   text-align: center;
   color: ${({ color, theme }) => color || theme.colors.textLight};
   overflow: hidden;
@@ -43,4 +44,4 @@ const SectionLayout = ({
   </Section>
 );
 
-export default SectionLayout; 
+export default SectionLayout;

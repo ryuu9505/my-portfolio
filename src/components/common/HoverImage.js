@@ -15,7 +15,9 @@ const BaseImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.4s, transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  transition:
+    opacity 0.4s,
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 const Overlay = styled.div`
@@ -29,9 +31,9 @@ const Overlay = styled.div`
   transition: opacity 0.4s;
   background: radial-gradient(
     circle,
-    rgba(0,0,0,0.18) 0%,
-    rgba(0,0,0,0.28) 55%,
-    rgba(0,0,0,0.55) 100%
+    rgba(0, 0, 0, 0.18) 0%,
+    rgba(0, 0, 0, 0.28) 55%,
+    rgba(0, 0, 0, 0.55) 100%
   );
   z-index: 1;
 `;
@@ -48,13 +50,16 @@ const ActionButton = styled.button`
   font-family: inherit;
   border: none;
   border-radius: 999px;
-  background: rgba(255,255,255,0.92);
+  background: rgba(255, 255, 255, 0.92);
   color: #222;
   letter-spacing: 0.02em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   pointer-events: none;
-  transition: opacity 0.4s, transform 0.4s, box-shadow 0.2s;
+  transition:
+    opacity 0.4s,
+    transform 0.4s,
+    box-shadow 0.2s;
   z-index: 3;
   ${({ isHovered }) =>
     isHovered &&
@@ -103,4 +108,4 @@ const HoverImage = ({
   );
 };
 
-export default HoverImage; 
+export default HoverImage;

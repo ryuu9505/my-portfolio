@@ -1,8 +1,12 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import HoverImage from './common/HoverImage';
-import { githubBadge, awsCloudComputing101Badge, hsatBadge } from "../assets/certs";
 
+import {
+  awsCloudComputing101Badge,
+  githubBadge,
+  hsatBadge,
+} from '../assets/certs';
+import HoverImage from './common/HoverImage';
 
 const images = [
   {
@@ -71,9 +75,9 @@ const CertFilmSection = () => {
       const delta = (now - lastTimeRef.current) / 1000;
       lastTimeRef.current = now;
       const speed = slow ? SLOW_SPEED : NORMAL_SPEED;
-      setOffset(prev => {
+      setOffset((prev) => {
         let next = prev + speed * delta;
-        return next %= FILM_WIDTH;
+        return (next %= FILM_WIDTH);
       });
       reqRef.current = requestAnimationFrame(animate);
     };
@@ -105,4 +109,4 @@ const CertFilmSection = () => {
   );
 };
 
-export default CertFilmSection; 
+export default CertFilmSection;

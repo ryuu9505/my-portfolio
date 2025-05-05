@@ -1,12 +1,12 @@
-import React from 'react';
-import Header from '@components/Header';
 import About from '@components/About';
-import History from '@components/History';
-import TechStack from '@components/TechStack';
-import Projects from '@components/Projects';
 import Contact from '@components/Contact';
 import FilmSection from '@components/FilmSection';
+import Header from '@components/Header';
+import History from '@components/History';
+import Projects from '@components/Projects';
+import TechStack from '@components/TechStack';
 import { WhiteSpace } from '@styles/CommonStyles';
+import React from 'react';
 
 export default function InfoPage() {
   return (
@@ -23,4 +23,4 @@ export default function InfoPage() {
       <Contact />
     </>
   );
-} 
+}

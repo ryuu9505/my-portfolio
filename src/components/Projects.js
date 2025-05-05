@@ -1,24 +1,25 @@
 import React from 'react';
-import ScrollAnimation from './common/ScrollAnimation';
-import HoverImage from './common/HoverImage';
-import {
-  ProjectsSection,
-  SectionTitle,
-  TextContent,
-  ProjectList,
-  ProjectCard,
-  ProjectImageContainer,
-  ProjectContent,
-  ProjectDescription,
-  ProjectTitle,
-  Period,
-} from '../styles/ProjectsStyles';
+
 import {
   prismBabyBottle,
   prismDeliveryRobot,
-  prismTicket,
   prismSpeechBubble,
+  prismTicket,
 } from '../assets/images';
+import {
+  Period,
+  ProjectCard,
+  ProjectContent,
+  ProjectDescription,
+  ProjectImageContainer,
+  ProjectList,
+  ProjectsSection,
+  ProjectTitle,
+  SectionTitle,
+  TextContent,
+} from '../styles/ProjectsStyles';
+import HoverImage from './common/HoverImage';
+import ScrollAnimation from './common/ScrollAnimation';
 
 const projects = [
   {
@@ -27,10 +28,15 @@ const projects = [
     period: '2025.02 ~ 진행 중',
     imageUrl: prismDeliveryRobot,
     githubUrl: 'https://github.com/',
-    notionUrl: 'https://www.notion.so/hyeongjun-dev/1a39683271d08049b1c8d53f1e0ef7c5?pvs=4',
-    domainUrl: 'https://www.notion.so/hyeongjun-dev/1a39683271d08049b1c8d53f1e0ef7c5?pvs=4',
+    notionUrl:
+      'https://www.notion.so/hyeongjun-dev/1a39683271d08049b1c8d53f1e0ef7c5?pvs=4',
+    domainUrl:
+      'https://www.notion.so/hyeongjun-dev/1a39683271d08049b1c8d53f1e0ef7c5?pvs=4',
     tags: [
-      { name: '기술 전환', url: 'https://www.notion.so/hyeongjun-dev/1b79683271d080e38e8ef91f186574c6?pvs=4' },
+      {
+        name: '기술 전환',
+        url: 'https://www.notion.so/hyeongjun-dev/1b79683271d080e38e8ef91f186574c6?pvs=4',
+      },
     ],
   },
   {
@@ -39,11 +45,19 @@ const projects = [
     period: '2024.09 ~ 2024.10',
     imageUrl: prismTicket,
     githubUrl: 'https://github.com/buffthis',
-    notionUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4',
-    domainUrl: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4',
+    notionUrl:
+      'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4',
+    domainUrl:
+      'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4',
     tags: [
-      { name: '채팅', url: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4' },
-      { name: '예매', url: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4' },
+      {
+        name: '채팅',
+        url: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4',
+      },
+      {
+        name: '예매',
+        url: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4',
+      },
     ],
   },
   {
@@ -52,11 +66,19 @@ const projects = [
     period: '2024.08 ~ 2024.09',
     imageUrl: prismSpeechBubble,
     githubUrl: 'https://github.com/buffthis',
-    notionUrl: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4',
-    domainUrl: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4',
+    notionUrl:
+      'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4',
+    domainUrl:
+      'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4',
     tags: [
-      { name: '채팅', url: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4' },
-      { name: '예매', url: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4' },
+      {
+        name: '채팅',
+        url: 'https://www.notion.so/hyeongjun-dev/1b79683271d0805da931f7860644da82?pvs=4',
+      },
+      {
+        name: '예매',
+        url: 'https://www.notion.so/hyeongjun-dev/1a09683271d080e1ba81f9aed75e25f4?pvs=4',
+      },
     ],
   },
   {
@@ -65,11 +87,19 @@ const projects = [
     period: '2024.02 ~ 2024.04',
     imageUrl: prismBabyBottle,
     githubUrl: 'https://github.com/samsungacademy/kkoma',
-    notionUrl: 'https://www.notion.so/hyeongjun-dev/1e19683271d080acb379fe9d4fa25177?pvs=4',
-    domainUrl: 'https://www.notion.so/hyeongjun-dev/1e19683271d080acb379fe9d4fa25177?pvs=4',
+    notionUrl:
+      'https://www.notion.so/hyeongjun-dev/1e19683271d080acb379fe9d4fa25177?pvs=4',
+    domainUrl:
+      'https://www.notion.so/hyeongjun-dev/1e19683271d080acb379fe9d4fa25177?pvs=4',
     tags: [
-      { name: '빅데이터', url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080b38097d28e6bd9863d?pvs=4' },
-      { name: '추천', url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080959b45f2023f1dbf31?pvs=4' },
+      {
+        name: '빅데이터',
+        url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080b38097d28e6bd9863d?pvs=4',
+      },
+      {
+        name: '추천',
+        url: 'https://www.notion.so/hyeongjun-dev/1bb9683271d080959b45f2023f1dbf31?pvs=4',
+      },
     ],
   },
 ];
@@ -81,8 +111,7 @@ function Projects() {
         <SectionTitle>Projects</SectionTitle>
       </ScrollAnimation>
       <ScrollAnimation delay={0.15}>
-        <TextContent>
-        </TextContent>
+        <TextContent></TextContent>
       </ScrollAnimation>
       <ProjectList>
         {projects.map((project, index) => (

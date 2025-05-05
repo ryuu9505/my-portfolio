@@ -14,7 +14,8 @@ export const HistoryList = styled.div`
 
 export const HistoryCard = styled.div`
   width: 100%;
-  background: ${({ theme }) => theme.colors.card || theme.colors.backgroundLight};
+  background: ${({ theme }) =>
+    theme.colors.card || theme.colors.backgroundLight};
   border-radius: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -63,4 +64,4 @@ export const HistoryDescription = styled.p`
     font-size: 0.7rem;
     line-height: 1.3;
   }
-`; 
+`;

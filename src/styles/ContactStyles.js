@@ -4,10 +4,10 @@ import styled from 'styled-components';
 export const ContactSection = styled.section`
   width: 100%;
   padding: 240px 40px;
-//   background-image: url('/star-textures/Atmo_Fstar.png'); // 배경 이미지 경로 설정
-//   background-size: cover; // 배경 이미지가 섹션을 덮도록 설정
-//   background-position: center; // 배경 이미지 위치 조정
-//   background-repeat: no-repeat; // 배경 이미지가 반복되지 않도록 설정
+  //   background-image: url('/star-textures/Atmo_Fstar.png'); // 배경 이미지 경로 설정
+  //   background-size: cover; // 배경 이미지가 섹션을 덮도록 설정
+  //   background-position: center; // 배경 이미지 위치 조정
+  //   background-repeat: no-repeat; // 배경 이미지가 반복되지 않도록 설정
   background-color: ${({ theme }) => theme.colors.backgroundDark};
   color: ${({ theme }) => theme.colors.textDark};
   text-align: center;

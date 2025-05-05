@@ -6,7 +6,8 @@ export const ProjectsSection = styled.section`
   padding: 0px 20px;
   padding-top: 80px;
   padding-bottom: 240px;
-  background-color: white; // ${({ theme }) => theme.colors.background}; // 화이트 배경
+  background-color: white; // ${({ theme }) =>
+    theme.colors.background}; // 화이트 배경
   text-align: center;
   color: ${({ theme }) => theme.colors.textLight}; // 진한 그레이 텍스트 색상
   overflow: hidden; // 애니메이션 중 오버플로우 방지
@@ -21,16 +22,16 @@ export const SectionTitle = styled.h2`
 
 // 텍스트 컨텐츠 스타일
 export const TextContent = styled.div`
-    margin-top: 0px;
-    font-size: 1.6rem;
-    line-height: 1.2;
-    font-weight: 200;
-    color: ${({ theme }) => theme.colors.secondary};
-    margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-weight: 200;
+  color: ${({ theme }) => theme.colors.secondary};
+  margin-bottom: 0px;
 
-    @media (max-width: 480px) {
-      font-size: 1.1rem;
-    }
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 `;
 
 // 프로젝트 리스트 스타일
@@ -132,7 +133,7 @@ export const ProjectDomain = styled.a`
   }
 
   &:hover {
-    color: #000000
+    color: #000000;
   }
 `;
 
@@ -151,7 +152,7 @@ export const ProjectLink = styled.a`
   color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
   transition: all 0.3s ease;
-  
+
   @media (max-width: 480px) {
     font-size: 0.9rem;
   }

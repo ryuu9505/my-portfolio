@@ -4,7 +4,7 @@ const theme = {
     backgroundDark: '#000000',
     backgroundGradient: 'linear-gradient(135deg, #1C1C1E, #636366)',
     backgroundLight: '#FFFFFF',
-    
+
     text: '#333',
     textDark: '#FFFFFF',
     textLight: '#2A2A2A',

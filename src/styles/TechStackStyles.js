@@ -20,16 +20,16 @@ export const SectionTitle = styled.h2`
 
 // 텍스트 컨텐츠 스타일
 export const TextContent = styled.div`
-    margin-top: 0px;
-    font-size: 1.6rem;
-    line-height: 1.2;
-    font-weight: 200;
-    color: ${({ theme }) => theme.colors.secondary};
-    margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-weight: 200;
+  color: ${({ theme }) => theme.colors.secondary};
+  margin-bottom: 0px;
 
-    @media (max-width: 480px) {
-      font-size: 1.1rem;
-    }
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 `;
 
 // 기술 스택 리스트 스타일
@@ -85,7 +85,7 @@ export const TechIcon = styled.div`
 
 // 기술 이름 스타일
 export const TechName = styled.h3`
-  font-size: 1.0rem;
+  font-size: 1rem;
   font-weight: 100;
   color: ${({ theme }) => theme.colors.textLight};
 

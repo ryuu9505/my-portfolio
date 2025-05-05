@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: GCP-APPLE
-      
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -60,15 +60,15 @@ jobs:
             sudo mkdir -p /var/www/react-app
             sudo chown -R $USER:$USER /var/www/react-app
             sudo chmod -R 777 /var/www/react-app
-          
+
       - name: Upload Build Files to Instance
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.INSTANCE_IP }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "build/*"
-          target: "/var/www/react-app/"
+          source: 'build/*'
+          target: '/var/www/react-app/'
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@v1.0.3

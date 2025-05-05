@@ -5,7 +5,7 @@ export const Section = styled.section`
   width: 100%;
   padding: 80px 20px;
   background-color: white;
-  color: ${({ theme, dark }) => 
+  color: ${({ theme, dark }) =>
     dark ? theme.colors.textDark : theme.colors.textLight};
   overflow: hidden;
 `;
@@ -13,7 +13,7 @@ export const Section = styled.section`
 // 섹션 제목 스타일
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
-  color: ${({ theme, dark }) => 
+  color: ${({ theme, dark }) =>
     dark ? theme.colors.textDark : theme.colors.textLight};
   margin-bottom: 0px;
   text-align: center;
@@ -25,7 +25,7 @@ export const SectionDescription = styled.div`
   font-size: 1.6rem;
   line-height: 1.2;
   font-weight: 200;
-  color: ${({ theme, dark }) => 
+  color: ${({ theme, dark }) =>
     dark ? theme.colors.textDark : theme.colors.secondary};
   margin-bottom: 0px;
   text-align: center;
@@ -55,25 +55,32 @@ export const FlexContainer = styled.div`
 // 그리드 컨테이너
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: ${({ columns }) => columns || 'repeat(auto-fit, minmax(300px, 1fr))'};
+  grid-template-columns: ${({ columns }) =>
+    columns || 'repeat(auto-fit, minmax(300px, 1fr))'};
   gap: ${({ gap }) => gap || '20px'};
   width: 100%;
 `;
 
 // 카드 기본 스타일
 export const Card = styled.div`
-  background-color: ${({ theme, dark }) => 
+  background-color: ${({ theme, dark }) =>
     dark ? theme.colors.backgroundDark : theme.colors.backgroundLight};
   border-radius: ${({ radius }) => radius || '0'};
   overflow: hidden;
-  box-shadow: ${({ elevation }) => 
-    elevation ? `0 ${elevation * 2}px ${elevation * 4}px rgba(0, 0, 0, 0.1)` : 'none'};
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+  box-shadow: ${({ elevation }) =>
+    elevation
+      ? `0 ${elevation * 2}px ${elevation * 4}px rgba(0, 0, 0, 0.1)`
+      : 'none'};
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
   &:hover {
-    transform: ${({ hover }) => hover ? 'translateY(-5px)' : 'none'};
-    box-shadow: ${({ hover, elevation }) => 
-      hover && elevation ? `0 ${elevation * 3}px ${elevation * 6}px rgba(0, 0, 0, 0.15)` : 'none'};
+    transform: ${({ hover }) => (hover ? 'translateY(-5px)' : 'none')};
+    box-shadow: ${({ hover, elevation }) =>
+      hover && elevation
+        ? `0 ${elevation * 3}px ${elevation * 6}px rgba(0, 0, 0, 0.15)`
+        : 'none'};
   }
 `;
 
@@ -100,21 +107,21 @@ export const Button = styled.button`
   font-weight: 400;
   border: none;
   border-radius: 999px;
-  background: ${({ theme, variant }) => 
-    variant === 'secondary' 
-      ? theme.colors.secondary 
-      : variant === 'accent' 
-        ? theme.colors.accent 
+  background: ${({ theme, variant }) =>
+    variant === 'secondary'
+      ? theme.colors.secondary
+      : variant === 'accent'
+        ? theme.colors.accent
         : theme.colors.primary};
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -130,7 +137,7 @@ const CommonStyles = {
   Card,
   Container,
   ResponsiveImage,
-  Button
+  Button,
 };
 
-export default CommonStyles; 
+export default CommonStyles;

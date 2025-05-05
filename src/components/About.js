@@ -1,12 +1,12 @@
-import React from 'react';
+import { profilePic } from '@assets/images'; // 프로필 사진 추가
 import ScrollAnimation from '@components/common/ScrollAnimation';
 import {
-  AboutSection,
   AboutContent,
+  AboutSection,
   ProfileImage,
   TextContent,
 } from '@styles/AboutStyles';
-import { profilePic } from '@assets/images'; // 프로필 사진 추가
+import React from 'react';
 
 function About() {
   return (
@@ -15,15 +15,13 @@ function About() {
         <ScrollAnimation delay={0.2}>
           <ProfileImage src={profilePic} alt="Profile" />
         </ScrollAnimation>
-        
+
         <ScrollAnimation delay={0.4}>
           <TextContent>
-            <p>
-              조형준
-            </p>
+            <p>조형준</p>
           </TextContent>
         </ScrollAnimation>
-        
+
         <ScrollAnimation delay={0.6}>
           <TextContent>
             <small>Backend Engineer | Data Engineer</small>
