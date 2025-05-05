@@ -1,4 +1,4 @@
-import { HeaderContainer, NavLink,NavMenu } from '@styles/HeaderStyles';
+import { HeaderContainer, NavLink, NavMenu } from '@styles/HeaderStyles';
 import React from 'react';
 import { Link } from 'react-scroll';
 
