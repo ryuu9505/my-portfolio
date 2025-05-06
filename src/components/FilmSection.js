@@ -1,6 +1,8 @@
 import HoverImage from '@components/HoverImage';
-import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
+import { Section } from '@components/Section';
+import { useFilmAnimation } from '@styles/AnimationStyles';
+import { FilmTrack, ThumbnailWrapper } from '@styles/CommonStyles';
+import React, { useState } from 'react';
 
 const images = [
   {
@@ -21,54 +23,9 @@ const images = [
   },
 ];
 
-const Section = styled.section`
-  width: 100%;
-  background: #fff;
-  padding: 0;
-  overflow: hidden;
-`;
-
-const FilmTrack = styled.div`
-  display: flex;
-  width: calc(400px * 10);
-  will-change: transform;
-  transition: none;
-`;
-
-const ThumbnailWrapper = styled.div`
-  margin-right: 20px;
-  display: inline-block;
-  position: relative;
-  width: 400px;
-  height: 250px;
-  vertical-align: top;
-`;
-
-const FILM_WIDTH = (400 + 20) * images.length; // 한 세트의 전체 너비
-const NORMAL_SPEED = 60; // px per second
-const SLOW_SPEED = 30; // px per second
-
 const FilmSection = () => {
   const [slow, setSlow] = useState(false);
-  const [offset, setOffset] = useState(0);
-  const reqRef = useRef();
-  const lastTimeRef = useRef();
-
-  useEffect(() => {
-    const animate = (now) => {
-      if (!lastTimeRef.current) lastTimeRef.current = now;
-      const delta = (now - lastTimeRef.current) / 1000; // 초 단위
-      lastTimeRef.current = now;
-      const speed = slow ? SLOW_SPEED : NORMAL_SPEED;
-      setOffset((prev) => {
-        let next = prev + speed * delta;
-        return (next %= FILM_WIDTH);
-      });
-      reqRef.current = requestAnimationFrame(animate);
-    };
-    reqRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(reqRef.current);
-  }, [slow]);
+  const { offset } = useFilmAnimation(images.length, 400, 20, 60, 30, slow);
 
   const filmImages = [...images, ...images];
 

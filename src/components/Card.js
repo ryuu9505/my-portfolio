@@ -1,4 +1,16 @@
-import React from 'react';
+import Link from '@components/Link';
+import { StarRatingAnimation } from '@styles/AnimationStyles';
+import {
+  ContentWrapper,
+  HistoryCard,
+  HistoryDescription,
+  HistoryPeriod,
+  HistoryTitle,
+  Position,
+  TitleWrapper,
+} from '@styles/CommonStyles';
+import { SquareImage } from '@styles/ImageStyles';
+import React, { useState } from 'react';
 import { FaCertificate } from 'react-icons/fa';
 import styled from 'styled-components';
 
@@ -16,7 +28,7 @@ const StyledTechCard = styled.div`
   justify-content: center;
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
   }
 
   .tech-icon {
@@ -43,11 +55,36 @@ const StyledTechCard = styled.div`
   }
 `;
 
-export const TechCard = ({ icon, name }) => {
+export const TechCard = ({ icon, name, level }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <StyledTechCard>
+    <StyledTechCard
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ position: 'relative', overflow: 'visible' }}
+    >
       <span className="tech-icon">{icon}</span>
       <span className="tech-name">{name}</span>
+      <StarRatingAnimation
+        show={isHovered}
+        count={level}
+        size="0.6rem"
+        color="#FFD700"
+        animationDirection="y"
+        style={{
+          position: 'absolute',
+          left: '50%',
+          top: '100%',
+          transform: 'translateX(-50%)',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: 8,
+          pointerEvents: 'none',
+          zIndex: 3,
+        }}
+      />
     </StyledTechCard>
   );
 };
@@ -129,3 +166,34 @@ export const CertBadge = ({ img, url, alt = 'cert badge' }) => {
     </a>
   );
 };
+
+export function HistoryCardItem({
+  logo,
+  company,
+  position,
+  description,
+  period,
+  url,
+  miniCards = [],
+}) {
+  const [isHovered, setIsHovered] = React.useState(false);
+  return (
+    <Link url={url}>
+      <HistoryCard
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{ position: 'relative', overflow: 'visible' }}
+      >
+        <SquareImage src={logo} alt={company} />
+        <ContentWrapper>
+          <TitleWrapper>
+            <HistoryTitle>{company}</HistoryTitle>
+            <Position>{position}</Position>
+          </TitleWrapper>
+          <HistoryDescription>{description}</HistoryDescription>
+          <HistoryPeriod>{period}</HistoryPeriod>
+        </ContentWrapper>
+      </HistoryCard>
+    </Link>
+  );
+}
