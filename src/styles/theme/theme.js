@@ -1,13 +1,13 @@
 const theme = {
   colors: {
-    background: '#f4f4f4',
+    background: '#FFFFFF',
     backgroundDark: '#000000',
     backgroundGradient: 'linear-gradient(135deg, #1C1C1E, #636366)',
     backgroundLight: '#FFFFFF',
 
-    text: '#333',
+    text: '#000000',
     textDark: '#FFFFFF',
-    textLight: '#2A2A2A',
+    textLight: '#000000',
     iconLight: '#FFFFFF',
 
     primary: '#333333',

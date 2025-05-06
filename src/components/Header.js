@@ -17,7 +17,7 @@ function Header() {
           </Link>
         </NavLink>
         <NavLink>
-          <Link to="tech-stack" smooth={true} duration={500}>
+          <Link to="skills" smooth={true} duration={500}>
             Skills
           </Link>
         </NavLink>
