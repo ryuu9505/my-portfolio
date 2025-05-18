@@ -2,6 +2,7 @@ import {
   allTechGroups,
   certBadges,
   historyData,
+  posts,
   projects,
   socialData,
 } from '@assets/data';
@@ -128,6 +129,34 @@ export default function InfoPage() {
                   <ProjectTitle>{project.title}</ProjectTitle>
                   <ProjectDescription>{project.description}</ProjectDescription>
                   <Period>{project.period}</Period>
+                </ProjectContent>
+              </ScrollAnimation>
+            </ProjectCard>
+          ))}
+        </ProjectList>
+      </Section>
+
+      <WhiteSpace />
+
+      <Section id="posts">
+        <SectionTitle>
+          <ScrollAnimation>Posts</ScrollAnimation>
+        </SectionTitle>
+        <ProjectList>
+          {posts.map((post, index) => (
+            <ProjectCard key={index} width="200px">
+              <ScrollAnimation delay={0.3}>
+                <ProjectImageContainer>
+                  <HoverImage
+                    baseImage={post.imageUrl}
+                    alt={post.title}
+                    link={post.domainUrl}
+                    showButton={false}
+                  />
+                </ProjectImageContainer>
+                <ProjectContent>
+                  <ProjectTitle fontSize="1.0rem">{post.title}</ProjectTitle>
+                  <Period>{post.createdAt}</Period>
                 </ProjectContent>
               </ScrollAnimation>
             </ProjectCard>

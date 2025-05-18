@@ -231,11 +231,10 @@ export const HistoryPeriod = styled.span`
 
 export const ProjectList = styled.div`
   margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 350px));
-  gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  justify-items: center;
+  gap: 50px;
   width: 100%;
   max-width: 800px;
   margin-left: auto;
@@ -243,11 +242,9 @@ export const ProjectList = styled.div`
   perspective: 1000px;
 
   @media (max-width: 800px) {
-    grid-template-columns: 1fr;
     max-width: 350px;
   }
   @media (max-width: 480px) {
-    grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 30px;
     max-width: 95vw;
@@ -257,12 +254,12 @@ export const ProjectList = styled.div`
 export const ProjectCard = styled.div`
   background-color: ${({ theme }) => theme.colors.backgroundLight};
   border-radius: 0;
-  width: 350px;
+  width: ${({ width }) => width || '350px'};
   will-change: transform;
   backface-visibility: hidden;
 
   @media (max-width: 480px) {
-    width: 300px;
+    width: ${({ width }) => width * 0.8 || '300px'};
   }
 `;
 
@@ -285,25 +282,27 @@ export const ProjectContent = styled.div`
 `;
 
 export const ProjectTitle = styled.h3`
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: ${({ fontSize }) => fontSize || '1.6rem'};
+  font-weight: ${({ fontWeight }) => fontWeight || '700'};
   color: ${({ theme }) => theme.colors.primary};
   margin-top: 20px;
 
   @media (max-width: 480px) {
-    font-size: 1.3rem;
+    font-size: ${({ fontSize }) => fontSize * 0.8 || '1.3rem'};
+    font-weight: ${({ fontWeight }) => fontWeight * 0.8 || '560'};
     margin-top: 15px;
   }
 `;
 
 export const ProjectDescription = styled.p`
-  font-size: 1.4rem;
-  font-weight: 200;
+  font-size: ${({ fontSize }) => fontSize || '1.4rem'};
+  font-weight: ${({ fontWeight }) => fontWeight || '200'};
   color: ${({ theme }) => theme.colors.secondary};
   margin: 0;
 
   @media (max-width: 480px) {
-    font-size: 0.95rem;
+    font-size: ${({ fontSize }) => fontSize * 0.8 || '0.95rem'};
+    font-weight: ${({ fontWeight }) => fontWeight * 0.8 || '160'};
     margin: 2px 0;
   }
 `;
