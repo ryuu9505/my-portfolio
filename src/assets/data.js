@@ -24,11 +24,11 @@ import {
   hsatBadge,
 } from './certs';
 import {
+  post67,
   prismBabyBottle,
   prismDeliveryRobot,
   prismSpeechBubble,
   prismTicket,
-  profilePic,
 } from './images';
 import { inhaLogo, neubilityLogo, ssafyLogo } from './logos';
 
@@ -259,6 +259,16 @@ const socialData = [
   { id: 4, icon: 'tistory', href: 'https://shady-dev.tistory.com/' },
 ];
 
+const posts = [
+  {
+    title: '내 컴퓨터를 서버로 사용해보자',
+    description: 'Infrastructure',
+    imageUrl: post67,
+    domainUrl: 'https://shady-dev.tistory.com/67',
+    createdAt: '2024.08.12',
+  },
+];
+
 const allTechGroups = [
   javaTechs,
   pythonTechs,
@@ -276,6 +286,7 @@ export {
   infraTechs,
   javaTechs,
   nosqlTechs,
+  posts,
   projects,
   pythonTechs,
   rdbTechs,

@@ -33,6 +33,7 @@ const FilmSection = () => {
     <Section
       onMouseEnter={() => setSlow(true)}
       onMouseLeave={() => setSlow(false)}
+      padding="20px 20px 20px 20px"
     >
       <FilmTrack style={{ transform: `translateX(-${offset}px)` }}>
         {filmImages.map((img, idx) => (
