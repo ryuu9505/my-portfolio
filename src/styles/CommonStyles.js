@@ -231,11 +231,10 @@ export const HistoryPeriod = styled.span`
 
 export const ProjectList = styled.div`
   margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 350px));
-  gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  justify-items: center;
+  gap: 50px;
   width: 100%;
   max-width: 800px;
   margin-left: auto;
@@ -243,11 +242,9 @@ export const ProjectList = styled.div`
   perspective: 1000px;
 
   @media (max-width: 800px) {
-    grid-template-columns: 1fr;
     max-width: 350px;
   }
   @media (max-width: 480px) {
-    grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 30px;
     max-width: 95vw;
