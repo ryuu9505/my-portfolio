@@ -24,6 +24,7 @@ import {
   hsatBadge,
 } from './certs';
 import {
+  post50,
   post67,
   prismBabyBottle,
   prismDeliveryRobot,
@@ -261,11 +262,18 @@ const socialData = [
 
 const posts = [
   {
+    title: '오늘도 QA가 안된다고 말했다',
+    description: 'Testing',
+    imageUrl: post50,
+    domainUrl: 'https://shady-dev.tistory.com/50',
+    createdAt: '2024.08.24',
+  },
+  {
     title: '내 컴퓨터를 서버로 사용해보자',
     description: 'Infrastructure',
     imageUrl: post67,
     domainUrl: 'https://shady-dev.tistory.com/67',
-    createdAt: '2024.08.12',
+    createdAt: '2025.05.18',
   },
 ];
 
