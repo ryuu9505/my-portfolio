@@ -263,14 +263,14 @@ const socialData = [
 const posts = [
   {
     title: '오늘도 QA가 안된다고 말했다',
-    description: 'Testing',
+    description: '테스트 코드를 작성하는 방법',
     imageUrl: post50,
     domainUrl: 'https://shady-dev.tistory.com/50',
     createdAt: '2024.08.24',
   },
   {
-    title: '내 컴퓨터를 서버로 사용해보자',
-    description: 'Infrastructure',
+    title: '서버, 폭삭 터졌수다',
+    description: '시스템 성능을 개선하는 방법',
     imageUrl: post67,
     domainUrl: 'https://shady-dev.tistory.com/67',
     createdAt: '2025.05.18',

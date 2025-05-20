@@ -178,22 +178,21 @@ export function HistoryCardItem({
 }) {
   const [isHovered, setIsHovered] = React.useState(false);
   return (
-    <Link url={url}>
-      <HistoryCard
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        style={{ position: 'relative', overflow: 'visible' }}
-      >
-        <SquareImage src={logo} alt={company} />
-        <ContentWrapper>
-          <TitleWrapper>
-            <HistoryTitle>{company}</HistoryTitle>
-            <Position>{position}</Position>
-          </TitleWrapper>
-          <HistoryDescription>{description}</HistoryDescription>
-          <HistoryPeriod>{period}</HistoryPeriod>
-        </ContentWrapper>
-      </HistoryCard>
-    </Link>
+    
+    <HistoryCard
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{ position: 'relative', overflow: 'visible' }}
+    >
+      <SquareImage src={logo} alt={company} />
+      <ContentWrapper>
+        <TitleWrapper>
+          <HistoryTitle>{company}</HistoryTitle>
+          <Position>{position}</Position>
+        </TitleWrapper>
+        <HistoryDescription>{description}</HistoryDescription>
+        <HistoryPeriod>{period}</HistoryPeriod>
+      </ContentWrapper>
+    </HistoryCard>
   );
 }
