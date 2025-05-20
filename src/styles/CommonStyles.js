@@ -359,7 +359,7 @@ export const TechList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  max-width: 690px;
+  max-width: 870px;
   margin: 30px auto 0 auto;
   justify-content: flex-start;
   align-items: flex-start;
