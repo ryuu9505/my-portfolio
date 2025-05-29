@@ -11,8 +11,9 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
-          <Route path="/info" element={<InfoPage />} />
-          <Route path="/" element={<Navigate to="/info" replace />} />
+          <Route path="/" element={<Navigate to="/info/1" replace />} />
+          <Route path="/info" element={<Navigate to="/info/1" replace />} />
+          <Route path="/info/:userId" element={<InfoPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
