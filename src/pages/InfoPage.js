@@ -30,9 +30,25 @@ import {
 } from '@styles/CommonStyles';
 import { IconButton, IconList } from '@styles/IconStyles';
 import { RoundedImage } from '@styles/ImageStyles';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function InfoPage() {
+  const { userId } = useParams();
+  const [userInfo, setUserInfo] = useState({ name: '', bio: '' });
+
+  useEffect(() => {
+    if (!userId) return;
+    fetch(`http://54.180.133.79/users/${userId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setUserInfo({ name: data.name, bio: data.bio });
+      })
+      .catch((err) => {
+        setUserInfo({ name: '이름을 불러올 수 없음', bio: '정보를 불러올 수 없음' });
+      });
+  }, [userId]);
+
   return (
     <>
       <Header />
@@ -47,13 +63,13 @@ export default function InfoPage() {
 
           <ScrollAnimation delay={0.4}>
             <TextContent>
-              <p>조형준</p>
+              <p>{userInfo.name}</p>
             </TextContent>
           </ScrollAnimation>
 
           <ScrollAnimation delay={0.6}>
             <TextContent>
-              <small>Backend Engineer | Data Engineer</small>
+              <small>{userInfo.bio}</small>
             </TextContent>
           </ScrollAnimation>
         </AboutContent>
