@@ -359,7 +359,7 @@ export const TechList = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  max-width: 690px;
+  max-width: 870px;
   margin: 30px auto 0 auto;
   justify-content: flex-start;
   align-items: flex-start;
@@ -376,6 +376,10 @@ export const FilmTrack = styled.div`
   width: calc(400px * 10);
   will-change: transform;
   transition: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: calc(200px * 10);
+  }
 `;
 
 export const ThumbnailWrapper = styled.div`
@@ -385,4 +389,9 @@ export const ThumbnailWrapper = styled.div`
   width: 400px;
   height: 250px;
   vertical-align: top;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 200px;
+    height: 125px;
+  }
 `;

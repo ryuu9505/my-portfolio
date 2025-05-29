@@ -116,7 +116,7 @@ const projects = [
   },
 ];
 
-const javaTechs = [
+const basicTechs = [
   {
     name: 'Java',
     icon: <FaJava />,
@@ -138,9 +138,6 @@ const javaTechs = [
     url: 'https://www.notion.so/hyeongjun-dev/Spring-Framework-1a29683271d08195b194d2f0e0e2480e?pvs=4',
     level: 5,
   },
-];
-
-const pythonTechs = [
   {
     name: 'Python',
     icon: <SiPython />,
@@ -157,7 +154,7 @@ const pythonTechs = [
   },
 ];
 
-const rdbTechs = [
+const dbTechs = [
   {
     name: 'MySQL',
     icon: <SiMysql />,
@@ -172,9 +169,6 @@ const rdbTechs = [
     url: 'https://www.notion.so/hyeongjun-dev/PostgreSQL-1a29683271d081c8a47ed972311ef0c6?pvs=4',
     level: 4,
   },
-];
-
-const nosqlTechs = [
   {
     name: 'Redis',
     icon: <SiRedis />,
@@ -277,26 +271,17 @@ const posts = [
   },
 ];
 
-const allTechGroups = [
-  javaTechs,
-  pythonTechs,
-  rdbTechs,
-  nosqlTechs,
-  bigDataTechs,
-  infraTechs,
-];
+const allTechGroups = [basicTechs, dbTechs, bigDataTechs, infraTechs];
 
 export {
   allTechGroups,
+  basicTechs,
   bigDataTechs,
   certBadges,
+  dbTechs,
   historyData,
   infraTechs,
-  javaTechs,
-  nosqlTechs,
   posts,
   projects,
-  pythonTechs,
-  rdbTechs,
   socialData,
 };

@@ -178,7 +178,6 @@ export function HistoryCardItem({
 }) {
   const [isHovered, setIsHovered] = React.useState(false);
   return (
-    
     <HistoryCard
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
