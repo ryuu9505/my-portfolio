@@ -39,7 +39,7 @@ export default function InfoPage() {
 
   useEffect(() => {
     if (!userId) return;
-    fetch(`http://54.180.133.79/users/${userId}`)
+    fetch(`https://api.hyeongjun.me/users/${userId}`)
       .then((res) => res.json())
       .then((data) => {
         setUserInfo({ name: data.name, bio: data.bio });
