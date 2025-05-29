@@ -33,20 +33,22 @@ import { RoundedImage } from '@styles/ImageStyles';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import api from '@/api';
+
 export default function InfoPage() {
   const { userId } = useParams();
   const [userInfo, setUserInfo] = useState({ name: '', bio: '' });
 
   useEffect(() => {
     if (!userId) return;
-    fetch(`https://api.hyeongjun.me/users/${userId}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setUserInfo({ name: data.name, bio: data.bio });
-      })
-      .catch((err) => {
+    (async () => {
+      try {
+        const res = await api.get(`/users/${userId}`);
+        setUserInfo({ name: res.data.name, bio: res.data.bio });
+      } catch (err) {
         setUserInfo({ name: '이름을 불러올 수 없음', bio: '정보를 불러올 수 없음' });
-      });
+      }
+    })();
   }, [userId]);
 
   return (
