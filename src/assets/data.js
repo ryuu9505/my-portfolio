@@ -1,4 +1,4 @@
-import { FaJava, FaTrophy } from 'react-icons/fa';
+import { FaJava } from 'react-icons/fa';
 import {
   SiAmazonwebservices,
   SiApachehadoop,
@@ -31,43 +31,6 @@ import {
   prismSpeechBubble,
   prismTicket,
 } from './images';
-import { inhaLogo, neubilityLogo, ssafyLogo } from './logos';
-
-const historyData = [
-  {
-    id: 1,
-    logo: neubilityLogo,
-    company: '뉴빌리티',
-    position: '백엔드 개발',
-    description: '로봇 운용/관리 플랫폼 개발',
-    period: '2025.02 - 재직 중',
-    url: 'https://www.neubility.co.kr',
-    miniCards: [],
-  },
-  {
-    id: 2,
-    logo: ssafyLogo,
-    company: '삼성 청년 SW 아카데미',
-    position: '웹 개발 트랙',
-    description: '웹 개발 지식 학습',
-    period: '2023.07 - 2024.06 (1,600시간)',
-    url: 'https://www.ssafy.com',
-    miniCards: [
-      { icon: <FaTrophy color="#FFD700" />, text: '1학기 프로젝트 우수상' },
-      { icon: <FaTrophy color="#FFD700" />, text: '2학기 프로젝트 우수상' },
-    ],
-  },
-  {
-    id: 3,
-    logo: inhaLogo,
-    company: '인하대학교',
-    position: '정보통신공학과',
-    description: '컴퓨터 공학 및 통신 공학 지식 학습',
-    period: '2014.03 - 2021.08',
-    url: 'https://ice.inha.ac.kr',
-    miniCards: [],
-  },
-];
 
 const projects = [
   {
@@ -279,7 +242,6 @@ export {
   bigDataTechs,
   certBadges,
   dbTechs,
-  historyData,
   infraTechs,
   posts,
   projects,
