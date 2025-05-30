@@ -115,7 +115,7 @@ export default function UserPage() {
         </CardList>
       </Section>
 
-      <FilmSection />
+      <WhiteSpace />
 
       <Section id="skills">
         <SectionTitle>
@@ -204,7 +204,7 @@ export default function UserPage() {
         </ProjectList>
       </Section>
 
-      <WhiteSpace />
+      <FilmSection />
 
       <Section id="contact" colorScheme="dark">
         <SectionTitle colorScheme="dark">
