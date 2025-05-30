@@ -35,8 +35,8 @@ import { useParams } from 'react-router-dom';
 
 import api from '@/api';
 
-export default function InfoPage() {
-  const { userId } = useParams();
+export default function UserPage() {
+  const { username } = useParams();
   const [userInfo, setUserInfo] = useState({
     name: '',
     bio: '',
@@ -45,10 +45,10 @@ export default function InfoPage() {
   });
 
   useEffect(() => {
-    if (!userId) return;
+    if (!username) return;
     (async () => {
       try {
-        const res = await api.get(`/users/${userId}`);
+        const res = await api.get(`/users/by-username/${username}`);
         setUserInfo({
           name: res.data.name,
           bio: res.data.bio,
@@ -66,7 +66,7 @@ export default function InfoPage() {
         });
       }
     })();
-  }, [userId]);
+  }, [username]);
 
   return (
     <>
