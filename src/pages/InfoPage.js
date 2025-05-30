@@ -1,7 +1,6 @@
 import {
   allTechGroups,
   certBadges,
-  historyData,
   posts,
   projects,
   socialData,
@@ -38,16 +37,33 @@ import api from '@/api';
 
 export default function InfoPage() {
   const { userId } = useParams();
-  const [userInfo, setUserInfo] = useState({ name: '', bio: '' });
+  const [userInfo, setUserInfo] = useState({
+    name: '',
+    bio: '',
+    profileImage: { url: '', altText: '' },
+    careers: [],
+  });
 
   useEffect(() => {
     if (!userId) return;
     (async () => {
       try {
         const res = await api.get(`/users/${userId}`);
-        setUserInfo({ name: res.data.name, bio: res.data.bio });
+        setUserInfo({
+          name: res.data.name,
+          bio: res.data.bio,
+          profileImage: res.data.profileImage 
+            ? res.data.profileImage 
+            : { url: '', altText: '' },
+          careers: Array.isArray(res.data.careers) ? res.data.careers : [],
+        });
       } catch (err) {
-        setUserInfo({ name: '이름을 불러올 수 없음', bio: '정보를 불러올 수 없음' });
+        setUserInfo({ 
+          name: '이름을 불러올 수 없음', 
+          bio: '정보를 불러올 수 없음', 
+          profileImage: { url: '', altText: '' },
+          careers: [],
+        });
       }
     })();
   }, [userId]);
@@ -60,7 +76,10 @@ export default function InfoPage() {
         <AboutContent>
           <ScrollAnimation delay={0.2}>
             <PulseAnimation>
-              <RoundedImage src={profilePic} alt="Profile" />
+              <RoundedImage 
+                src={userInfo.profileImage?.url || profilePic} 
+                alt={userInfo.profileImage?.altText || 'Profile'} 
+              />
             </PulseAnimation>
           </ScrollAnimation>
 
@@ -85,9 +104,9 @@ export default function InfoPage() {
           <ScrollAnimation>History</ScrollAnimation>
         </SectionTitle>
         <CardList>
-          {historyData.map((item, index) => (
-            <ScrollAnimation key={item.id} delay={0.3}>
-              <HistoryCardItem {...item} miniCards={item.miniCards} />
+          {userInfo.careers.map((item, index) => (
+            <ScrollAnimation key={index} delay={0.3}>
+              <HistoryCardItem {...item} />
             </ScrollAnimation>
           ))}
         </CardList>

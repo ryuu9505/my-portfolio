@@ -1,4 +1,3 @@
-import Link from '@components/Link';
 import { StarRatingAnimation } from '@styles/AnimationStyles';
 import {
   ContentWrapper,
@@ -13,6 +12,8 @@ import { SquareImage } from '@styles/ImageStyles';
 import React, { useState } from 'react';
 import { FaCertificate } from 'react-icons/fa';
 import styled from 'styled-components';
+
+import formatYearMonth, { withParentheses } from '@/utils/format';
 
 const StyledTechCard = styled.div`
   background-color: white;
@@ -168,13 +169,12 @@ export const CertBadge = ({ img, url, alt = 'cert badge' }) => {
 };
 
 export function HistoryCardItem({
-  logo,
   company,
   position,
+  startDate,
+  endDate,
+  periodNote,
   description,
-  period,
-  url,
-  miniCards = [],
 }) {
   const [isHovered, setIsHovered] = React.useState(false);
   return (
@@ -183,14 +183,16 @@ export function HistoryCardItem({
       onMouseLeave={() => setIsHovered(false)}
       style={{ position: 'relative', overflow: 'visible' }}
     >
-      <SquareImage src={logo} alt={company} />
+      <SquareImage src={company.logo.url} alt={company.name} />
       <ContentWrapper>
         <TitleWrapper>
-          <HistoryTitle>{company}</HistoryTitle>
+          <HistoryTitle>{company.name}</HistoryTitle>
           <Position>{position}</Position>
         </TitleWrapper>
         <HistoryDescription>{description}</HistoryDescription>
-        <HistoryPeriod>{period}</HistoryPeriod>
+        <HistoryPeriod>
+          {formatYearMonth(startDate)} - {endDate ? formatYearMonth(endDate) : '재직 중'} {withParentheses(periodNote)}
+        </HistoryPeriod>
       </ContentWrapper>
     </HistoryCard>
   );
