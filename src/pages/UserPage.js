@@ -42,6 +42,7 @@ export default function UserPage() {
     bio: '',
     profileImage: { url: '', altText: '' },
     careers: [],
+    skills: [],
   });
 
   useEffect(() => {
@@ -56,6 +57,7 @@ export default function UserPage() {
             ? res.data.profileImage 
             : { url: '', altText: '' },
           careers: Array.isArray(res.data.careers) ? res.data.careers : [],
+          skills: Array.isArray(res.data.skills) ? res.data.skills : [],
         });
       } catch (err) {
         setUserInfo({ 
@@ -63,6 +65,7 @@ export default function UserPage() {
           bio: '정보를 불러올 수 없음', 
           profileImage: { url: '', altText: '' },
           careers: [],
+          skills: [],
         });
       }
     })();
