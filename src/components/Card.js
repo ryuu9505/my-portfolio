@@ -8,7 +8,7 @@ import {
   Position,
   TitleWrapper,
 } from '@styles/CommonStyles';
-import { SquareImage } from '@styles/ImageStyles';
+import { RoundedImage, SquareImage } from '@styles/ImageStyles';
 import React, { useState } from 'react';
 import { FaCertificate } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -195,5 +195,54 @@ export function HistoryCardItem({
         </HistoryPeriod>
       </ContentWrapper>
     </HistoryCard>
+  );
+}
+
+const StyledProfileCard = styled.div`
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  padding: 24px 0 24px 0;
+  width: 160px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-8px);
+  }
+`;
+
+export function ProfileCard({ profileImage, name, username, bio, companyLogos }) {
+  return (
+    <a
+      href={`/${username}`}
+      style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+    >
+      <StyledProfileCard>
+        <RoundedImage
+          src={profileImage?.url || ''}
+          alt={profileImage?.altText || username || 'profile'}
+          style={{ width: 64, height: 64, marginBottom: 0 }}
+        />
+        <div style={{ fontWeight: 600, fontSize: '0.9rem', marginTop: 4, textAlign: 'center' }}>{username}</div>
+        <div style={{ fontWeight: 300, fontSize: '0.9rem', marginTop: 0, textAlign: 'center' }}>{name}</div>
+        <div style={{ fontWeight: 300, fontSize: '0.7rem', marginTop: 0, textAlign: 'center', color: '#888' }}>{bio}</div>
+        {companyLogos && companyLogos.length > 0 && (
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8, marginTop: 12 }}>
+            {companyLogos.slice(0, 1).map((logo, idx) => (
+              <SquareImage
+                key={logo?.url || idx}
+                src={logo?.url}
+                alt={logo?.altText || 'company logo'}
+                style={{ width: 30, height: 30, marginRight: 0 }}
+              />
+            ))}
+          </div>
+        )}
+      </StyledProfileCard>
+    </a>
   );
 }
