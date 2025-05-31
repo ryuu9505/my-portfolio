@@ -20,7 +20,8 @@ const StyledTechCard = styled.div`
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 150px;
+  width: 128px;
+  min-height: 128px;
   text-align: center;
   transition: transform 0.3s ease;
   display: flex;
@@ -45,6 +46,7 @@ const StyledTechCard = styled.div`
 
   @media (max-width: 480px) {
     width: 100px;
+    min-height: 100px;
     padding: 12px;
     .tech-icon {
       font-size: 2rem;
@@ -56,7 +58,7 @@ const StyledTechCard = styled.div`
   }
 `;
 
-export const TechCard = ({ icon, name, level }) => {
+export const TechCard = ({ url, name, level }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -65,7 +67,7 @@ export const TechCard = ({ icon, name, level }) => {
       onMouseLeave={() => setIsHovered(false)}
       style={{ position: 'relative', overflow: 'visible' }}
     >
-      <span className="tech-icon">{icon}</span>
+      <img className="tech-icon" src={url} alt={name} style={{ width: '48px', height: '48px', objectFit: 'contain', marginBottom: 0 }} />
       <span className="tech-name">{name}</span>
       <StarRatingAnimation
         show={isHovered}

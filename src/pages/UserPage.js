@@ -122,21 +122,17 @@ export default function UserPage() {
           <ScrollAnimation>Skills</ScrollAnimation>
         </SectionTitle>
 
-        {allTechGroups.map((group, groupIdx) => (
-          <TechList key={groupIdx}>
-            {group.map((tech, index) => (
-              <ScrollAnimation key={index} delay={0.3}>
-                <Link url={tech.url}>
-                  <TechCard
-                    icon={tech.icon}
-                    name={tech.name}
-                    level={tech.level}
-                  />
-                </Link>
-              </ScrollAnimation>
-            ))}
-          </TechList>
-        ))}
+        <TechList>
+          {userInfo.skills.map((skill, idx) => (
+            <ScrollAnimation key={skill.id} delay={0.3}>
+              <TechCard
+                url={skill.tool.logo.url}
+                name={skill.tool.name}
+                level={skill.level}
+              />
+            </ScrollAnimation>
+          ))}
+        </TechList>
 
         <TechList>
           {certBadges.map((cert, idx) => (
