@@ -6,7 +6,7 @@ import {
 import React from 'react';
 import { useTheme } from 'styled-components';
 
-export const Section = ({ children, colorScheme = 'default', ...props }) => {
+export const Section = ({ children, colorScheme = 'default', visible = true, ...props }) => {
   const theme = useTheme();
   let background, color;
 
@@ -22,7 +22,12 @@ export const Section = ({ children, colorScheme = 'default', ...props }) => {
   }
 
   return (
-    <StyledSection background={background} color={color} {...props}>
+    <StyledSection
+      background={background}
+      color={color}
+      {...props}
+      style={{ ...(props.style || {}), display: visible ? undefined : 'none' }}
+    >
       {children}
     </StyledSection>
   );

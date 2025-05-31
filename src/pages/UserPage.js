@@ -11,7 +11,6 @@ import FilmSection from '@components/FilmSection';
 import Footer from '@components/Footer';
 import Header from '@components/Header';
 import HoverImage from '@components/HoverImage';
-import Link from '@components/Link';
 import { Section, SectionTitle } from '@components/Section';
 import { PulseAnimation, ScrollAnimation } from '@styles/AnimationStyles';
 import {
@@ -30,6 +29,7 @@ import {
 } from '@styles/CommonStyles';
 import { IconButton, IconList } from '@styles/IconStyles';
 import { RoundedImage } from '@styles/ImageStyles';
+import isEmpty from '@utils/isEmpty';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -102,7 +102,10 @@ export default function UserPage() {
 
       <WhiteSpace />
 
-      <Section id="history">
+      <Section 
+        id="history"
+        visible={!isEmpty(userInfo.careers)}
+      >
         <SectionTitle>
           <ScrollAnimation>History</ScrollAnimation>
         </SectionTitle>
@@ -115,9 +118,12 @@ export default function UserPage() {
         </CardList>
       </Section>
 
-      <WhiteSpace />
+      <WhiteSpace visible={!isEmpty(userInfo.careers)} />
 
-      <Section id="skills">
+      <Section
+        id="skills"
+        visible={!isEmpty(userInfo.skills)}
+      >
         <SectionTitle>
           <ScrollAnimation>Skills</ScrollAnimation>
         </SectionTitle>
@@ -143,9 +149,9 @@ export default function UserPage() {
         </TechList>
       </Section>
 
-      <WhiteSpace />
+      <WhiteSpace visible={!isEmpty(userInfo.skills)} />
 
-      <Section id="projects">
+      <Section id="projects" visible={!isEmpty(userInfo.projects)}>
         <SectionTitle>
           <ScrollAnimation>Projects</ScrollAnimation>
         </SectionTitle>
@@ -172,9 +178,9 @@ export default function UserPage() {
         </ProjectList>
       </Section>
 
-      <WhiteSpace />
+      <WhiteSpace visible={!isEmpty(userInfo.projects)} />
 
-      <Section id="posts">
+      <Section id="posts" visible={!isEmpty(userInfo.posts)}>
         <SectionTitle>
           <ScrollAnimation>Posts</ScrollAnimation>
         </SectionTitle>
