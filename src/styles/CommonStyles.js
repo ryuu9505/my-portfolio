@@ -345,7 +345,7 @@ export const TextContent = styled.div`
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.2;
-    color: ${({ theme }) => theme.colors.textDark};
+    color: inherit;
   }
 
   small {

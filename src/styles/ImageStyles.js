@@ -4,6 +4,8 @@ export const RoundedImage = styled.img`
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  border: 1.5px solid #e0e0e0;
+  box-sizing: border-box;
   object-fit: cover;
 `;
 

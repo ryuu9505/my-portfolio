@@ -1,41 +1,22 @@
 import { HeaderContainer, NavLink, NavMenu } from '@styles/layout/HeaderStyles';
+import { sectionConfig } from '@utils/sections';
 import React from 'react';
 import { Link } from 'react-scroll';
 
-function Header() {
+function Header({ sectionVisibility }) {
   return (
     <HeaderContainer>
       <NavMenu>
-        <NavLink>
-          <Link to="about" smooth={true} duration={500}>
-            About
-          </Link>
-        </NavLink>
-        <NavLink>
-          <Link to="history" smooth={true} duration={500}>
-            History
-          </Link>
-        </NavLink>
-        <NavLink>
-          <Link to="skills" smooth={true} duration={500}>
-            Skills
-          </Link>
-        </NavLink>
-        <NavLink>
-          <Link to="projects" smooth={true} duration={500}>
-            Projects
-          </Link>
-        </NavLink>
-        <NavLink>
-          <Link to="posts" smooth={true} duration={500}>
-            Posts
-          </Link>
-        </NavLink>
-        <NavLink>
-          <Link to="contact" smooth={true} duration={500}>
-            Contact
-          </Link>
-        </NavLink>
+        {sectionConfig.map(
+          section =>
+            sectionVisibility[section.id] && (
+              <NavLink key={section.id}>
+                <Link to={section.id} smooth={true} duration={500}>
+                  {section.label}
+                </Link>
+              </NavLink>
+            )
+        )}
       </NavMenu>
     </HeaderContainer>
   );

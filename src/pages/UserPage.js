@@ -1,5 +1,4 @@
 import {
-  allTechGroups,
   certBadges,
   posts,
   projects,
@@ -30,6 +29,7 @@ import {
 import { IconButton, IconList } from '@styles/IconStyles';
 import { RoundedImage } from '@styles/ImageStyles';
 import isEmpty from '@utils/isEmpty';
+import { sectionConfig } from '@utils/sections';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -71,9 +71,18 @@ export default function UserPage() {
     })();
   }, [username]);
 
+  const sectionVisibility = {};
+  sectionConfig.forEach(section => {
+    if (section.always) {
+      sectionVisibility[section.id] = true;
+    } else {
+      sectionVisibility[section.id] = !isEmpty(userInfo[section.key]);
+    }
+  });
+
   return (
     <>
-      <Header />
+      <Header sectionVisibility={sectionVisibility} />
 
       <Section id="about" colorScheme="dark">
         <AboutContent>

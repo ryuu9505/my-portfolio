@@ -32,7 +32,7 @@ export default function UserListPage() {
 
   return (
     <Section id="users">
-      <SectionTitle>Users</SectionTitle>
+      <SectionTitle></SectionTitle>
       <CenteredCardList>
         {users.map((user) => {
           const companyLogos = Array.isArray(user.careers)

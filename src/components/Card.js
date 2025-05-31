@@ -65,7 +65,7 @@ export const TechCard = ({ url, name, level }) => {
     <StyledTechCard
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ position: 'relative', overflow: 'visible' }}
+      style={{ position: 'relative', overflow: 'visible', border: '1px solid #e0e0e0', boxSizing: 'border-box' }}
     >
       <img className="tech-icon" src={url} alt={name} style={{ width: '48px', height: '48px', objectFit: 'contain', marginBottom: 0 }} />
       <span className="tech-name">{name}</span>
@@ -183,7 +183,7 @@ export function HistoryCardItem({
     <HistoryCard
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ position: 'relative', overflow: 'visible' }}
+      style={{ position: 'relative', overflow: 'visible', border: '1px solid #e0e0e0', boxSizing: 'border-box' }}
     >
       <SquareImage src={company.logo.url} alt={company.name} />
       <ContentWrapper>
@@ -212,6 +212,8 @@ const StyledProfileCard = styled.div`
   align-items: center;
   justify-content: flex-start;
   transition: transform 0.2s;
+  border: 1.5px solid #e0e0e0;
+  box-sizing: border-box;
   &:hover {
     transform: translateY(-8px);
   }
@@ -227,7 +229,13 @@ export function ProfileCard({ profileImage, name, username, bio, companyLogos })
         <RoundedImage
           src={profileImage?.url || ''}
           alt={profileImage?.altText || username || 'profile'}
-          style={{ width: 64, height: 64, marginBottom: 0 }}
+          style={{
+            width: 64,
+            height: 64,
+            marginBottom: 0,
+            border: '1.5px solid #e0e0e0',
+            boxSizing: 'border-box'
+          }}
         />
         <div style={{ fontWeight: 600, fontSize: '0.9rem', marginTop: 4, textAlign: 'center' }}>{username}</div>
         <div style={{ fontWeight: 300, fontSize: '0.9rem', marginTop: 0, textAlign: 'center' }}>{name}</div>
