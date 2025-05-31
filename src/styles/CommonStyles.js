@@ -343,6 +343,7 @@ export const TextContent = styled.div`
   p {
     margin-top: 40px;
     font-size: 1.6rem;
+    font-weight: 400;
     line-height: 1.2;
     color: ${({ theme }) => theme.colors.textDark};
   }
@@ -350,6 +351,7 @@ export const TextContent = styled.div`
   small {
     margin-top: 40px;
     font-size: 1.2rem;
+    font-weight: 200;
     line-height: 1.2;
     color: ${({ theme }) => theme.colors.secondary};
   }
