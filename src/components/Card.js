@@ -13,7 +13,7 @@ import React, { useState } from 'react';
 import { FaCertificate } from 'react-icons/fa';
 import styled from 'styled-components';
 
-import formatYearMonth, { withParentheses } from '@/utils/format';
+import formatYearMonth, { getPeriodLength, withParentheses } from '@/utils/format';
 
 const StyledTechCard = styled.div`
   background-color: white;
@@ -193,7 +193,7 @@ export function HistoryCardItem({
         </TitleWrapper>
         <HistoryDescription>{description}</HistoryDescription>
         <HistoryPeriod>
-          {formatYearMonth(startDate)} - {endDate ? formatYearMonth(endDate) : '재직 중'} {withParentheses(periodNote)}
+          {formatYearMonth(startDate)} - {endDate ? formatYearMonth(endDate) : '재직 중'} {withParentheses(periodNote ? periodNote : getPeriodLength(startDate, endDate))}
         </HistoryPeriod>
       </ContentWrapper>
     </HistoryCard>
