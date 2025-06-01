@@ -236,7 +236,7 @@ export const ProjectList = styled.div`
   justify-content: center;
   gap: 50px;
   width: 100%;
-  max-width: 800px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
   perspective: 1000px;
@@ -287,7 +287,7 @@ export const ProjectTitle = styled.h3`
   font-size: ${({ fontSize }) => fontSize || '1.6rem'};
   font-weight: ${({ fontWeight }) => fontWeight || '700'};
   color: ${({ theme }) => theme.colors.primary};
-  margin-top: 20px;
+  margin-top: 12px;
 
   @media (max-width: 480px) {
     font-size: ${({ fontSize }) => fontSize * 0.8 || '1.3rem'};
@@ -297,10 +297,10 @@ export const ProjectTitle = styled.h3`
 `;
 
 export const ProjectDescription = styled.p`
-  font-size: ${({ fontSize }) => fontSize || '1.4rem'};
+  font-size: ${({ fontSize }) => fontSize || '1.0rem'};
   font-weight: ${({ fontWeight }) => fontWeight || '200'};
   color: ${({ theme }) => theme.colors.secondary};
-  margin: 0;
+  margin-top: 4px;
 
   @media (max-width: 480px) {
     font-size: ${({ fontSize }) => fontSize * 0.8 || '0.95rem'};
@@ -310,11 +310,11 @@ export const ProjectDescription = styled.p`
 `;
 
 export const Period = styled.span`
-  font-size: 0.8rem;
-  font-weight: 200;
+  font-size: ${({ fontSize }) => fontSize || '1.0rem'};
+  font-weight: ${({ fontWeight }) => fontWeight || '200'};
   color: ${({ theme }) => theme.colors.secondary}99;
-  line-height: 2.4;
   display: block;
+  margin-top: 6px;
 
   @media (max-width: 480px) {
     font-size: 0.6rem;

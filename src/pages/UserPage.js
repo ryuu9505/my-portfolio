@@ -196,10 +196,10 @@ export default function UserPage() {
         <SectionTitle>
           <ScrollAnimation>Posts</ScrollAnimation>
         </SectionTitle>
-        
+
         <ProjectList>
           {userInfo.posts.map((post, index) => (
-            <ProjectCard key={index} width="200px">
+            <ProjectCard key={index} width="256px">
               <ScrollAnimation delay={0.3}>
                 <ProjectImageContainer>
                   <HoverImage
@@ -211,7 +211,8 @@ export default function UserPage() {
                 </ProjectImageContainer>
                 <ProjectContent>
                   <ProjectTitle fontSize="1.0rem">{post.title}</ProjectTitle>
-                  <Period>{formatDate(post.createdAt)}</Period>
+                  <ProjectDescription fontSize="0.8rem">{post.subtitle}</ProjectDescription>
+                  <Period fontSize="0.8rem" fontWeight="100">{formatDate(post.createdAt)}</Period>
                 </ProjectContent>
               </ScrollAnimation>
             </ProjectCard>
