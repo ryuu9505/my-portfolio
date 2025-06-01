@@ -1,9 +1,8 @@
 import {
-  certBadges,
   socialData,
 } from '@assets/data';
 import { profilePic } from '@assets/images';
-import { CertBadge, HistoryCardItem, TechCard } from '@components/Card';
+import { HistoryCardItem, TechCard } from '@components/Card';
 import FilmSection from '@components/FilmSection';
 import Footer from '@components/Footer';
 import Header from '@components/Header';
@@ -20,11 +19,12 @@ import {
   ProjectImageContainer,
   ProjectList,
   ProjectTitle,
-  TechList,
+  SkillCardList,
   TextContent,
 } from '@styles/CommonStyles';
 import { IconButton, IconList } from '@styles/IconStyles';
 import { RoundedImage } from '@styles/ImageStyles';
+import { formatDate } from '@utils/format';
 import isEmpty from '@utils/isEmpty';
 import { sectionConfig } from '@utils/sections';
 import React, { useEffect, useState } from 'react';
@@ -88,7 +88,10 @@ export default function UserPage() {
     <>
       <Header sectionVisibility={sectionVisibility} />
 
-      <Section id="about" colorScheme="light">
+      <Section 
+        id="about" 
+        colorScheme="light"
+      >
         <AboutContent>
           <ScrollAnimation delay={0.2}>
             <PulseAnimation>
@@ -114,7 +117,6 @@ export default function UserPage() {
       </Section>
 
       <Divider visible={!isEmpty(userInfo.careers)} />
-
       <Section 
         id="history"
         visible={!isEmpty(userInfo.careers)}
@@ -122,6 +124,7 @@ export default function UserPage() {
         <SectionTitle>
           <ScrollAnimation>History</ScrollAnimation>
         </SectionTitle>
+
         <CardList>
           {userInfo.careers.map((item, index) => (
             <ScrollAnimation key={index} delay={0.3}>
@@ -132,16 +135,15 @@ export default function UserPage() {
       </Section>
 
       <Divider visible={!isEmpty(userInfo.skills)} />
-
-      <Section
-        id="skills"
+      <Section 
+        id="skills" 
         visible={!isEmpty(userInfo.skills)}
       >
         <SectionTitle>
           <ScrollAnimation>Skills</ScrollAnimation>
         </SectionTitle>
 
-        <TechList>
+        <SkillCardList>
           {userInfo.skills.map((skill, idx) => (
             <ScrollAnimation key={skill.id} delay={0.3}>
               <TechCard
@@ -151,23 +153,18 @@ export default function UserPage() {
               />
             </ScrollAnimation>
           ))}
-        </TechList>
-
-        <TechList>
-          {certBadges.map((cert, idx) => (
-            <ScrollAnimation key={`cert-badge-${idx}`} delay={0.3}>
-              <CertBadge img={cert.img} url={cert.url} alt="cert badge" />
-            </ScrollAnimation>
-          ))}
-        </TechList>
+        </SkillCardList>
       </Section>
 
       <Divider visible={!isEmpty(userInfo.projects)} />
-
-      <Section id="projects" visible={!isEmpty(userInfo.projects)}>
+      <Section 
+        id="projects" 
+        visible={!isEmpty(userInfo.projects)}
+      >
         <SectionTitle>
           <ScrollAnimation>Projects</ScrollAnimation>
         </SectionTitle>
+
         <ProjectList>
           {userInfo.projects.map((project, index) => (
             <ProjectCard key={index}>
@@ -192,11 +189,14 @@ export default function UserPage() {
       </Section>
 
       <Divider visible={!isEmpty(userInfo.posts)} />
-
-      <Section id="posts" visible={!isEmpty(userInfo.posts)}>
+      <Section 
+        id="posts" 
+        visible={!isEmpty(userInfo.posts)}
+      >
         <SectionTitle>
           <ScrollAnimation>Posts</ScrollAnimation>
         </SectionTitle>
+        
         <ProjectList>
           {userInfo.posts.map((post, index) => (
             <ProjectCard key={index} width="200px">
@@ -211,7 +211,7 @@ export default function UserPage() {
                 </ProjectImageContainer>
                 <ProjectContent>
                   <ProjectTitle fontSize="1.0rem">{post.title}</ProjectTitle>
-                  <Period>{post.createdAt}</Period>
+                  <Period>{formatDate(post.createdAt)}</Period>
                 </ProjectContent>
               </ScrollAnimation>
             </ProjectCard>
