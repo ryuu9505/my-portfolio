@@ -34,6 +34,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import api from '@/api';
+import Divider from '@/components/Divider';
 
 export default function UserPage() {
   const { username } = useParams();
@@ -84,7 +85,7 @@ export default function UserPage() {
     <>
       <Header sectionVisibility={sectionVisibility} />
 
-      <Section id="about" colorScheme="dark">
+      <Section id="about" colorScheme="light">
         <AboutContent>
           <ScrollAnimation delay={0.2}>
             <PulseAnimation>
@@ -109,7 +110,7 @@ export default function UserPage() {
         </AboutContent>
       </Section>
 
-      <WhiteSpace />
+      <Divider visible={!isEmpty(userInfo.careers)} />
 
       <Section 
         id="history"
@@ -127,7 +128,7 @@ export default function UserPage() {
         </CardList>
       </Section>
 
-      <WhiteSpace visible={!isEmpty(userInfo.careers)} />
+      <Divider visible={!isEmpty(userInfo.skills)} />
 
       <Section
         id="skills"
@@ -158,7 +159,7 @@ export default function UserPage() {
         </TechList>
       </Section>
 
-      <WhiteSpace visible={!isEmpty(userInfo.skills)} />
+      <Divider visible={!isEmpty(userInfo.projects)} />
 
       <Section id="projects" visible={!isEmpty(userInfo.projects)}>
         <SectionTitle>
@@ -187,7 +188,7 @@ export default function UserPage() {
         </ProjectList>
       </Section>
 
-      <WhiteSpace visible={!isEmpty(userInfo.projects)} />
+      <Divider visible={!isEmpty(userInfo.posts)} />
 
       <Section id="posts" visible={!isEmpty(userInfo.posts)}>
         <SectionTitle>
