@@ -1,7 +1,5 @@
 import {
   certBadges,
-  posts,
-  projects,
   socialData,
 } from '@assets/data';
 import { profilePic } from '@assets/images';
@@ -24,7 +22,6 @@ import {
   ProjectTitle,
   TechList,
   TextContent,
-  WhiteSpace,
 } from '@styles/CommonStyles';
 import { IconButton, IconList } from '@styles/IconStyles';
 import { RoundedImage } from '@styles/ImageStyles';
@@ -44,6 +41,8 @@ export default function UserPage() {
     profileImage: { url: '', altText: '' },
     careers: [],
     skills: [],
+    projects: [],
+    posts: [],
   });
 
   useEffect(() => {
@@ -59,6 +58,8 @@ export default function UserPage() {
             : { url: '', altText: '' },
           careers: Array.isArray(res.data.careers) ? res.data.careers : [],
           skills: Array.isArray(res.data.skills) ? res.data.skills : [],
+          projects: Array.isArray(res.data.projectSummaries) ? res.data.projectSummaries : [],
+          posts: Array.isArray(res.data.postSummaries) ? res.data.postSummaries : [],
         });
       } catch (err) {
         setUserInfo({ 
@@ -67,6 +68,8 @@ export default function UserPage() {
           profileImage: { url: '', altText: '' },
           careers: [],
           skills: [],
+          projects: [],
+          posts: [],
         });
       }
     })();
@@ -166,21 +169,21 @@ export default function UserPage() {
           <ScrollAnimation>Projects</ScrollAnimation>
         </SectionTitle>
         <ProjectList>
-          {projects.map((project, index) => (
+          {userInfo.projects.map((project, index) => (
             <ProjectCard key={index}>
               <ScrollAnimation delay={0.3}>
                 <ProjectImageContainer>
                   <HoverImage
-                    baseImage={project.imageUrl}
+                    baseImage={project.thumbnail?.url}
                     alt={project.title}
-                    link={project.domainUrl}
+                    link={project.externalUrl}
                     showButton={false}
                   />
                 </ProjectImageContainer>
                 <ProjectContent>
                   <ProjectTitle>{project.title}</ProjectTitle>
-                  <ProjectDescription>{project.description}</ProjectDescription>
-                  <Period>{project.period}</Period>
+                  <ProjectDescription>{project.subtitle}</ProjectDescription>
+                  <Period>{project.startDate}</Period>
                 </ProjectContent>
               </ScrollAnimation>
             </ProjectCard>
@@ -195,14 +198,14 @@ export default function UserPage() {
           <ScrollAnimation>Posts</ScrollAnimation>
         </SectionTitle>
         <ProjectList>
-          {posts.map((post, index) => (
+          {userInfo.posts.map((post, index) => (
             <ProjectCard key={index} width="200px">
               <ScrollAnimation delay={0.3}>
                 <ProjectImageContainer>
                   <HoverImage
-                    baseImage={post.imageUrl}
+                    baseImage={post.thumbnail?.url}
                     alt={post.title}
-                    link={post.domainUrl}
+                    link={post.externalUrl}
                     showButton={false}
                   />
                 </ProjectImageContainer>
