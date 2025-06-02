@@ -136,7 +136,7 @@ export default function UserPage() {
         id="history"
         visible={!isEmpty(careers)}
       >
-        <SectionTitle>
+        <SectionTitle id="history-title">
           <ScrollAnimation>History</ScrollAnimation>
         </SectionTitle>
 
@@ -154,7 +154,7 @@ export default function UserPage() {
         id="skills" 
         visible={!isEmpty(userInfo.skills)}
       >
-        <SectionTitle>
+        <SectionTitle id="skills-title">
           <ScrollAnimation>Skills</ScrollAnimation>
         </SectionTitle>
 
@@ -176,7 +176,7 @@ export default function UserPage() {
         id="projects" 
         visible={!isEmpty(userInfo.projects)}
       >
-        <SectionTitle>
+        <SectionTitle id="projects-title">
           <ScrollAnimation>Projects</ScrollAnimation>
         </SectionTitle>
 
@@ -208,7 +208,7 @@ export default function UserPage() {
         id="posts" 
         visible={!isEmpty(userInfo.posts)}
       >
-        <SectionTitle>
+        <SectionTitle id="posts-title">
           <ScrollAnimation>Posts</ScrollAnimation>
         </SectionTitle>
 
@@ -237,8 +237,8 @@ export default function UserPage() {
 
       <FilmSection />
 
-      <Section id="contact" colorScheme="dark">
-        <SectionTitle colorScheme="dark">
+      <Section id="contact" colorScheme="dark" padding="256px 20px 256px 20px">
+        <SectionTitle id="contact-title" colorScheme="dark">
           <ScrollAnimation>Contact</ScrollAnimation>
         </SectionTitle>
         <IconList>

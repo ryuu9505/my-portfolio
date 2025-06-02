@@ -11,7 +11,7 @@ function Header({ sectionVisibility }) {
           section =>
             sectionVisibility[section.id] && (
               <NavLink key={section.id}>
-                <Link to={section.id} smooth={true} duration={500}>
+                <Link to={section.id} smooth={true} duration={500} offset={section.offset}>
                   {section.label}
                 </Link>
               </NavLink>
