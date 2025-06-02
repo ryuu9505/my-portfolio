@@ -14,8 +14,8 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Navigate to="/users" replace />} />
           <Route path="/:username" element={<UserPage />} />
-          <Route path="/" element={<Navigate to="/hyeongjun" replace />} />
           <Route path="/users" element={<UserListPage />} />
           <Route path="/posts/:postId" element={<PostPage />} />
         </Routes>
