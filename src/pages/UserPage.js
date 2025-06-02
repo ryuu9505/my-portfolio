@@ -36,14 +36,15 @@ import Divider from '@/components/Divider';
 export default function UserPage() {
   const { username } = useParams();
   const [userInfo, setUserInfo] = useState({
+    id: '',
     name: '',
     bio: '',
     profileImage: { url: '', altText: '' },
-    careers: [],
     skills: [],
     projects: [],
     posts: [],
   });
+  const [careers, setCareers] = useState([]);
 
   useEffect(() => {
     if (!username) return;
@@ -51,22 +52,22 @@ export default function UserPage() {
       try {
         const res = await api.get(`/users/by-username/${username}`);
         setUserInfo({
+          id: res.data.id,
           name: res.data.name,
           bio: res.data.bio,
           profileImage: res.data.profileImage 
             ? res.data.profileImage 
             : { url: '', altText: '' },
-          careers: Array.isArray(res.data.careers) ? res.data.careers : [],
           skills: Array.isArray(res.data.skills) ? res.data.skills : [],
           projects: Array.isArray(res.data.projectSummaries) ? res.data.projectSummaries : [],
           posts: Array.isArray(res.data.postSummaries) ? res.data.postSummaries : [],
         });
       } catch (err) {
         setUserInfo({ 
+          id: '',
           name: '이름을 불러올 수 없음', 
           bio: '정보를 불러올 수 없음', 
           profileImage: { url: '', altText: '' },
-          careers: [],
           skills: [],
           projects: [],
           posts: [],
@@ -75,10 +76,24 @@ export default function UserPage() {
     })();
   }, [username]);
 
+  useEffect(() => {
+    if (!userInfo.id) return;
+    (async () => {
+      try {
+        const res = await api.get(`/careers?userId=${userInfo.id}`);
+        setCareers(Array.isArray(res.data) ? res.data : []);
+      } catch (err) {
+        setCareers([]);
+      }
+    })();
+  }, [userInfo.id]);
+
   const sectionVisibility = {};
   sectionConfig.forEach(section => {
     if (section.always) {
       sectionVisibility[section.id] = true;
+    } else if (section.id === 'history') {
+      sectionVisibility[section.id] = !isEmpty(careers);
     } else {
       sectionVisibility[section.id] = !isEmpty(userInfo[section.key]);
     }
@@ -116,17 +131,17 @@ export default function UserPage() {
         </AboutContent>
       </Section>
 
-      <Divider visible={!isEmpty(userInfo.careers)} />
+      <Divider visible={!isEmpty(careers)} />
       <Section 
         id="history"
-        visible={!isEmpty(userInfo.careers)}
+        visible={!isEmpty(careers)}
       >
         <SectionTitle>
           <ScrollAnimation>History</ScrollAnimation>
         </SectionTitle>
 
         <CardList>
-          {userInfo.careers.map((item, index) => (
+          {careers.map((item, index) => (
             <ScrollAnimation key={index} delay={0.3}>
               <HistoryCardItem {...item} />
             </ScrollAnimation>

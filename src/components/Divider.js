@@ -10,14 +10,14 @@ const DividerWrapper = styled.div`
 const DividerLine = styled.div`
   width: 100%;
   border-bottom: 1.5px solid #e0e0e0;
-  margin: 0 128px;
+  margin: 0 ${({ margin }) => margin};
 `;
 
-export default function Divider({ visible = true }) {
+export default function Divider({ visible = true, margin = '128px' }) {
   if (!visible) return null;
   return (
     <DividerWrapper>
-      <DividerLine />
+      <DividerLine margin={margin} />
     </DividerWrapper>
   );
 } 

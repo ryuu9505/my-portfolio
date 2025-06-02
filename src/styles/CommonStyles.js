@@ -274,6 +274,17 @@ export const ProjectImageContainer = styled.div`
   box-sizing: border-box;
 `;
 
+export const PostImageContainer = styled.div`
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border: 1.0px solid #e0e0e0;
+  box-sizing: border-box;
+`;
+
 export const ProjectContent = styled.div`
   padding: 0px;
   text-align: left;
