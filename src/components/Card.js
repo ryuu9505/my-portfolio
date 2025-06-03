@@ -1,3 +1,4 @@
+import { blackSquare } from '@assets/images';
 import { StarRatingAnimation } from '@styles/AnimationStyles';
 import {
   ContentWrapper,
@@ -177,18 +178,31 @@ export function HistoryCardItem({
   endDate,
   periodNote,
   description,
+  masked,
 }) {
   const [isHovered, setIsHovered] = React.useState(false);
+
+  const textMaskStyle = masked
+  ? {
+      background: '#000',
+      color: '#000',
+      overflow: 'hidden',
+      fontSize: '1.5rem',
+    }
+  : {};
   return (
     <HistoryCard
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ position: 'relative', overflow: 'visible', border: '1px solid #e0e0e0', boxSizing: 'border-box' }}
     >
-      <SquareImage src={company.logo.url} alt={company.name} />
+      <SquareImage
+        src={masked ? blackSquare : company.logo?.url}
+        alt={company.name}
+      />
       <ContentWrapper>
         <TitleWrapper>
-          <HistoryTitle>{company.name}</HistoryTitle>
+          <HistoryTitle style={textMaskStyle}>{company.name}</HistoryTitle>
           <Position>{position}</Position>
         </TitleWrapper>
         <HistoryDescription>{description}</HistoryDescription>

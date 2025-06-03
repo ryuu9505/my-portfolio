@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   width: 100%;
-  padding: ${({ padding }) => padding || '150px 20px 150px 20px'};
+  padding: ${({ padding }) => padding || '200px 20px 200px 20px'};
   background-color: ${({ background, theme }) =>
     background || theme.colors.backgroundLight};
   color: ${({ color, theme }) => color || theme.colors.textLight};
