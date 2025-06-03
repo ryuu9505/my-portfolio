@@ -15,10 +15,7 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   padding: 0 20px;
   position: fixed;
-  z-index: 1000;
-
-  // border
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1001;
 `;
 
 export const Logo = styled.div`
