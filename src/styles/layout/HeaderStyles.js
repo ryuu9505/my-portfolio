@@ -30,7 +30,7 @@ export const Logo = styled.div`
 export const NavMenu = styled.nav`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 36px;
 `;
 
 export const NavLink = styled.a`
