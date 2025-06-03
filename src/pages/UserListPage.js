@@ -10,11 +10,13 @@ const CenteredCardList = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   min-height: 80vh;
   padding-top: 60px;
+  max-width: 1024px;
   gap: 24px;
+  margin: 0 auto;
 `;
 
 export default function UserListPage() {
