@@ -1,6 +1,7 @@
 import { ProfileCard } from '@components/Card';
 import { Section, SectionTitle } from '@components/Section';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
 
 import api from '@/api';
@@ -31,26 +32,32 @@ export default function UserListPage() {
   }, []);
 
   return (
-    <Section id="users">
-      <SectionTitle></SectionTitle>
-      <CenteredCardList>
-        {users.map((user) => {
-          const companyLogos = Array.isArray(user.careers)
-            ? user.careers.slice(0, 3).map(career => career.company?.logo).filter(Boolean)
-            : [];
-          return (
-            <ProfileCard
-              key={user.id || user._id || user.name}
-              profileImage={user.profileImage}
-              name={user.name}
-              username={user.username || user.id || user._id}
-              bio={user.bio || ''}
-              companyLogos={companyLogos}
-            />
-          );
-        })}
-      </CenteredCardList>
-    </Section>
+    <>
+      <Helmet>
+        <title>Users | Ratelo</title>
+      </Helmet>
+
+      <Section id="users">
+        <SectionTitle></SectionTitle>
+        <CenteredCardList>
+          {users.map((user) => {
+            const companyLogos = Array.isArray(user.careers)
+              ? user.careers.slice(0, 3).map(career => career.company?.logo).filter(Boolean)
+              : [];
+            return (
+              <ProfileCard
+                key={user.id || user._id || user.name}
+                profileImage={user.profileImage}
+                name={user.name}
+                username={user.username || user.id || user._id}
+                bio={user.bio || ''}
+                companyLogos={companyLogos}
+              />
+            );
+          })}
+        </CenteredCardList>
+      </Section>
+    </>
   );
 }
   

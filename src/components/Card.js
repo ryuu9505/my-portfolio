@@ -173,6 +173,7 @@ export const CertBadge = ({ img, url, alt = 'cert badge' }) => {
 
 export function HistoryCardItem({
   company,
+  team,
   position,
   startDate,
   endDate,
@@ -203,7 +204,7 @@ export function HistoryCardItem({
       <ContentWrapper>
         <TitleWrapper>
           <HistoryTitle style={textMaskStyle}>{company.name}</HistoryTitle>
-          <Position>{position}</Position>
+          <Position>{team}</Position>
         </TitleWrapper>
         <HistoryDescription>{description}</HistoryDescription>
         <HistoryPeriod>

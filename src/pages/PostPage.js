@@ -1,9 +1,9 @@
 import Container from '@components/Container';
-import { Section, SectionTitle } from '@components/Section';
 import { PostTitle } from '@components/Title';
-import { Period, PostImageContainer, ProjectCard, ProjectContent, ProjectDescription, ProjectTitle } from '@styles/CommonStyles';
+import { PostImageContainer, ProjectContent, ProjectDescription } from '@styles/CommonStyles';
 import { RoundedImage } from '@styles/ImageStyles';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 
 import api from '@/api';
@@ -38,6 +38,11 @@ export default function PostPage() {
   }, [postId]);
 
   return (
+    <>
+    <Helmet>
+      <title>{post.title} | Ratelo</title>
+    </Helmet>
+    
     <Container maxWidth="1024px">
         <PostImageContainer style={{ marginBottom: 32 }}>
           {post.thumbnail?.url && (
@@ -56,5 +61,6 @@ export default function PostPage() {
           <ProjectDescription style={{ marginTop: 24, whiteSpace: 'pre-line' }}>{post.content}</ProjectDescription>
         </ProjectContent>
     </Container>
+    </>
   );
 } 

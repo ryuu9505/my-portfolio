@@ -28,6 +28,7 @@ import { formatDate } from '@utils/format';
 import isEmpty from '@utils/isEmpty';
 import { sectionConfig } from '@utils/sections';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 
 import api from '@/api';
@@ -101,6 +102,10 @@ export default function UserPage() {
 
   return (
     <>
+      <Helmet>
+        <title>{username} | Ratelo</title>
+      </Helmet>
+
       <Header sectionVisibility={sectionVisibility} />
 
       <Section 
