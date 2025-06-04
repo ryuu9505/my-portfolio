@@ -4,7 +4,7 @@ const DividerWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 40px 0;
+  margin: 12px 0;
 `;
 
 const DividerLine = styled.div`

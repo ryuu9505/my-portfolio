@@ -1,4 +1,5 @@
 import { blackSquare } from '@assets/images';
+import Divider from '@components/Divider';
 import { StarRatingAnimation } from '@styles/AnimationStyles';
 import {
   ContentWrapper,
@@ -7,8 +8,7 @@ import {
   HistoryPeriod,
   HistoryTitle,
   Position,
-  TitleWrapper,
-} from '@styles/CommonStyles';
+  TitleWrapper } from '@styles/CommonStyles';
 import { RoundedImage, SquareImage } from '@styles/ImageStyles';
 import React, { useState } from 'react';
 import { FaCertificate } from 'react-icons/fa';
@@ -255,9 +255,10 @@ export function ProfileCard({ profileImage, name, username, bio, companyLogos })
         <div style={{ fontWeight: 600, fontSize: '0.9rem', marginTop: 4, textAlign: 'center' }}>{username}</div>
         <div style={{ fontWeight: 300, fontSize: '0.9rem', marginTop: 0, textAlign: 'center' }}>{name}</div>
         <div style={{ fontWeight: 300, fontSize: '0.7rem', marginTop: 0, textAlign: 'center', color: '#888' }}>{bio}</div>
+        <Divider margin="16px" />
         {companyLogos && companyLogos.length > 0 && (
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8, marginTop: 12 }}>
-            {companyLogos.slice(0, 1).map((logo, idx) => (
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8 }}>
+            {companyLogos.slice(0, 3).map((logo, idx) => (
               <SquareImage
                 key={logo?.url || idx}
                 src={logo?.url}
