@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import api from '@/api';
 import Loading from '@/components/Loading';
+import Logo from '@/components/Logo';
 
 const CenteredCardList = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const CenteredCardList = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 80vh;
-  padding-top: 60px;
+  padding-top: 20px;
   max-width: 1024px;
   gap: 24px;
   margin: 0 auto;
@@ -44,9 +45,8 @@ export default function UserListPage() {
       <Helmet>
         <title>Users | Ratelo</title>
       </Helmet>
-
-      <Section id="users">
-        <SectionTitle></SectionTitle>
+      <Logo />
+      <Section id="users" padding="0px 20px 100px 20px">
         <CenteredCardList>
           {users.map((user) => {
             const companyLogos = Array.isArray(user.careers)
