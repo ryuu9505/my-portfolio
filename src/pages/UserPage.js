@@ -34,6 +34,7 @@ import { useParams } from 'react-router-dom';
 
 import api from '@/api';
 import Divider from '@/components/Divider';
+import Loading from '@/components/Loading';
 
 export default function UserPage() {
   const { username } = useParams();
@@ -48,6 +49,7 @@ export default function UserPage() {
     userType: '',
   });
   const [careers, setCareers] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (!username) return;
@@ -77,6 +79,8 @@ export default function UserPage() {
           posts: [],
           userType: '',
         });
+      } finally {
+        setLoading(false)
       }
     })();
   }, [username]);
@@ -103,6 +107,8 @@ export default function UserPage() {
       sectionVisibility[section.id] = !isEmpty(userInfo[section.key]);
     }
   });
+
+  if (loading) return <Loading />
 
   return (
     <>

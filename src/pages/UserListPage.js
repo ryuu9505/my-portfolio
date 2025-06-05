@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
 
 import api from '@/api';
+import Loading from '@/components/Loading';
 
 const CenteredCardList = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ const CenteredCardList = styled.div`
 
 export default function UserListPage() {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     (async () => {
@@ -29,9 +31,13 @@ export default function UserListPage() {
         setUsers(Array.isArray(res.data) ? res.data : []);
       } catch (err) {
         setUsers([]);
+      } finally {
+        setLoading(false)
       }
     })();
   }, []);
+
+  if (loading) return <Loading />
 
   return (
     <>
