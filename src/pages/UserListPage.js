@@ -54,6 +54,7 @@ export default function UserListPage() {
                 username={user.username || user.id || user._id}
                 bio={user.bio || ''}
                 companyLogos={companyLogos}
+                userType={user.userType}
               />
             );
           })}

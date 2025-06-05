@@ -1,11 +1,12 @@
 import {
   socialData,
 } from '@assets/data';
-import { profilePic } from '@assets/images';
+import { profilePic, robot } from '@assets/images';
 import { HistoryCardItem, TechCard } from '@components/Card';
 import FilmSection from '@components/FilmSection';
 import Footer from '@components/Footer';
 import Header from '@components/Header';
+import HeaderNotice from '@components/HeaderNotice';
 import HoverImage from '@components/HoverImage';
 import { Section, SectionTitle } from '@components/Section';
 import { PulseAnimation, ScrollAnimation } from '@styles/AnimationStyles';
@@ -44,6 +45,7 @@ export default function UserPage() {
     skills: [],
     projects: [],
     posts: [],
+    userType: '',
   });
   const [careers, setCareers] = useState([]);
 
@@ -62,6 +64,7 @@ export default function UserPage() {
           skills: Array.isArray(res.data.skills) ? res.data.skills : [],
           projects: Array.isArray(res.data.projectSummaries) ? res.data.projectSummaries : [],
           posts: Array.isArray(res.data.postSummaries) ? res.data.postSummaries : [],
+          userType: res.data.userType,
         });
       } catch (err) {
         setUserInfo({ 
@@ -72,6 +75,7 @@ export default function UserPage() {
           skills: [],
           projects: [],
           posts: [],
+          userType: '',
         });
       }
     })();
@@ -107,6 +111,25 @@ export default function UserPage() {
       </Helmet>
 
       <Header sectionVisibility={sectionVisibility} />
+      
+      {userInfo.userType === 'TEST' && (
+        <HeaderNotice>
+          <img 
+            src={robot} 
+            alt="robot" 
+            style={{ 
+              width: 22, 
+              height: 22, 
+              verticalAlign: 'middle',
+              display: 'inline-block',
+              lineHeight: 1,
+              position: 'relative',
+              top: '-2px'
+            }} 
+          />
+          <span style={{ verticalAlign: 'middle', lineHeight: 1 }}>This user is a bot.</span>
+        </HeaderNotice>
+      )}
 
       <Section 
         id="about" 

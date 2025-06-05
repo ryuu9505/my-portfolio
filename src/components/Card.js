@@ -1,4 +1,4 @@
-import { blackSquare } from '@assets/images';
+import { blackSquare, robot } from '@assets/images';
 import Divider from '@components/Divider';
 import { StarRatingAnimation } from '@styles/AnimationStyles';
 import {
@@ -234,13 +234,58 @@ const StyledProfileCard = styled.div`
   }
 `;
 
-export function ProfileCard({ profileImage, name, username, bio, companyLogos }) {
+function Tooltip({ text, children }) {
+  const [visible, setVisible] = useState(false);
+  return (
+    <>
+      {React.cloneElement(children, {
+        onMouseEnter: () => setVisible(true),
+        onMouseLeave: () => setVisible(false),
+      })}
+      {visible && (
+        <span style={{
+          position: 'absolute',
+          top: '-10px',
+          right: 0,
+          left: 'auto',
+          background: 'rgba(40,40,40,0.95)',
+          color: 'white',
+          padding: '6px 12px',
+          borderRadius: 6,
+          fontSize: '0.8rem',
+          whiteSpace: 'nowrap',
+          zIndex: 10,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+        }}>
+          {text}
+        </span>
+      )}
+    </>
+  );
+}
+
+export function ProfileCard({ profileImage, name, username, bio, companyLogos, userType }) {
   return (
     <a
       href={`/${username}`}
-      style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+      style={{ textDecoration: 'none', color: 'inherit', display: 'block', position: 'relative' }}
     >
-      <StyledProfileCard>
+      <StyledProfileCard style={{ position: 'relative' }}>
+        {userType === 'TEST' && (
+          <img
+            src={robot}
+            alt="robot"
+            style={{
+              position: 'absolute',
+              top: 6,
+              right: 12,
+              width: 28,
+              height: 28,
+              zIndex: 2,
+              padding: 2
+            }}
+          />
+        )}
         <RoundedImage
           src={profileImage?.url || ''}
           alt={profileImage?.altText || username || 'profile'}
@@ -258,7 +303,7 @@ export function ProfileCard({ profileImage, name, username, bio, companyLogos })
         <Divider margin="16px" />
         {companyLogos && companyLogos.length > 0 && (
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8 }}>
-            {companyLogos.slice(0, 3).map((logo, idx) => (
+            {companyLogos.slice(0, 1).map((logo, idx) => (
               <SquareImage
                 key={logo?.url || idx}
                 src={logo?.url}
