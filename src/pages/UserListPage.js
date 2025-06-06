@@ -9,6 +9,7 @@ import BasicHeader from '@/components/BasicHeader';
 import Footer from '@/components/Footer';
 import Loading from '@/components/Loading';
 import Logo from '@/components/Logo';
+import Spinner from '@/components/Spinner';
 
 
 const CenteredCardList = styled.div`
@@ -36,7 +37,7 @@ export default function UserListPage() {
     loadingRef.current = true;
     setLoading(true);
     try {
-      const params = { pageSize: 20 };
+      const params = { pageSize: 10 };
       if (cursor) params.lastId = cursor;
       const res = await api.get('/users/cursor', { params });
       const newUsers = res.data.content || res.data;
@@ -88,7 +89,12 @@ export default function UserListPage() {
         <CenteredCardList>
           {users.map((user) => {
             const companyLogos = Array.isArray(user.careers)
-              ? user.careers.slice(0, 3).map(career => career.company?.logo).filter(Boolean)
+              ? user.careers.slice(0, 3).map(career => {
+                  const company = career.company;
+                  if (company?.wideLogo?.url) return { url: company.wideLogo.url, altText: company.wideLogo.altText, isWide: true };
+                  if (company?.logo?.url) return { url: company.logo.url, altText: company.logo.altText, isWide: false };
+                  return null;
+                }).filter(Boolean)
               : [];
             return (
               <ProfileCard
@@ -102,9 +108,8 @@ export default function UserListPage() {
               />
             );
           })}
-          {loading && users.length > 0 && <Loading marginTop="80px" height="10px"/>}
         </CenteredCardList>
-        
+        {loading && users.length > 0 && <Spinner style={{ marginTop: 80, height: 10 }} />}
         {!hasMore && <div style={{textAlign: 'center', fontSize: '1.2rem', fontWeight: '300', padding: '80px 0px 40px 0px'}}>All users loaded</div>}
       </Section>
       <Footer />

@@ -264,6 +264,31 @@ function Tooltip({ text, children }) {
   );
 }
 
+// CompanyLogoList: wide 여부에 따라 스타일 분기
+const LogoImg = styled.img`
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  max-width: 100px;
+  margin-right: 0;
+`;
+
+function CompanyLogoList({ logos }) {
+  if (!logos || logos.length === 0) return null;
+  return (
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8 }}>
+      {logos.slice(0, 1).map((logo, idx) => (
+        <LogoImg
+          key={logo?.url || idx}
+          src={logo?.url}
+          alt={logo?.altText || 'company logo'}
+          isWide={logo?.isWide}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function ProfileCard({ profileImage, name, username, bio, companyLogos, userType }) {
   return (
     <a
@@ -301,18 +326,7 @@ export function ProfileCard({ profileImage, name, username, bio, companyLogos, u
         <div style={{ fontWeight: 300, fontSize: '0.9rem', marginTop: 0, textAlign: 'center' }}>{name}</div>
         <div style={{ fontWeight: 300, fontSize: '0.7rem', marginTop: 0, textAlign: 'center', color: '#888' }}>{bio}</div>
         <Divider margin="16px" />
-        {companyLogos && companyLogos.length > 0 && (
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8 }}>
-            {companyLogos.slice(0, 1).map((logo, idx) => (
-              <SquareImage
-                key={logo?.url || idx}
-                src={logo?.url}
-                alt={logo?.altText || 'company logo'}
-                style={{ width: 30, height: 30, marginRight: 0 }}
-              />
-            ))}
-          </div>
-        )}
+        <CompanyLogoList logos={companyLogos} />
       </StyledProfileCard>
     </a>
   );
