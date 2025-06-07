@@ -1,4 +1,4 @@
-import { blackSquare, robot } from '@assets/images';
+import { blackSquare, robot, verified } from '@assets/images';
 import Divider from '@components/Divider';
 import { StarRatingAnimation } from '@styles/AnimationStyles';
 import {
@@ -304,6 +304,21 @@ export function ProfileCard({ profileImage, name, username, bio, companyLogos, u
               position: 'absolute',
               top: 6,
               right: 12,
+              width: 28,
+              height: 28,
+              zIndex: 2,
+              padding: 2
+            }}
+          />
+        )}
+        {userType === 'ADMIN' && (
+          <img
+            src={verified}
+            alt="verified"
+            style={{
+              position: 'absolute',
+              top: 8,
+              right: 8,
               width: 28,
               height: 28,
               zIndex: 2,

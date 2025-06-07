@@ -8,3 +8,4 @@ export const profilePic = 'https://imgur.com/DXm6GJE.png';
 export const blackSquare = 'https://imgur.com/KSoLopf.png';
 export const logo = 'https://imgur.com/HOtRUW2.png';
 export const robot = 'https://imgur.com/GpkXO7W.png';
+export const verified = 'https://imgur.com/0g7l5uE.png';

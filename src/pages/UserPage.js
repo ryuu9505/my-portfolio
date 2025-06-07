@@ -1,7 +1,7 @@
 import {
   socialData,
 } from '@assets/data';
-import { profilePic, robot } from '@assets/images';
+import { profilePic, robot, verified } from '@assets/images';
 import { HistoryCardItem, TechCard } from '@components/Card';
 import FilmSection from '@components/FilmSection';
 import Footer from '@components/Footer';
@@ -118,23 +118,18 @@ export default function UserPage() {
 
       <Header sectionVisibility={sectionVisibility} />
       
+      {userInfo.userType === 'ADMIN' && (
+        <HeaderNotice 
+          type="info"
+          message="This user is an admin."
+        />
+      )}
       {userInfo.userType === 'TEST' && (
-        <HeaderNotice>
-          <img 
-            src={robot} 
-            alt="robot" 
-            style={{ 
-              width: 22, 
-              height: 22, 
-              verticalAlign: 'middle',
-              display: 'inline-block',
-              lineHeight: 1,
-              position: 'relative',
-              top: '-2px'
-            }} 
-          />
-          <span style={{ verticalAlign: 'middle', lineHeight: 1 }}>This user is a bot.</span>
-        </HeaderNotice>
+        <HeaderNotice 
+          type="warning"
+          message="This user is a bot."
+          icon={robot}
+        />
       )}
 
       <Section 

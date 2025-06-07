@@ -5,8 +5,8 @@ import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
 
 import api from '@/api';
-import BasicHeader from '@/components/BasicHeader';
 import Footer from '@/components/Footer';
+import BasicHeader from '@/components/header/BasicHeader';
 import Loading from '@/components/Loading';
 import Logo from '@/components/Logo';
 import Spinner from '@/components/Spinner';

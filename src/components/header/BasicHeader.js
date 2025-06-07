@@ -4,8 +4,8 @@ import React, { useEffect,useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
 
-import BlurOverlay from './BlurOverlay';
-import SearchBar from './SearchBar';
+import BlurOverlay from '../BlurOverlay';
+import SearchBar from '../SearchBar';
 
 const HEADER_HEIGHT = 44;
 const SEARCHBAR_HEIGHT = 44;
