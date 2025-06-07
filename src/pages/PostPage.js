@@ -40,7 +40,7 @@ export default function PostPage() {
   return (
     <>
     <Helmet>
-      <title>{post.title} | Ratelo</title>
+      <title>{post.title} | UNBLIND</title>
     </Helmet>
     
     <Container maxWidth="1024px">

@@ -4,7 +4,7 @@ import React from 'react';
 function Footer() {
   return (
     <FooterContainer>
-      <div>Copyright © 2025 Ratelo. All rights reserved.</div>
+      <div>Copyright © 2025 Unblind. All rights reserved.</div>
     </FooterContainer>
   );
 }

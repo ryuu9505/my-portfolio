@@ -6,6 +6,9 @@ export const prismTicket = 'https://imgur.com/DFePcN7.png';
 export const prismSpeechBubble = 'https://imgur.com/732z0zE.png';
 export const profilePic = 'https://imgur.com/DXm6GJE.png';
 export const blackSquare = 'https://imgur.com/KSoLopf.png';
-export const logo = 'https://imgur.com/HOtRUW2.png';
+export const logo = 'https://imgur.com/UDyxcHD.png';
+export const logo_dark = 'https://imgur.com/8E8gCQc.png';
+export const logo_gray = 'https://imgur.com/W9ctXiQ.png';
 export const robot = 'https://imgur.com/GpkXO7W.png';
+
 export const verified = 'https://imgur.com/0g7l5uE.png';

@@ -82,7 +82,7 @@ export default function UserListPage() {
     <>  
       <BasicHeader />
       <Helmet>
-        <title>Users | Ratelo</title>
+        <title>Users | UNBLIND</title>
       </Helmet>
       <Logo />
       <Section id="users" padding="0px 20px 100px 20px">

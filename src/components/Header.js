@@ -50,7 +50,7 @@ function Header({ sectionVisibility }) {
         <div style={{ pointerEvents: 'auto' }}>
           <HeaderContainer>
             <RouterLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
-              <img src={logo} alt="logo" style={{ height: '24px', marginRight: '48px' }} />
+              <img src={logo} alt="logo" style={{ height: '18px', marginRight: '48px' }} />
             </RouterLink>
             <NavMenu>
               {sectionConfig.map(

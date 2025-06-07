@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { logo } from '@/assets/images';
+import { logo_dark } from '@/assets/images';
 
 const Logo = ({ size = 120 }) => (
   <div style={{
@@ -10,7 +10,7 @@ const Logo = ({ size = 120 }) => (
     width: '100%',
     margin: '32px 0'
   }}>
-    <img src={logo} alt="Logo" style={{ width: size, height: 'auto' }} />
+    <img src={logo_dark} alt="Logo" style={{ width: size, height: 'auto' }} />
   </div>
 );
 

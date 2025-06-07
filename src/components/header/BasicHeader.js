@@ -48,7 +48,7 @@ function BasicHeader() {
         <div style={{ pointerEvents: 'auto' }}>
           <HeaderContainer>
             <RouterLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
-              <img src={logo} alt="logo" style={{ height: '24px' }} />
+              <img src={logo} alt="logo" style={{ height: '18px' }} />
             </RouterLink>
           </HeaderContainer>
           <SearchBar open={isSearchOpen} />
