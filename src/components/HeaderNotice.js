@@ -5,16 +5,19 @@ const COLOR_STYLES = {
     background: '#fffbe7',
     borderBottom: '1.5px solid #ffe082',
     color: '#222',
+    opacity: 0.9,
   },
   info: {
     background: '#e3f2fd',
     borderBottom: '1.5px solid #90caf9',
     color: '#1565c0',
+    opacity: 0.9,
   },
   error: {
     background: '#ffebee',
     borderBottom: '1.5px solid #ef9a9a',
     color: '#c62828',
+    opacity: 0.9,
   },
 };
 
