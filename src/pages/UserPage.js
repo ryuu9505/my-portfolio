@@ -5,7 +5,6 @@ import { profilePic, robot, verified } from '@assets/images';
 import { HistoryCardItem, TechCard } from '@components/Card';
 import FilmSection from '@components/FilmSection';
 import Footer from '@components/Footer';
-import Header from '@components/Header';
 import HeaderNotice from '@components/HeaderNotice';
 import HoverImage from '@components/HoverImage';
 import { Section, SectionTitle } from '@components/Section';
@@ -34,6 +33,7 @@ import { useParams } from 'react-router-dom';
 
 import api from '@/api';
 import Divider from '@/components/Divider';
+import Header from '@/components/header/Header';
 import Loading from '@/components/Loading';
 
 export default function UserPage() {

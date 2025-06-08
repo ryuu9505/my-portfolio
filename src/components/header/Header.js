@@ -1,4 +1,4 @@
-import { logo } from '@assets/images';
+import { logo_dark } from '@assets/images';
 import { HeaderContainer, NavLink, NavMenu } from '@styles/layout/HeaderStyles';
 import { sectionConfig } from '@utils/sections';
 import React, { useEffect,useState } from 'react';
@@ -6,8 +6,8 @@ import { FiSearch } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
 
-import BlurOverlay from './BlurOverlay';
-import SearchBar from './SearchBar';
+import BlurOverlay from '../BlurOverlay';
+import SearchBar from '../SearchBar';
 
 const HEADER_HEIGHT = 44;
 const SEARCHBAR_HEIGHT = 44;
@@ -50,7 +50,7 @@ function Header({ sectionVisibility }) {
         <div style={{ pointerEvents: 'auto' }}>
           <HeaderContainer>
             <RouterLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
-              <img src={logo} alt="logo" style={{ height: '18px', marginRight: '48px' }} />
+            <img src={logo_dark} alt="logo" style={{ height: '30px', backgroundColor: 'white', borderRadius: '4px', marginRight: '48px' }} />
             </RouterLink>
             <NavMenu>
               {sectionConfig.map(
