@@ -113,7 +113,7 @@ export default function UserPage() {
   return (
     <>
       <Helmet>
-        <title>{username} | UNBLIND</title>
+        <title>{username} | Unblind</title>
       </Helmet>
 
       <Header sectionVisibility={sectionVisibility} />

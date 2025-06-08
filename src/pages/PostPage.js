@@ -40,7 +40,7 @@ export default function PostPage() {
   return (
     <>
     <Helmet>
-      <title>{post.title} | UNBLIND</title>
+      <title>{post.title} | Unblind</title>
     </Helmet>
     
     <Container maxWidth="1024px">
