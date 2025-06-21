@@ -110,10 +110,51 @@ export default function UserPage() {
 
   if (loading) return <Loading />
 
+  const cleanedBio = userInfo.bio ? userInfo.bio.replace(/"/g, '\\"').replace(/\\n/g, ' ') : '';
+
   return (
     <>
       <Helmet>
-        <title>{username} | Unblind</title>
+        <title>{`${userInfo.name} (@${username}) | Unblind`}</title>
+        <meta name="description" content={`${userInfo.bio}`} />
+        <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "mainEntity": {
+              "@type": "Person",
+              "name": "${userInfo.name}",
+              "alternateName": "${username}",
+              "url": "https://unblind.kr/${username}",
+              "description": "${cleanedBio}",
+              "image": {
+                "@type": "ImageObject",
+                "url": "${userInfo.profileImage?.url}"
+              }
+            }
+          }
+        `}
+        </script>
+        <script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Users",
+              "item": "https://unblind.kr/users"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "${userInfo.name}",
+              "item": "https://unblind.kr/${username}"
+            }]
+          }
+        `}
+        </script>
       </Helmet>
 
       <Header sectionVisibility={sectionVisibility} />

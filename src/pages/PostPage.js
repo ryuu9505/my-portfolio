@@ -40,7 +40,8 @@ export default function PostPage() {
   return (
     <>
     <Helmet>
-      <title>{post.title} | Unblind</title>
+      <title>{`${post.title}`} | Unblind</title>
+      <meta name="description" content={`${post.content.substring(0, 50)}...`} />
     </Helmet>
     
     <Container maxWidth="1024px">

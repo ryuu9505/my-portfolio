@@ -83,6 +83,7 @@ export default function UserListPage() {
       <BasicHeader />
       <Helmet>
         <title>Users | Unblind</title>
+        <meta name="description" content="언블라인드의 사용자 목록을 확인해보세요." />
       </Helmet>
       <Logo />
       <Section id="users" padding="0px 20px 100px 20px">
