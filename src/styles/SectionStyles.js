@@ -15,6 +15,7 @@ export const SectionTitle = styled.h2`
   color: ${({ color, theme }) => color || theme.colors.textLight};
   margin-bottom: 50px;
   text-align: center;
+  opacity: 0.8;
 `;
 
 export const SectionDescription = styled.div`
