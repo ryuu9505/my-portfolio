@@ -307,7 +307,8 @@ export function ProfileCard({ profileImage, name, username, bio, companyLogos, u
               width: 28,
               height: 28,
               zIndex: 2,
-              padding: 2
+              padding: 2,
+              opacity: 0.9,
             }}
           />
         )}
