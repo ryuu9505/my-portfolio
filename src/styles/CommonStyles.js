@@ -270,7 +270,7 @@ export const ProjectImageContainer = styled.div`
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  border: 1.0px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
   box-sizing: border-box;
 `;
 
@@ -281,7 +281,7 @@ export const PostImageContainer = styled.div`
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  border: 1.0px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
   box-sizing: border-box;
 `;
 

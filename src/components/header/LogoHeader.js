@@ -5,12 +5,14 @@ import { Link as RouterLink } from 'react-router-dom';
 
 function LogoHeader() {
   return (
-    <HeaderContainer style={{ position: 'fixed', top: 0, left: 0, zIndex: 1000 }}>
+    <HeaderContainer
+      style={{ position: 'fixed', top: 0, left: 0, zIndex: 1000 }}
+    >
       <RouterLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src={logo} alt="logo" style={{ height: '24px' }} />
+        <img src={logo} alt="logo" style={{ height: '24px' }} />
       </RouterLink>
     </HeaderContainer>
   );
 }
 
-export default LogoHeader; 
+export default LogoHeader;

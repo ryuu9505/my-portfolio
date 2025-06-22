@@ -1,6 +1,6 @@
 import { logo } from '@assets/images';
 import { HeaderContainer } from '@styles/layout/HeaderStyles';
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ function BasicHeader() {
     };
   }, [isSearchOpen]);
 
-  const handleSearchToggle = () => setIsSearchOpen(open => !open);
+  const handleSearchToggle = () => setIsSearchOpen((open) => !open);
 
   return (
     <>
@@ -40,14 +40,19 @@ function BasicHeader() {
           left: 0,
           width: '100%',
           zIndex: 1000,
-          height: isSearchOpen ? HEADER_HEIGHT + SEARCHBAR_HEIGHT : HEADER_HEIGHT,
+          height: isSearchOpen
+            ? HEADER_HEIGHT + SEARCHBAR_HEIGHT
+            : HEADER_HEIGHT,
           overflow: 'visible',
           pointerEvents: 'none',
         }}
       >
         <div style={{ pointerEvents: 'auto' }}>
           <HeaderContainer>
-            <RouterLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
+            <RouterLink
+              to="/"
+              style={{ display: 'flex', alignItems: 'center' }}
+            >
               <img src={logo} alt="logo" style={{ height: '32px' }} />
             </RouterLink>
           </HeaderContainer>

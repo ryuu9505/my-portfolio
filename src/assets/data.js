@@ -19,7 +19,4 @@ const socialData = [
   { id: 4, icon: 'tistory', href: 'https://shady-dev.tistory.com/' },
 ];
 
-export {
-  certBadges,
-  socialData,
-};
+export { certBadges, socialData };

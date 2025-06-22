@@ -1,6 +1,4 @@
-import {
-  socialData,
-} from '@assets/data';
+import { socialData } from '@assets/data';
 import { profilePic, robot, verified } from '@assets/images';
 import { HistoryCardItem, TechCard } from '@components/Card';
 import FilmSection from '@components/FilmSection';
@@ -49,7 +47,7 @@ export default function UserPage() {
     userType: '',
   });
   const [careers, setCareers] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!username) return;
@@ -60,19 +58,23 @@ export default function UserPage() {
           id: res.data.id,
           name: res.data.name,
           bio: res.data.bio,
-          profileImage: res.data.profileImage 
-            ? res.data.profileImage 
+          profileImage: res.data.profileImage
+            ? res.data.profileImage
             : { url: '', altText: '' },
           skills: Array.isArray(res.data.skills) ? res.data.skills : [],
-          projects: Array.isArray(res.data.projectSummaries) ? res.data.projectSummaries : [],
-          posts: Array.isArray(res.data.postSummaries) ? res.data.postSummaries : [],
+          projects: Array.isArray(res.data.projectSummaries)
+            ? res.data.projectSummaries
+            : [],
+          posts: Array.isArray(res.data.postSummaries)
+            ? res.data.postSummaries
+            : [],
           userType: res.data.userType,
         });
       } catch (err) {
-        setUserInfo({ 
+        setUserInfo({
           id: '',
-          name: '이름을 불러올 수 없음', 
-          bio: '정보를 불러올 수 없음', 
+          name: '이름을 불러올 수 없음',
+          bio: '정보를 불러올 수 없음',
           profileImage: { url: '', altText: '' },
           skills: [],
           projects: [],
@@ -80,7 +82,7 @@ export default function UserPage() {
           userType: '',
         });
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     })();
   }, [username]);
@@ -98,7 +100,7 @@ export default function UserPage() {
   }, [userInfo.id]);
 
   const sectionVisibility = {};
-  sectionConfig.forEach(section => {
+  sectionConfig.forEach((section) => {
     if (section.always) {
       sectionVisibility[section.id] = true;
     } else if (section.id === 'history') {
@@ -108,9 +110,11 @@ export default function UserPage() {
     }
   });
 
-  if (loading) return <Loading />
+  if (loading) return <Loading />;
 
-  const cleanedBio = userInfo.bio ? userInfo.bio.replace(/"/g, '\\"').replace(/\\n/g, ' ') : '';
+  const cleanedBio = userInfo.bio
+    ? userInfo.bio.replace(/"/g, '\\"').replace(/\\n/g, ' ')
+    : '';
 
   return (
     <>
@@ -118,7 +122,7 @@ export default function UserPage() {
         <title>{`${userInfo.name} (@${username}) | Unblind`}</title>
         <meta name="description" content={`${userInfo.bio}`} />
         <script type="application/ld+json">
-        {`
+          {`
           {
             "@context": "https://schema.org",
             "@type": "ProfilePage",
@@ -137,7 +141,7 @@ export default function UserPage() {
         `}
         </script>
         <script type="application/ld+json">
-        {`
+          {`
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
@@ -158,31 +162,25 @@ export default function UserPage() {
       </Helmet>
 
       <Header sectionVisibility={sectionVisibility} />
-      
+
       {userInfo.userType === 'ADMIN' && (
-        <HeaderNotice 
-          type="info"
-          message="This user is an admin."
-        />
+        <HeaderNotice type="info" message="This user is an admin." />
       )}
       {userInfo.userType === 'TEST' && (
-        <HeaderNotice 
+        <HeaderNotice
           type="warning"
           message="This user is a bot."
           icon={robot}
         />
       )}
 
-      <Section 
-        id="about" 
-        colorScheme="light"
-      >
+      <Section id="about" colorScheme="light">
         <AboutContent>
           <ScrollAnimation delay={0.2}>
             <PulseAnimation>
-              <RoundedImage 
-                src={userInfo.profileImage?.url || profilePic} 
-                alt={userInfo.profileImage?.altText || 'Profile'} 
+              <RoundedImage
+                src={userInfo.profileImage?.url || profilePic}
+                alt={userInfo.profileImage?.altText || 'Profile'}
               />
             </PulseAnimation>
           </ScrollAnimation>
@@ -202,10 +200,7 @@ export default function UserPage() {
       </Section>
 
       <Divider visible={!isEmpty(careers)} />
-      <Section 
-        id="history"
-        visible={!isEmpty(careers)}
-      >
+      <Section id="history" visible={!isEmpty(careers)}>
         <SectionTitle id="history-title">
           <ScrollAnimation>History</ScrollAnimation>
         </SectionTitle>
@@ -220,10 +215,7 @@ export default function UserPage() {
       </Section>
 
       <Divider visible={!isEmpty(userInfo.skills)} />
-      <Section 
-        id="skills" 
-        visible={!isEmpty(userInfo.skills)}
-      >
+      <Section id="skills" visible={!isEmpty(userInfo.skills)}>
         <SectionTitle id="skills-title">
           <ScrollAnimation>Skills</ScrollAnimation>
         </SectionTitle>
@@ -242,10 +234,7 @@ export default function UserPage() {
       </Section>
 
       <Divider visible={!isEmpty(userInfo.projects)} />
-      <Section 
-        id="projects" 
-        visible={!isEmpty(userInfo.projects)}
-      >
+      <Section id="projects" visible={!isEmpty(userInfo.projects)}>
         <SectionTitle id="projects-title">
           <ScrollAnimation>Projects</ScrollAnimation>
         </SectionTitle>
@@ -274,10 +263,7 @@ export default function UserPage() {
       </Section>
 
       <Divider visible={!isEmpty(userInfo.posts)} />
-      <Section 
-        id="posts" 
-        visible={!isEmpty(userInfo.posts)}
-      >
+      <Section id="posts" visible={!isEmpty(userInfo.posts)}>
         <SectionTitle id="posts-title">
           <ScrollAnimation>Posts</ScrollAnimation>
         </SectionTitle>
@@ -296,8 +282,12 @@ export default function UserPage() {
                 </ProjectImageContainer>
                 <ProjectContent>
                   <ProjectTitle fontSize="1.0rem">{post.title}</ProjectTitle>
-                  <ProjectDescription fontSize="0.8rem">{post.subtitle}</ProjectDescription>
-                  <Period fontSize="0.8rem" fontWeight="100">{formatDate(post.createdAt)}</Period>
+                  <ProjectDescription fontSize="0.8rem">
+                    {post.subtitle}
+                  </ProjectDescription>
+                  <Period fontSize="0.8rem" fontWeight="100">
+                    {formatDate(post.createdAt)}
+                  </Period>
                 </ProjectContent>
               </ScrollAnimation>
             </ProjectCard>

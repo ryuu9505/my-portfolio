@@ -19,4 +19,4 @@ export default function Container({ children, maxWidth, maxHeight, style }) {
       {children}
     </StyledContainer>
   );
-} 
+}

@@ -12,11 +12,12 @@ export const SearchBarContainer = styled.div`
   min-height: 0;
   max-height: ${({ open }) => (open ? '100vh' : '0')};
   opacity: ${({ open }) => (open ? 1 : 0)};
-  transition: height 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s cubic-bezier(.4,0,.2,1);
+  transition:
+    height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: flex-start;
   pointer-events: ${({ open }) => (open ? 'auto' : 'none')};
-  
 `;
 
 export const SearchInputWrapper = styled.div`
@@ -34,4 +35,4 @@ export const SearchInputWrapper = styled.div`
     background: transparent;
     color: #fff;
   }
-`; 
+`;

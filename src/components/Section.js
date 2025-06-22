@@ -6,7 +6,12 @@ import {
 import React from 'react';
 import { useTheme } from 'styled-components';
 
-export const Section = ({ children, colorScheme = 'default', visible = true, ...props }) => {
+export const Section = ({
+  children,
+  colorScheme = 'default',
+  visible = true,
+  ...props
+}) => {
   const theme = useTheme();
   let background, color;
 

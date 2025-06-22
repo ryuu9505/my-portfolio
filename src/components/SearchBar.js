@@ -1,5 +1,8 @@
-import { SearchBarContainer, SearchInputWrapper } from '@styles/layout/SearchBarStyles';
-import React, { useEffect,useState } from 'react';
+import {
+  SearchBarContainer,
+  SearchInputWrapper,
+} from '@styles/layout/SearchBarStyles';
+import React, { useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 
 function SearchBar({ open }) {
@@ -30,4 +33,4 @@ function SearchBar({ open }) {
   );
 }
 
-export default SearchBar; 
+export default SearchBar;

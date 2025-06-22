@@ -3,7 +3,7 @@ import BlurOverlay from '@components/BlurOverlay';
 import SearchBar from '@components/SearchBar';
 import { HeaderContainer, NavLink, NavMenu } from '@styles/layout/HeaderStyles';
 import { sectionConfig } from '@utils/sections';
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link } from 'react-scroll';
@@ -29,7 +29,7 @@ function SearchBarHeader({ sectionVisibility }) {
     };
   }, [isSearchOpen]);
 
-  const handleSearchToggle = () => setIsSearchOpen(open => !open);
+  const handleSearchToggle = () => setIsSearchOpen((open) => !open);
 
   return (
     <>
@@ -41,22 +41,36 @@ function SearchBarHeader({ sectionVisibility }) {
           left: 0,
           width: '100%',
           zIndex: 1000,
-          height: isSearchOpen ? HEADER_HEIGHT + SEARCHBAR_HEIGHT : HEADER_HEIGHT,
+          height: isSearchOpen
+            ? HEADER_HEIGHT + SEARCHBAR_HEIGHT
+            : HEADER_HEIGHT,
           overflow: 'visible',
           pointerEvents: 'none',
         }}
       >
         <div style={{ pointerEvents: 'auto' }}>
           <HeaderContainer>
-            <RouterLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={logo} alt="logo" style={{ height: '32px', marginRight: '48px' }} />
+            <RouterLink
+              to="/"
+              style={{ display: 'flex', alignItems: 'center' }}
+            >
+              <img
+                src={logo}
+                alt="logo"
+                style={{ height: '32px', marginRight: '48px' }}
+              />
             </RouterLink>
             <NavMenu>
               {sectionConfig.map(
-                section =>
+                (section) =>
                   sectionVisibility[section.id] && (
                     <NavLink key={section.id}>
-                      <Link to={section.id} smooth={true} duration={500} offset={section.offset}>
+                      <Link
+                        to={section.id}
+                        smooth={true}
+                        duration={500}
+                        offset={section.offset}
+                      >
                         {section.label}
                       </Link>
                     </NavLink>

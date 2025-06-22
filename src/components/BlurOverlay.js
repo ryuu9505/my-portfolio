@@ -5,4 +5,4 @@ function BlurOverlay({ onClose, open }) {
   return <BlurOverlayContainer onClick={onClose} open={open} />;
 }
 
-export default BlurOverlay; 
+export default BlurOverlay;

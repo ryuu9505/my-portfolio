@@ -21,4 +21,4 @@ export default function Divider({ visible = true, margin = '128px' }) {
       <DividerLine margin={margin} />
     </DividerWrapper>
   );
-} 
+}

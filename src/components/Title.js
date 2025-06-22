@@ -8,16 +8,31 @@ const StyledTitle = styled.h2`
   color: ${({ color }) => color || '#222'};
 `;
 
-export function Title({ children, fontSize, fontWeight, margin, color, as = 'h2', ...props }) {
+export function Title({
+  children,
+  fontSize,
+  fontWeight,
+  margin,
+  color,
+  as = 'h2',
+  ...props
+}) {
   return (
-    <StyledTitle as={as} fontSize={fontSize} fontWeight={fontWeight} margin={margin} color={color} {...props}>
+    <StyledTitle
+      as={as}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+      margin={margin}
+      color={color}
+      {...props}
+    >
       {children}
     </StyledTitle>
   );
 }
 
 const StyledPostTitle = styled(StyledTitle)`
-  font-size: 3.0rem;
+  font-size: 3rem;
   font-weight: 800;
   margin-bottom: 20px;
   line-height: 1.2;
@@ -25,5 +40,9 @@ const StyledPostTitle = styled(StyledTitle)`
 `;
 
 export function PostTitle({ children, ...props }) {
-  return <StyledPostTitle as="h1" {...props}>{children}</StyledPostTitle>;
-} 
+  return (
+    <StyledPostTitle as="h1" {...props}>
+      {children}
+    </StyledPostTitle>
+  );
+}

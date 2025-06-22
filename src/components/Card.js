@@ -8,13 +8,17 @@ import {
   HistoryPeriod,
   HistoryTitle,
   Position,
-  TitleWrapper } from '@styles/CommonStyles';
+  TitleWrapper,
+} from '@styles/CommonStyles';
 import { RoundedImage, SquareImage } from '@styles/ImageStyles';
 import React, { useState } from 'react';
 import { FaCertificate } from 'react-icons/fa';
 import styled from 'styled-components';
 
-import formatYearMonth, { getPeriodLength, withParentheses } from '@/utils/format';
+import formatYearMonth, {
+  getPeriodLength,
+  withParentheses,
+} from '@/utils/format';
 
 const StyledTechCard = styled.div`
   background-color: white;
@@ -66,9 +70,24 @@ export const TechCard = ({ url, name, level }) => {
     <StyledTechCard
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ position: 'relative', overflow: 'visible', border: '1px solid #e0e0e0', boxSizing: 'border-box' }}
+      style={{
+        position: 'relative',
+        overflow: 'visible',
+        border: '1px solid #e0e0e0',
+        boxSizing: 'border-box',
+      }}
     >
-      <img className="tech-icon" src={url} alt={name} style={{ width: '48px', height: '48px', objectFit: 'contain', marginBottom: 0 }} />
+      <img
+        className="tech-icon"
+        src={url}
+        alt={name}
+        style={{
+          width: '48px',
+          height: '48px',
+          objectFit: 'contain',
+          marginBottom: 0,
+        }}
+      />
       <span className="tech-name">{name}</span>
       <StarRatingAnimation
         show={isHovered}
@@ -184,18 +203,23 @@ export function HistoryCardItem({
   const [isHovered, setIsHovered] = React.useState(false);
 
   const textMaskStyle = masked
-  ? {
-      background: '#000',
-      color: '#000',
-      overflow: 'hidden',
-      fontSize: '1.5rem',
-    }
-  : {};
+    ? {
+        background: '#000',
+        color: '#000',
+        overflow: 'hidden',
+        fontSize: '1.5rem',
+      }
+    : {};
   return (
     <HistoryCard
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ position: 'relative', overflow: 'visible', border: '1px solid #e0e0e0', boxSizing: 'border-box' }}
+      style={{
+        position: 'relative',
+        overflow: 'visible',
+        border: '1px solid #e0e0e0',
+        boxSizing: 'border-box',
+      }}
     >
       <SquareImage
         src={masked ? blackSquare : company.logo?.url}
@@ -208,7 +232,11 @@ export function HistoryCardItem({
         </TitleWrapper>
         <HistoryDescription>{description}</HistoryDescription>
         <HistoryPeriod>
-          {formatYearMonth(startDate)} - {endDate ? formatYearMonth(endDate) : '재직 중'} {withParentheses(periodNote ? periodNote : getPeriodLength(startDate, endDate))}
+          {formatYearMonth(startDate)} -{' '}
+          {endDate ? formatYearMonth(endDate) : '재직 중'}{' '}
+          {withParentheses(
+            periodNote ? periodNote : getPeriodLength(startDate, endDate)
+          )}
         </HistoryPeriod>
       </ContentWrapper>
     </HistoryCard>
@@ -243,20 +271,22 @@ function Tooltip({ text, children }) {
         onMouseLeave: () => setVisible(false),
       })}
       {visible && (
-        <span style={{
-          position: 'absolute',
-          top: '-10px',
-          right: 0,
-          left: 'auto',
-          background: 'rgba(40,40,40,0.95)',
-          color: 'white',
-          padding: '6px 12px',
-          borderRadius: 6,
-          fontSize: '0.8rem',
-          whiteSpace: 'nowrap',
-          zIndex: 10,
-          boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
-        }}>
+        <span
+          style={{
+            position: 'absolute',
+            top: '-10px',
+            right: 0,
+            left: 'auto',
+            background: 'rgba(40,40,40,0.95)',
+            color: 'white',
+            padding: '6px 12px',
+            borderRadius: 6,
+            fontSize: '0.8rem',
+            whiteSpace: 'nowrap',
+            zIndex: 10,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+          }}
+        >
           {text}
         </span>
       )}
@@ -276,7 +306,15 @@ const LogoImg = styled.img`
 function CompanyLogoList({ logos }) {
   if (!logos || logos.length === 0) return null;
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 8 }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 8,
+      }}
+    >
       {logos.slice(0, 1).map((logo, idx) => (
         <LogoImg
           key={logo?.url || idx}
@@ -289,11 +327,23 @@ function CompanyLogoList({ logos }) {
   );
 }
 
-export function ProfileCard({ profileImage, name, username, bio, companyLogos, userType }) {
+export function ProfileCard({
+  profileImage,
+  name,
+  username,
+  bio,
+  companyLogos,
+  userType,
+}) {
   return (
     <a
       href={`/${username}`}
-      style={{ textDecoration: 'none', color: 'inherit', display: 'block', position: 'relative' }}
+      style={{
+        textDecoration: 'none',
+        color: 'inherit',
+        display: 'block',
+        position: 'relative',
+      }}
     >
       <StyledProfileCard style={{ position: 'relative' }}>
         {userType === 'TEST' && (
@@ -323,7 +373,7 @@ export function ProfileCard({ profileImage, name, username, bio, companyLogos, u
               width: 28,
               height: 28,
               zIndex: 2,
-              padding: 2
+              padding: 2,
             }}
           />
         )}
@@ -335,12 +385,40 @@ export function ProfileCard({ profileImage, name, username, bio, companyLogos, u
             height: 64,
             marginBottom: 0,
             border: '1.5px solid #e0e0e0',
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
           }}
         />
-        <div style={{ fontWeight: 600, fontSize: '0.9rem', marginTop: 4, textAlign: 'center' }}>{username}</div>
-        <div style={{ fontWeight: 300, fontSize: '0.9rem', marginTop: 0, textAlign: 'center' }}>{name}</div>
-        <div style={{ fontWeight: 300, fontSize: '0.7rem', marginTop: 0, textAlign: 'center', color: '#888' }}>{bio}</div>
+        <div
+          style={{
+            fontWeight: 600,
+            fontSize: '0.9rem',
+            marginTop: 4,
+            textAlign: 'center',
+          }}
+        >
+          {username}
+        </div>
+        <div
+          style={{
+            fontWeight: 300,
+            fontSize: '0.9rem',
+            marginTop: 0,
+            textAlign: 'center',
+          }}
+        >
+          {name}
+        </div>
+        <div
+          style={{
+            fontWeight: 300,
+            fontSize: '0.7rem',
+            marginTop: 0,
+            textAlign: 'center',
+            color: '#888',
+          }}
+        >
+          {bio}
+        </div>
         <Divider margin="16px" />
         <CompanyLogoList logos={companyLogos} />
       </StyledProfileCard>

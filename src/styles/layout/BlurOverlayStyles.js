@@ -6,7 +6,7 @@ export const BlurOverlayContainer = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(12px);
   opacity: ${({ open }) => (open ? 1 : 0)};
   transition: opacity 1s;

@@ -1,6 +1,6 @@
 import { ProfileCard } from '@components/Card';
-import { Section } from '@components/Section'
-import React, { useEffect, useRef,useState } from 'react';
+import { Section } from '@components/Section';
+import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
 
@@ -10,7 +10,6 @@ import BasicHeader from '@/components/header/BasicHeader';
 import Loading from '@/components/Loading';
 import Logo from '@/components/Logo';
 import Spinner from '@/components/Spinner';
-
 
 const CenteredCardList = styled.div`
   display: flex;
@@ -41,7 +40,7 @@ export default function UserListPage() {
       if (cursor) params.lastId = cursor;
       const res = await api.get('/users/cursor', { params });
       const newUsers = res.data.content || res.data;
-      setUsers(prev => [...prev, ...newUsers]);
+      setUsers((prev) => [...prev, ...newUsers]);
       setHasMore(!res.data.last);
       if (newUsers.length > 0) setLastId(newUsers[newUsers.length - 1].id);
     } finally {
@@ -57,7 +56,8 @@ export default function UserListPage() {
   useEffect(() => {
     const onScroll = () => {
       if (
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 100
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 100
       ) {
         if (!loadingRef.current && hasMore) fetchUsers(lastId);
       }
@@ -79,23 +79,39 @@ export default function UserListPage() {
   if (users.length === 0 && loading) return <Loading />;
 
   return (
-    <>  
+    <>
       <BasicHeader />
       <Helmet>
         <title>Users | Unblind</title>
-        <meta name="description" content="언블라인드의 사용자 목록을 확인해보세요." />
+        <meta
+          name="description"
+          content="언블라인드의 사용자 목록을 확인해보세요."
+        />
       </Helmet>
       <Logo />
       <Section id="users" padding="0px 20px 100px 20px">
         <CenteredCardList>
           {users.map((user) => {
             const companyLogos = Array.isArray(user.careers)
-              ? user.careers.slice(0, 3).map(career => {
-                  const company = career.company;
-                  if (company?.wideLogo?.url) return { url: company.wideLogo.url, altText: company.wideLogo.altText, isWide: true };
-                  if (company?.logo?.url) return { url: company.logo.url, altText: company.logo.altText, isWide: false };
-                  return null;
-                }).filter(Boolean)
+              ? user.careers
+                  .slice(0, 3)
+                  .map((career) => {
+                    const company = career.company;
+                    if (company?.wideLogo?.url)
+                      return {
+                        url: company.wideLogo.url,
+                        altText: company.wideLogo.altText,
+                        isWide: true,
+                      };
+                    if (company?.logo?.url)
+                      return {
+                        url: company.logo.url,
+                        altText: company.logo.altText,
+                        isWide: false,
+                      };
+                    return null;
+                  })
+                  .filter(Boolean)
               : [];
             return (
               <ProfileCard
@@ -110,11 +126,23 @@ export default function UserListPage() {
             );
           })}
         </CenteredCardList>
-        {loading && users.length > 0 && <Spinner style={{ marginTop: 80, height: 10 }} />}
-        {!hasMore && <div style={{textAlign: 'center', fontSize: '1.2rem', fontWeight: '300', padding: '80px 0px 40px 0px'}}>All users loaded</div>}
+        {loading && users.length > 0 && (
+          <Spinner style={{ marginTop: 80, height: 10 }} />
+        )}
+        {!hasMore && (
+          <div
+            style={{
+              textAlign: 'center',
+              fontSize: '1.2rem',
+              fontWeight: '300',
+              padding: '80px 0px 40px 0px',
+            }}
+          >
+            All users loaded
+          </div>
+        )}
       </Section>
       <Footer />
     </>
   );
 }
-  

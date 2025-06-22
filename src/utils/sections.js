@@ -5,4 +5,4 @@ export const sectionConfig = [
   { id: 'projects', label: 'Projects', key: 'projects', offset: 128 },
   { id: 'posts', label: 'Posts', key: 'posts', offset: 128 },
   { id: 'contact', label: 'Contact', always: true, offset: 128 },
-]; 
+];

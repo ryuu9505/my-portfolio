@@ -60,4 +60,4 @@ export default function HeaderNotice({ message, type = 'warning', icon }) {
       <span style={{ verticalAlign: 'middle', lineHeight: 1 }}>{message}</span>
     </div>
   );
-} 
+}
