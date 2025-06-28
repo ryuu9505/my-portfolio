@@ -31,3 +31,8 @@ export async function fetchMe() {
     return null;
   }
 }
+
+export async function fetchUserById(id) {
+  const res = await api.get(`/users/${id}`, { withCredentials: true });
+  return res.data;
+}
