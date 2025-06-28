@@ -1,9 +1,11 @@
 import { logo } from '@assets/images';
+import { RoundedImage } from '@styles/ImageStyles';
 import { HeaderContainer } from '@styles/layout/HeaderStyles';
 import React, { useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { Link as RouterLink } from 'react-router-dom';
 
+import { useAuth } from '../AuthProvider';
 import BlurOverlay from '../BlurOverlay';
 import SearchBar from '../SearchBar';
 
@@ -12,6 +14,7 @@ const SEARCHBAR_HEIGHT = 44;
 
 function BasicHeader() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const { user } = useAuth();
 
   useEffect(() => {
     const root = document.getElementById('root');
@@ -49,12 +52,57 @@ function BasicHeader() {
       >
         <div style={{ pointerEvents: 'auto' }}>
           <HeaderContainer>
+            {/* 좌측: 빈 공간 */}
+            <div style={{ flex: 1 }} />
+            {/* 중앙: 로고 */}
             <RouterLink
               to="/"
-              style={{ display: 'flex', alignItems: 'center' }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}
             >
               <img src={logo} alt="logo" style={{ height: '32px' }} />
             </RouterLink>
+            {/* 우측: 프로필 이미지 또는 로그인 링크 */}
+            <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+              {user && user.profileImage && user.username ? (
+                <RouterLink
+                  to={`/${user.username}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    textDecoration: 'none',
+                    height: 44,
+                  }}
+                >
+                  <RoundedImage
+                    src={user.profileImage.url}
+                    alt={user.profileImage.altText || user.username}
+                    style={{
+                      width: 64,
+                      height: 64,
+                      border: '1.5px solid #e0e0e0',
+                      boxSizing: 'border-box',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </RouterLink>
+              ) : (
+                <RouterLink
+                  to="/login"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    height: 44,
+                    fontWeight: 600,
+                    fontSize: '1rem',
+                    color: '#fff',
+                    textDecoration: 'none',
+                    padding: '0 16px',
+                  }}
+                >
+                  로그인
+                </RouterLink>
+              )}
+            </div>
           </HeaderContainer>
           <SearchBar open={isSearchOpen} />
         </div>
