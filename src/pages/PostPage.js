@@ -1,4 +1,6 @@
+import api from '@apis/Api';
 import Container from '@components/Container';
+import Divider from '@components/Divider';
 import { PostTitle } from '@components/Title';
 import {
   PostImageContainer,
@@ -9,9 +11,6 @@ import { RoundedImage } from '@styles/ImageStyles';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
-
-import api from '@/api';
-import Divider from '@/components/Divider';
 
 export default function PostPage() {
   const { postId } = useParams();

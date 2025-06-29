@@ -1,6 +1,5 @@
+import { fetchMe, fetchUserById, login, logout } from '@apis/Login';
 import React, { createContext, useContext, useEffect, useState } from 'react';
-
-import { fetchMe, login, logout, fetchUserById } from '../api';
 
 const AuthContext = createContext();
 

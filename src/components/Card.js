@@ -11,14 +11,13 @@ import {
   TitleWrapper,
 } from '@styles/CommonStyles';
 import { RoundedImage, SquareImage } from '@styles/ImageStyles';
-import React, { useState } from 'react';
-import { FaCertificate } from 'react-icons/fa';
-import styled from 'styled-components';
-
 import formatYearMonth, {
   getPeriodLength,
   withParentheses,
-} from '@/utils/format';
+} from '@utils/format';
+import React, { useState } from 'react';
+import { FaCertificate } from 'react-icons/fa';
+import styled from 'styled-components';
 
 const StyledTechCard = styled.div`
   background-color: white;

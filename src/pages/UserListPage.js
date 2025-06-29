@@ -1,15 +1,13 @@
+import api from '@apis/Api';
 import { ProfileCard } from '@components/Card';
+import Footer from '@components/Footer';
+import BasicHeader from '@components/header/BasicHeader';
+import Loading from '@components/Loading';
 import { Section } from '@components/Section';
+import Spinner from '@components/Spinner';
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
-
-import api from '@/api';
-import Footer from '@/components/Footer';
-import BasicHeader from '@/components/header/BasicHeader';
-import Loading from '@/components/Loading';
-import Logo from '@/components/Logo';
-import Spinner from '@/components/Spinner';
 
 const CenteredCardList = styled.div`
   display: flex;
@@ -88,8 +86,7 @@ export default function UserListPage() {
           content="언블라인드의 사용자 목록을 확인해보세요."
         />
       </Helmet>
-      <Logo />
-      <Section id="users" padding="0px 20px 100px 20px">
+      <Section id="users" padding="100px 20px 100px 20px">
         <CenteredCardList>
           {users.map((user) => {
             const companyLogos = Array.isArray(user.careers)

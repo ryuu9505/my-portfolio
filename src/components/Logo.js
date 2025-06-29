@@ -1,8 +1,15 @@
 import React from 'react';
 
-import { logo_letter_dark } from '@/assets/images';
+const logoMap = {
+  default: '/logo.png',
+  black: '/logo_black.png',
+  pink: '/logo_pink.png',
+  red: '/logo_red.png',
+  white: '/logo_white.png',
+  yellow: '/logo_yellow.png',
+};
 
-const Logo = ({ size = 120 }) => (
+const Logo = ({ size = 120, variant = 'default', style }) => (
   <div
     style={{
       display: 'flex',
@@ -11,10 +18,11 @@ const Logo = ({ size = 120 }) => (
       width: '100%',
       margin: '32px 0',
       opacity: 0.9,
+      ...style,
     }}
   >
     <img
-      src={logo_letter_dark}
+      src={logoMap[variant] || logoMap.default}
       alt="Logo"
       style={{ width: size, height: 'auto' }}
     />

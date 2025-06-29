@@ -1,10 +1,14 @@
+import api from '@apis/Api';
 import { socialData } from '@assets/data';
 import { profilePic, robot, verified } from '@assets/images';
 import { HistoryCardItem, TechCard } from '@components/Card';
+import Divider from '@components/Divider';
 import FilmSection from '@components/FilmSection';
 import Footer from '@components/Footer';
+import Header from '@components/header/Header';
 import HeaderNotice from '@components/HeaderNotice';
 import HoverImage from '@components/HoverImage';
+import Loading from '@components/Loading';
 import { Section, SectionTitle } from '@components/Section';
 import { PulseAnimation, ScrollAnimation } from '@styles/AnimationStyles';
 import {
@@ -28,11 +32,6 @@ import { sectionConfig } from '@utils/sections';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
-
-import api from '@/api';
-import Divider from '@/components/Divider';
-import Header from '@/components/header/Header';
-import Loading from '@/components/Loading';
 
 export default function UserPage() {
   const { username } = useParams();
