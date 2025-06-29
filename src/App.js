@@ -10,6 +10,7 @@ import LoginPage from '@/pages/LoginPage';
 import PostPage from '@/pages/PostPage';
 import UserListPage from '@/pages/UserListPage';
 import UserPage from '@/pages/UserPage';
+import BasicHeader from '@/components/header/BasicHeader';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <GlobalStyle />
         <BrowserRouter>
           <AuthProvider>
+            <BasicHeader />
             <Routes>
               <Route path="/" element={<Navigate to="/users" replace />} />
               <Route path="/login" element={<LoginPage />} />
