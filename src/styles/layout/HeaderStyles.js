@@ -13,7 +13,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 44px;
   position: fixed;
   z-index: 1001;
 `;

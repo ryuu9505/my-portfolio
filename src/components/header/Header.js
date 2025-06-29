@@ -29,9 +29,25 @@ function Header({ sectionVisibility }) {
         height={isSearchOpen ? HEADER_HEIGHT + SEARCHBAR_HEIGHT : HEADER_HEIGHT}
       >
         <HeaderContainer>
-          <RouterLink to="/" style={{ display: 'flex', alignItems: 'center', marginRight: '48px' }}>
-            <Logo variant="white" size={30}/>
-          </RouterLink>
+          <div
+            style={{
+              flex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+            }}
+          >
+            <RouterLink
+              to="/"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                marginRight: '48px',
+              }}
+            >
+              <Logo variant="white" size={30} />
+            </RouterLink>
+          </div>
           <NavMenu>
             {sectionConfig.map(
               (section) =>
@@ -49,19 +65,26 @@ function Header({ sectionVisibility }) {
                 )
             )}
           </NavMenu>
-          <button
-            aria-label="search"
-            style={{ background: 'none', border: 'none', marginLeft: '48px' }}
-            onClick={handleSearchToggle}
+          <div
+            style={{
+              flex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
+            }}
           >
-            <FiSearch size={24} color="white" />
-          </button>
+            <button
+              aria-label="search"
+              style={{ background: 'none', border: 'none', marginLeft: '48px' }}
+              onClick={handleSearchToggle}
+            >
+              <FiSearch size={24} color="white" />
+            </button>
+          </div>
         </HeaderContainer>
         <SearchBar open={isSearchOpen} />
       </HeaderLayout>
-      {/* BlurOverlay는 그 아래에만 */}
       <BlurOverlay onClose={handleSearchToggle} open={isSearchOpen} />
-      {/* 페이지 컨텐츠: 헤더 높이만큼 패딩 */}
       <div style={{ paddingTop: HEADER_HEIGHT }} />
     </>
   );

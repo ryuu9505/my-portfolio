@@ -10,11 +10,9 @@ export default function LoginButton({ style, children = '로그인' }) {
         fontWeight: 600,
         fontSize: '1rem',
         textDecoration: 'none',
-        padding: '0 24px',
-        height: 60,
         display: 'flex',
         alignItems: 'center',
-        background: '#222',
+        background: 'none',
         ...style,
       }}
     >

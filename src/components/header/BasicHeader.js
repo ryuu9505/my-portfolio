@@ -1,3 +1,4 @@
+import LoginButton from '@components/LoginButton';
 import Logo from '@components/Logo';
 import { HeaderContainer } from '@styles/layout/HeaderStyles';
 import React from 'react';
@@ -7,7 +8,14 @@ function BasicHeader() {
   return (
     <>
       <HeaderContainer>
-        <div style={{ flex: 1 }} />
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+          }}
+        ></div>
         <div
           style={{
             flex: 1,
@@ -17,10 +25,19 @@ function BasicHeader() {
           }}
         >
           <RouterLink to="/">
-            <Logo variant="white" size={32} />
+            <Logo variant="white" size={30} />
           </RouterLink>
         </div>
-        <div style={{ flex: 1 }} />
+        <div
+          style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <LoginButton />
+        </div>
       </HeaderContainer>
     </>
   );
