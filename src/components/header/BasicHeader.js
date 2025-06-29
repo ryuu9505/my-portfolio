@@ -1,7 +1,7 @@
+import { useAuth } from '@components/AuthProvider';
 import LoginButton from '@components/LoginButton';
 import Logo from '@components/Logo';
-import RoundImage from '@components/RoundImage';
-import { useAuth } from '@components/AuthProvider';
+import { RoundedImage } from '@styles/ImageStyles';
 import { HeaderContainer } from '@styles/layout/HeaderStyles';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
@@ -43,7 +43,7 @@ function BasicHeader() {
           }}
         >
           {user ? (
-            <RoundImage src={user.profileImage?.url} size={32} />
+            <RoundedImage src={user.profileImage?.url} size={32} />
           ) : (
             <LoginButton />
           )}
