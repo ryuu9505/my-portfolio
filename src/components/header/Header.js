@@ -30,7 +30,7 @@ function Header({ sectionVisibility }) {
       >
         <HeaderContainer>
           <RouterLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
-            <Logo variant="white" size={30} style={{ marginRight: '48px' }}/>
+            <Logo variant="white" size={30} style={{ marginRight: '48px' }} />
           </RouterLink>
           <NavMenu>
             {sectionConfig.map(

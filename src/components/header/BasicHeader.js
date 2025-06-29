@@ -8,17 +8,18 @@ function BasicHeader() {
     <>
       <HeaderContainer>
         <div style={{ flex: 1 }} />
-        <RouterLink
-          to="/"
+        <div
           style={{
+            flex: 1,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            flex: 1,
           }}
         >
-          <Logo variant="white" size={32} />
-        </RouterLink>
+          <RouterLink to="/">
+            <Logo variant="white" size={32} />
+          </RouterLink>
+        </div>
         <div style={{ flex: 1 }} />
       </HeaderContainer>
     </>

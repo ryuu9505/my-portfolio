@@ -9,24 +9,17 @@ const logoMap = {
   yellow: '/logo_yellow.png',
 };
 
-const Logo = ({ size = 120, variant = 'default', style }) => (
-  <div
+const Logo = ({ size = 120, variant = 'default' }) => (
+  <img
+    src={logoMap[variant] || logoMap.default}
+    alt="Logo"
     style={{
       display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
-      margin: '32px 0',
+      height: size,
+      width: size,
       opacity: 0.9,
-      ...style,
     }}
-  >
-    <img
-      src={logoMap[variant] || logoMap.default}
-      alt="Logo"
-      style={{ width: size, height: 'auto' }}
-    />
-  </div>
+  />
 );
 
 export default Logo;
