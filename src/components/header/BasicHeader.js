@@ -43,7 +43,7 @@ function BasicHeader() {
           }}
         >
           {user ? (
-            <RoundedImage src={user.profileImage?.url} size={32} />
+            <RoundedImage src={user.profileImage?.url} size={30} />
           ) : (
             <LoginButton />
           )}
