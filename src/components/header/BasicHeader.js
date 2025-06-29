@@ -1,15 +1,15 @@
 import LoginButton from '@components/LoginButton';
 import Logo from '@components/Logo';
 import RoundImage from '@components/RoundImage';
-import { useAuthUser } from '@hooks/useAuthUser';
+import { useAuth } from '@components/AuthProvider';
 import { HeaderContainer } from '@styles/layout/HeaderStyles';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 function BasicHeader() {
-  const { user, checked } = useAuthUser();
+  const { user, loading } = useAuth();
 
-  if (!checked) return null;
+  if (loading) return null;
 
   return (
     <>
@@ -42,7 +42,7 @@ function BasicHeader() {
             justifyContent: 'flex-end',
           }}
         >
-          {!checked ? null : user ? (
+          {user ? (
             <RoundImage src={user.profileImage?.url} size={32} />
           ) : (
             <LoginButton />
