@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import api from '@apis/Api';
+import { useEffect, useState } from 'react';
 
 export function useAuthUser() {
   const [user, setUser] = useState(null);
@@ -26,7 +26,9 @@ export function useAuthUser() {
     }
 
     fetchUser();
-    return () => { isMounted = false; };
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return { user, checked };

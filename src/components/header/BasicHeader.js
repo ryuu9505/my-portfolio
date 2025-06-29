@@ -1,10 +1,10 @@
 import LoginButton from '@components/LoginButton';
 import Logo from '@components/Logo';
+import RoundImage from '@components/RoundImage';
+import { useAuthUser } from '@hooks/useAuthUser';
 import { HeaderContainer } from '@styles/layout/HeaderStyles';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { useAuthUser } from '@hooks/useAuthUser';
-import RoundImage from '@components/RoundImage';
 
 function BasicHeader() {
   const { user, checked } = useAuthUser();
