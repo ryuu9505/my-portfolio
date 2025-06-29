@@ -29,8 +29,8 @@ function Header({ sectionVisibility }) {
         height={isSearchOpen ? HEADER_HEIGHT + SEARCHBAR_HEIGHT : HEADER_HEIGHT}
       >
         <HeaderContainer>
-          <RouterLink to="/" style={{ display: 'flex', alignItems: 'center' }}>
-            <Logo variant="white" size={30} style={{ marginRight: '48px' }} />
+          <RouterLink to="/" style={{ display: 'flex', alignItems: 'center', marginRight: '48px' }}>
+            <Logo variant="white" size={30}/>
           </RouterLink>
           <NavMenu>
             {sectionConfig.map(
