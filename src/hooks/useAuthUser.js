@@ -6,14 +6,27 @@ export function useAuthUser() {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
-    api.get('/me')
-      .then(res => {
-        setUser(res.data);
-      })
-      .catch(err => {
-        setUser(null);
-      })
-      .finally(() => setChecked(true));
+    let isMounted = true;
+
+    async function fetchUser() {
+      try {
+        const meRes = await api.get('/me');
+        const id = meRes.data.id;
+        if (id) {
+          const userRes = await api.get(`/users/${id}`);
+          if (isMounted) setUser(userRes.data);
+        } else {
+          if (isMounted) setUser(null);
+        }
+      } catch {
+        if (isMounted) setUser(null);
+      } finally {
+        if (isMounted) setChecked(true);
+      }
+    }
+
+    fetchUser();
+    return () => { isMounted = false; };
   }, []);
 
   return { user, checked };
