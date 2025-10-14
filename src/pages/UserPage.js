@@ -11,9 +11,8 @@ import HoverImage from '@components/HoverImage';
 import Loading from '@components/Loading';
 import { Section, SectionTitle } from '@components/Section';
 import { PulseAnimation, ScrollAnimation } from '@styles/AnimationStyles';
+import { CardList } from '@styles/compositions/Card.styles';
 import {
-  AboutContent,
-  CardList,
   Period,
   ProjectCard,
   ProjectContent,
@@ -21,9 +20,9 @@ import {
   ProjectImageContainer,
   ProjectList,
   ProjectTitle,
-  SkillCardList,
-  TextContent,
-} from '@styles/CommonStyles';
+} from '@styles/compositions/Project.styles';
+import { AboutContent, TextContent } from '@styles/compositions/Section.styles';
+import { SkillCardList } from '@styles/compositions/Skill.styles';
 import { IconButton, IconList } from '@styles/IconStyles';
 import { RoundedImage } from '@styles/ImageStyles';
 import { formatDate } from '@utils/format';

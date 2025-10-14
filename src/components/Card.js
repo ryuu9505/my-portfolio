@@ -9,7 +9,7 @@ import {
   HistoryTitle,
   Position,
   TitleWrapper,
-} from '@styles/CommonStyles';
+} from '@styles/compositions/Card.styles';
 import { RoundedImage, SquareImage } from '@styles/ImageStyles';
 import formatYearMonth, {
   getPeriodLength,

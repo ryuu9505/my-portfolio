@@ -1,7 +1,7 @@
 import HoverImage from '@components/HoverImage';
 import { Section } from '@components/Section';
 import { useFilmAnimation } from '@styles/AnimationStyles';
-import { FilmTrack, ThumbnailWrapper } from '@styles/CommonStyles';
+import { FilmTrack, ThumbnailWrapper } from '@styles/compositions/Film.styles';
 import React, { useState } from 'react';
 
 const images = [

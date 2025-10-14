@@ -6,7 +6,7 @@ import {
   PostImageContainer,
   ProjectContent,
   ProjectDescription,
-} from '@styles/CommonStyles';
+} from '@styles/compositions/Project.styles';
 import { RoundedImage } from '@styles/ImageStyles';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';

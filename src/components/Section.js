@@ -2,7 +2,7 @@ import {
   Section as StyledSection,
   SectionDescription as StyledSectionDescription,
   SectionTitle as StyledSectionTitle,
-} from '@styles/SectionStyles';
+} from '@styles/compositions/Section.styles';
 import React from 'react';
 import { useTheme } from 'styled-components';
 
