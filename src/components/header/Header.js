@@ -45,7 +45,7 @@ function Header({ sectionVisibility }) {
                 marginRight: '48px',
               }}
             >
-              <Logo variant="white" size={30} />
+              <Logo variant="white" size={24} />
             </RouterLink>
           </div>
           <NavMenu>
@@ -78,7 +78,7 @@ function Header({ sectionVisibility }) {
               style={{ background: 'none', border: 'none', marginLeft: '48px' }}
               onClick={handleSearchToggle}
             >
-              <FiSearch size={24} color="white" />
+              <FiSearch size={20} color="white" />
             </button>
           </div>
         </HeaderContainer>

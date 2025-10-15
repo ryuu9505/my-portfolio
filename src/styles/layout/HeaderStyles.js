@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   // color
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(10px);
 
   // size
@@ -32,7 +32,7 @@ export const NavMenu = styled.nav`
 
 export const NavLink = styled.a`
   color: #f5f5f7;
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   font-weight: 300;
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
