@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   // color
-  background-color: ${({ theme }) => theme.colors.backgroundLight || '#FFFFFF'};
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid ${({ theme }) => theme.colors.border || '#e0e0e0'};
 
