@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
   // color
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: ${({ theme }) => theme.colors.backgroundLight || '#FFFFFF'};
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border || '#e0e0e0'};
 
   // size
   width: 100%;
@@ -21,7 +22,7 @@ export const HeaderContainer = styled.header`
 export const Logo = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: ${({ theme }) => theme.colors.primary || '#333333'};
 `;
 
 export const NavMenu = styled.nav`
@@ -31,7 +32,7 @@ export const NavMenu = styled.nav`
 `;
 
 export const NavLink = styled.a`
-  color: #f5f5f7;
+  color: ${({ theme }) => theme.colors.primary || '#333333'};
   font-size: 0.7rem;
   font-weight: 300;
   font-family:
@@ -43,6 +44,6 @@ export const NavLink = styled.a`
   align-items: center;
 
   &:hover {
-    color: #aaaaaa;
+    color: ${({ theme }) => theme.colors.secondary || '#646464'};
   }
 `;

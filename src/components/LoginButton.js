@@ -6,7 +6,7 @@ export default function LoginButton({ style, children = 'Sign in' }) {
     <RouterLink
       to="/login"
       style={{
-        color: '#fff',
+        color: '#333333',
         fontWeight: 500,
         fontSize: '1rem',
         textDecoration: 'none',
