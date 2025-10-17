@@ -31,7 +31,7 @@ function BasicHeader() {
           }}
         >
           <RouterLink to="/">
-            <Logo variant="black" size={30} />
+            <Logo variant="black" size={24} />
           </RouterLink>
         </div>
         <div
