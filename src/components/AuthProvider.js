@@ -26,19 +26,30 @@ export function AuthProvider({ children }) {
   }, []);
 
   const handleLogin = async (username, password) => {
-    await login(username, password);
-    const me = await fetchMe();
-    if (me && me.id) {
-      const userDetail = await fetchUserById(me.id);
-      setUser(userDetail);
-    } else {
+    try {
+      await login(username, password);
+      const me = await fetchMe();
+      if (me && me.id) {
+        const userDetail = await fetchUserById(me.id);
+        setUser(userDetail);
+      } else {
+        setUser(null);
+      }
+    } catch (error) {
       setUser(null);
+      throw error; // 컴포넌트에서 에러 메시지를 표시할 수 있도록 throw
     }
   };
 
   const handleLogout = async () => {
-    await logout();
-    setUser(null);
+    try {
+      await logout();
+      setUser(null);
+    } catch (error) {
+      // 로그아웃 실패시에도 클라이언트 상태는 초기화
+      setUser(null);
+      console.error('로그아웃 중 오류 발생:', error);
+    }
   };
 
   return (

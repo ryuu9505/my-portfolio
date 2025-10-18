@@ -11,32 +11,32 @@ export default function ProfileDropdown({ onMyPage, onLogout }) {
         background: '#fff',
         boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
         borderRadius: 8,
-        minWidth: 140,
+        minWidth: 120,
         zIndex: 2000,
         padding: '8px 0',
       }}
     >
       <div
         style={{
-          padding: '10px 20px',
+          padding: '10px 20px 5px 20px',
           cursor: 'pointer',
-          fontWeight: 500,
+          fontWeight: 300,
           color: '#222',
         }}
         onClick={onMyPage}
       >
-        마이페이지
+        My Page
       </div>
       <div
         style={{
-          padding: '10px 20px',
+          padding: '5px 20px 10px 20px',
           cursor: 'pointer',
-          fontWeight: 500,
+          fontWeight: 300,
           color: '#222',
         }}
         onClick={onLogout}
       >
-        로그아웃
+        Logout
       </div>
     </div>
   );

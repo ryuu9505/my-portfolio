@@ -7,6 +7,7 @@ export const RoundedImage = styled.img`
   border: 1.5px solid #e0e0e0;
   box-sizing: border-box;
   object-fit: cover;
+  display: block;
 `;
 
 export const SquareImage = styled.img`
