@@ -13,7 +13,7 @@ const CenteredCardList = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-content: flex-start;
   justify-content: center;
   min-height: 80vh;
   padding-top: 20px;

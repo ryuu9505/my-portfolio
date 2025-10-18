@@ -1,4 +1,4 @@
-import { logo } from '@assets/images';
+import Logo from '@components/Logo';
 import React from 'react';
 
 const Loading = ({ height, marginTop }) => (
@@ -11,7 +11,7 @@ const Loading = ({ height, marginTop }) => (
       marginTop: marginTop || '0px',
     }}
   >
-    <img src={logo} alt="Logo" style={{ width: 120 }} />
+    <Logo variant="black" size={120} />
   </div>
 );
 
